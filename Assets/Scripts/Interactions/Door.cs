@@ -8,23 +8,23 @@ namespace Interactions
         [SerializeField] private UnityEvent onOpened;
         [SerializeField] private UnityEvent onClosed;
 
-        private bool _isOpen;
+        public bool IsOpen { get; private set; }
 
         public void Open()
         {
-            _isOpen = true;
+            IsOpen = true;
             onOpened?.Invoke();
         }
 
         public void Close()
         {
-            _isOpen = false;
+            IsOpen = false;
             onClosed?.Invoke();
         }
 
         public void ToggleOpenClose()
         {
-            if (_isOpen) Close();
+            if (IsOpen) Close();
             else Open();
         }
     }
