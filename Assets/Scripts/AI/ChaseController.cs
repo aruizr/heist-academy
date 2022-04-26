@@ -4,15 +4,16 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
 using Utilities;
+using Variables;
 
 namespace AI
 {
     public class ChaseController : MonoBehaviour
     {
         [SerializeField] private NavMeshAgent navMeshAgent;
-        [SerializeField] private float movementSpeed;
-        [SerializeField] private float acceleration;
-        [SerializeField] [Min(0)] private float maxRange;
+        [SerializeField] private ValueReference<float> movementSpeed;
+        [SerializeField] private ValueReference<float> acceleration;
+        [SerializeField] private ValueReference<float> maxRange;
         [SerializeField] [Disabled] private GameObject target;
         [SerializeField] private UnityEvent onTargetLost;
 
@@ -22,7 +23,7 @@ namespace AI
             
             navMeshAgent.SetDestination(target.transform.position);
 
-            if (navMeshAgent.remainingDistance > maxRange || !navMeshAgent.CanReachDestination())
+            if (navMeshAgent.remainingDistance > maxRange.Value || !navMeshAgent.CanReachDestination())
             {
                 StopChasing();
                 onTargetLost?.Invoke();
@@ -32,8 +33,8 @@ namespace AI
         public void StartChasing(GameObject target)
         {
             this.target = target;
-            navMeshAgent.speed = movementSpeed;
-            navMeshAgent.acceleration = acceleration;
+            navMeshAgent.speed = movementSpeed.Value;
+            navMeshAgent.acceleration = acceleration.Value;
         }
 
         public void StopChasing()

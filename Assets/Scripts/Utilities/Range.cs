@@ -1,0 +1,15 @@
+﻿using System;
+
+namespace Utilities
+{
+    [Serializable]
+    public struct Range<T> where T: IComparable<T>
+    {
+        public T min, max;
+
+        public bool IsInRange(T value)
+        {
+            return value.CompareTo(min) >= 0 && value.CompareTo(max) <= 0;
+        }
+    }
+}

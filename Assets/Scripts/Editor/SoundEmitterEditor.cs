@@ -1,6 +1,5 @@
 ﻿using Interactions;
 using UnityEditor;
-using UnityEngine;
 
 namespace Editor
 {
@@ -10,8 +9,8 @@ namespace Editor
         private void OnSceneGUI()
         {
             var emitter = (SoundEmitter) target;
+            var radius = emitter.Radius;
             var transform = emitter.transform;
-            var radius = serializedObject.FindProperty("radius").floatValue;
             var color = serializedObject.FindProperty("gizmosColor").colorValue;
 
             Handles.color = color;

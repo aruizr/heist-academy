@@ -1,12 +1,13 @@
 ﻿using Codetox.Attributes;
 using UnityEngine;
 using UnityEngine.Events;
+using Variables;
 
 namespace Utilities
 {
     public class Timer : MonoBehaviour
     {
-        [SerializeField] private float time;
+        [SerializeField] private ValueReference<float> time;
         [SerializeField] [Disabled] private float currentValue;
         [SerializeField] private bool loop;
         [SerializeField] private bool autoPlay;
@@ -18,7 +19,7 @@ namespace Utilities
         {
             if (!_isPlaying) return;
             currentValue += Time.fixedDeltaTime;
-            if (currentValue < time) return;
+            if (currentValue < time.Value) return;
             onFinish?.Invoke();
             if (loop) Rewind();
             else Stop();

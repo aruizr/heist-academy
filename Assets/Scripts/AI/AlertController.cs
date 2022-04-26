@@ -4,15 +4,16 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
 using Utilities;
+using Variables;
 
 namespace AI
 {
     public class AlertController : MonoBehaviour
     {
         [SerializeField] private NavMeshAgent navMeshAgent;
-        [SerializeField] private float movingSpeed;
-        [SerializeField] private float acceleration;
-        [SerializeField] private float turningSpeed;
+        [SerializeField] private ValueReference<float> movingSpeed;
+        [SerializeField] private ValueReference<float> acceleration;
+        [SerializeField] private ValueReference<float> turningSpeed;
         [SerializeField] private UnityEvent onDestinationReached;
 
         private Tweener _currentTween;
@@ -35,10 +36,10 @@ namespace AI
             var horizontalPosition = new Vector3(position.x, transformPosition.y, position.z);
             var direction = t.DirectionTo(horizontalPosition);
             var angle = Vector3.Angle(t.forward, direction);
-            var time = angle / turningSpeed;
+            var time = angle / turningSpeed.Value;
 
-            navMeshAgent.speed = movingSpeed;
-            navMeshAgent.acceleration = acceleration;
+            navMeshAgent.speed = movingSpeed.Value;
+            navMeshAgent.acceleration = acceleration.Value;
             navMeshAgent.isStopped = true;
             navMeshAgent.SetDestination(position);
             _currentTween?.Kill();
