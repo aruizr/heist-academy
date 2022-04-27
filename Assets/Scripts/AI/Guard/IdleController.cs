@@ -4,7 +4,7 @@ using UnityEngine.AI;
 using UnityEngine.Events;
 using Utilities;
 
-namespace AI
+namespace AI.Guard
 {
     public class IdleController : MonoBehaviour
     {

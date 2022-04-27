@@ -6,7 +6,7 @@ using UnityEngine.Events;
 using Utilities;
 using Variables;
 
-namespace AI
+namespace AI.Guard
 {
     public class AlertController : MonoBehaviour
     {

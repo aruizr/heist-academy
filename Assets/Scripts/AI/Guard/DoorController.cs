@@ -3,7 +3,7 @@ using Interactions;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace AI
+namespace AI.Guard
 {
     public class DoorController : MonoBehaviour
     {

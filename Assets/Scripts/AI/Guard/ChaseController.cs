@@ -1,4 +1,5 @@
 ﻿using Codetox.Attributes;
+using Codetox.Core;
 using Codetox.Variables;
 using UnityEngine;
 using UnityEngine.AI;
@@ -6,7 +7,7 @@ using UnityEngine.Events;
 using Utilities;
 using Variables;
 
-namespace AI
+namespace AI.Guard
 {
     public class ChaseController : MonoBehaviour
     {
@@ -14,8 +15,10 @@ namespace AI
         [SerializeField] private ValueReference<float> movementSpeed;
         [SerializeField] private ValueReference<float> acceleration;
         [SerializeField] private ValueReference<float> maxRange;
+        [SerializeField] private ValueReference<float> rangeToBustTarget;
         [SerializeField] [Disabled] private GameObject target;
         [SerializeField] private UnityEvent onTargetLost;
+        [SerializeField] private UnityEvent onTargetBusted;
 
         private void Update()
         {
@@ -23,10 +26,14 @@ namespace AI
             
             navMeshAgent.SetDestination(target.transform.position);
 
-            if (navMeshAgent.remainingDistance > maxRange.Value || !navMeshAgent.CanReachDestination())
+            if (navMeshAgent.transform.DistanceTo(target) > maxRange.Value || !navMeshAgent.CanReachDestination())
             {
                 StopChasing();
                 onTargetLost?.Invoke();
+            }
+            else if (navMeshAgent.transform.DistanceTo(target) <= rangeToBustTarget.Value)
+            {
+                onTargetBusted?.Invoke();
             }
         }
 
