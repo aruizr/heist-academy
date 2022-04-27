@@ -1,4 +1,5 @@
 ﻿using Codetox.Attributes;
+using Codetox.Core;
 using Codetox.Variables;
 using UnityEngine;
 using UnityEngine.AI;
@@ -6,7 +7,7 @@ using UnityEngine.Events;
 using Utilities;
 using Variables;
 
-namespace AI
+namespace AI.Guard
 {
     public class ChaseController : MonoBehaviour
     {
@@ -23,7 +24,7 @@ namespace AI
             
             navMeshAgent.SetDestination(target.transform.position);
 
-            if (navMeshAgent.remainingDistance > maxRange.Value || !navMeshAgent.CanReachDestination())
+            if (navMeshAgent.transform.DistanceTo(target) > maxRange.Value || !navMeshAgent.CanReachDestination())
             {
                 StopChasing();
                 onTargetLost?.Invoke();
