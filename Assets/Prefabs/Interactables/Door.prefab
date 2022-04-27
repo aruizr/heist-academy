@@ -427,6 +427,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  onFinishOpening:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3999802033947499853
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,7 +440,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6423743437548706994}
   - component: {fileID: 7412483144348248597}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Moving Part
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -479,4 +482,16 @@ MonoBehaviour:
   autoPlay: 0
   onComplete:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2050001031394308588}
+        m_TargetAssemblyTypeName: Interactions.Door, Assembly-CSharp
+        m_MethodName: FinishOpening
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

@@ -5,8 +5,9 @@ namespace Interactions
 {
     public class Door : MonoBehaviour
     {
-        [SerializeField] private UnityEvent onOpened;
-        [SerializeField] private UnityEvent onClosed;
+        public UnityEvent onOpened;
+        public UnityEvent onClosed;
+        public UnityEvent onFinishOpening;
 
         public bool IsOpen { get; private set; }
 
@@ -26,6 +27,11 @@ namespace Interactions
         {
             if (IsOpen) Close();
             else Open();
+        }
+
+        public void FinishOpening()
+        {
+            onFinishOpening?.Invoke();
         }
     }
 }
