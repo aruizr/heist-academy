@@ -15,8 +15,10 @@ namespace AI.Guard
         [SerializeField] private ValueReference<float> movementSpeed;
         [SerializeField] private ValueReference<float> acceleration;
         [SerializeField] private ValueReference<float> maxRange;
+        [SerializeField] private ValueReference<float> rangeToBustTarget;
         [SerializeField] [Disabled] private GameObject target;
         [SerializeField] private UnityEvent onTargetLost;
+        [SerializeField] private UnityEvent onTargetBusted;
 
         private void Update()
         {
@@ -28,6 +30,10 @@ namespace AI.Guard
             {
                 StopChasing();
                 onTargetLost?.Invoke();
+            }
+            else if (navMeshAgent.transform.DistanceTo(target) <= rangeToBustTarget.Value)
+            {
+                onTargetBusted?.Invoke();
             }
         }
 
