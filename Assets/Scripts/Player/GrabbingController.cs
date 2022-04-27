@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Player
 {
-    public class GrabbingController : Selector
+    public class GrabbingController : Interactor
     {
         [SerializeField] private Transform handTransform;
         [SerializeField] private Transform playerTransform;
@@ -20,12 +20,12 @@ namespace Player
                 return;
             }
 
-            var currentGrabbeable = current as IGrabbeable;
+            if (!(current is IGrabbeable grabbeable)) return;
 
             if (_isGrabbed)
-                currentGrabbeable?.Drop();
+                grabbeable?.Drop();
             else
-                currentGrabbeable?.Grab(handTransform);
+                grabbeable?.Grab(handTransform);
 
             _isGrabbed = !_isGrabbed;
         }

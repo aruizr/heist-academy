@@ -13,7 +13,7 @@ namespace Utilities
         [SerializeField] [Min(-1)] private int loops = 1;
         [SerializeField] private LoopType loopType;
         [SerializeField] private bool autoPlay;
-        [SerializeField] private UnityEvent onComplete;
+        public UnityEvent onComplete;
 
         private bool _forward;
 

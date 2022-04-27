@@ -4,14 +4,15 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
 using Utilities;
+using Variables;
 
 namespace AI
 {
     public class RoutePatrolController : MonoBehaviour
     {
         [SerializeField] private NavMeshAgent navMeshAgent;
-        [SerializeField] private float movementSpeed;
-        [SerializeField] private float acceleration;
+        [SerializeField] private ValueReference<float> movementSpeed;
+        [SerializeField] private ValueReference<float> acceleration;
         [SerializeField] private RouteSpot[] route;
         [SerializeField] private UnityEvent onRouteComplete;
 
@@ -30,10 +31,11 @@ namespace AI
 
         private IEnumerator DoPatrol()
         {
-            navMeshAgent.speed = movementSpeed;
-            navMeshAgent.acceleration = acceleration;
+            navMeshAgent.speed = movementSpeed.Value;
+            navMeshAgent.acceleration = acceleration.Value;
             while (true)
             {
+                if (route.Length == 0) yield return new WaitUntil(() => route.Length > 0);
                 var spot = route[_index];
                 navMeshAgent.SetDestination(spot.transform.position);
                 yield return new WaitUntil(() => navMeshAgent.HasReachedDestination());

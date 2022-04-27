@@ -539,6 +539,216 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &3241848356702580552
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4886966572993553469}
+  - component: {fileID: 8221729274559744146}
+  - component: {fileID: 4430460983093084052}
+  - component: {fileID: 6468559320759138076}
+  - component: {fileID: 8540426755159699641}
+  - component: {fileID: 410100408994641051}
+  - component: {fileID: 7748320919184570851}
+  - component: {fileID: 6578311250473764388}
+  m_Layer: 8
+  m_Name: Sound Emitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4886966572993553469
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3241848356702580552}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8437281129090545558}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8221729274559744146
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3241848356702580552}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.25, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &4430460983093084052
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3241848356702580552}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &6468559320759138076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3241848356702580552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91c8ab7f86824428abb547f7b23309af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  detectionStrategy: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6578311250473764388}
+        m_TargetAssemblyTypeName: Interactions.SoundEmitter, Assembly-CSharp
+        m_MethodName: Emit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &8540426755159699641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3241848356702580552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 209e8bceab0b453089cc49825051ff9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 0c3e6fad54779c643b20da0c9883c38a, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7748320919184570851}
+        m_TargetAssemblyTypeName: Utilities.Timer, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &410100408994641051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3241848356702580552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 209e8bceab0b453089cc49825051ff9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: fd10a5b602983354cb6362432c123af6, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7748320919184570851}
+        m_TargetAssemblyTypeName: Utilities.Timer, Assembly-CSharp
+        m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7748320919184570851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3241848356702580552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 845d8a908b813524f93466f982c738e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time:
+    useVariable: 0
+    variableValue: {fileID: 0}
+    fieldValue: 0
+  currentValue: 0
+  loop: 1
+  autoPlay: 0
+  onFinish:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6578311250473764388}
+        m_TargetAssemblyTypeName: Interactions.SoundEmitter, Assembly-CSharp
+        m_MethodName: Emit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6578311250473764388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3241848356702580552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c89161d738720b7468f6a2744fa9a0b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius:
+    useVariable: 1
+    variableValue: {fileID: 11400000, guid: 488f7a1cadb83e1469a70fc4452bd064, type: 2}
+    fieldValue: 3
+  obstacleLayers:
+    serializedVersion: 2
+    m_Bits: 1088
+  gizmosColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &3414784461999760556
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,9 +808,9 @@ GameObject:
   - component: {fileID: 4214815917045544350}
   - component: {fileID: 178439825466326651}
   - component: {fileID: 8310423702285012753}
-  - component: {fileID: 739487034573483785}
   - component: {fileID: 6076884349590622814}
-  - component: {fileID: 4752436373355379345}
+  - component: {fileID: 5273302180526281039}
+  - component: {fileID: 9092278924195701456}
   m_Layer: 8
   m_Name: Interaction Controller
   m_TagString: Untagged
@@ -634,7 +844,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd4eb5ccdf2e4acf98771a2d0dba2735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 3
+  distance: 2
   fieldOfView: 180
   targetLayers:
     serializedVersion: 2
@@ -644,23 +854,11 @@ MonoBehaviour:
     m_Bits: 64
   scanRate: 10
   gizmosColor: {r: 1, g: 1, b: 1, a: 1}
-  gizmosConeDetail: 1
+  gizmosConeDetail: 2
   onTargetDetected:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 739487034573483785}
-        m_TargetAssemblyTypeName: Interactions.Selector, Assembly-CSharp
-        m_MethodName: Select
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4752436373355379345}
+      - m_Target: {fileID: 9092278924195701456}
         m_TargetAssemblyTypeName: Interactions.Selector, Assembly-CSharp
         m_MethodName: Select
         m_Mode: 0
@@ -675,19 +873,7 @@ MonoBehaviour:
   onTargetUndetected:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 739487034573483785}
-        m_TargetAssemblyTypeName: Interactions.Selector, Assembly-CSharp
-        m_MethodName: Unselect
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4752436373355379345}
+      - m_Target: {fileID: 9092278924195701456}
         m_TargetAssemblyTypeName: Interactions.Selector, Assembly-CSharp
         m_MethodName: Unselect
         m_Mode: 0
@@ -715,7 +901,7 @@ MonoBehaviour:
   unityEventResponse:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 739487034573483785}
+      - m_Target: {fileID: 9092278924195701456}
         m_TargetAssemblyTypeName: Interactions.Interactor, Assembly-CSharp
         m_MethodName: Interact
         m_Mode: 1
@@ -727,7 +913,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4752436373355379345}
+      - m_Target: {fileID: 9092278924195701456}
         m_TargetAssemblyTypeName: Player.GrabbingController, Assembly-CSharp
         m_MethodName: ToggleGrabDrop
         m_Mode: 1
@@ -739,18 +925,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &739487034573483785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3467710189829130772}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f21a83f6ddbf4eacad27cec056198459, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6076884349590622814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -767,7 +941,7 @@ MonoBehaviour:
   unityEventResponse:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4752436373355379345}
+      - m_Target: {fileID: 9092278924195701456}
         m_TargetAssemblyTypeName: Player.GrabbingController, Assembly-CSharp
         m_MethodName: Throw
         m_Mode: 1
@@ -779,7 +953,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4752436373355379345
+--- !u!114 &5273302180526281039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3467710189829130772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db5898ae7a9b47b2862c6267bd6232e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handTransform: {fileID: 7550446084287989354}
+  playerTransform: {fileID: 1018530998528239112}
+  throwingVelocity: {fileID: 11400000, guid: 87695016005af2449840e2986d1de9cb, type: 2}
+--- !u!114 &9092278924195701456
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1054,7 +1243,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3566474018424812788
 Transform:
   m_ObjectHideFlags: 0
@@ -1068,6 +1257,7 @@ Transform:
   m_Children:
   - {fileID: 7392488790874577860}
   - {fileID: 920531030841911020}
+  - {fileID: 1300923745132193803}
   m_Father: {fileID: 7397816124558313485}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1470,7 +1660,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8437281129090545558
 Transform:
   m_ObjectHideFlags: 0
@@ -1485,6 +1675,7 @@ Transform:
   - {fileID: 660129598764569921}
   - {fileID: 3857203903422539134}
   - {fileID: 1695301424490783401}
+  - {fileID: 4886966572993553469}
   m_Father: {fileID: 7397816124558313485}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1632,6 +1823,216 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &7609895005444285400
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1300923745132193803}
+  - component: {fileID: 6623758159498489909}
+  - component: {fileID: 5983908806337482432}
+  - component: {fileID: 5458771465546163180}
+  - component: {fileID: 7674366062750168344}
+  - component: {fileID: 5086132758801476726}
+  - component: {fileID: 2062661590771862768}
+  - component: {fileID: 4261917937068650886}
+  m_Layer: 8
+  m_Name: Sound Emitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1300923745132193803
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7609895005444285400}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3566474018424812788}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6623758159498489909
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7609895005444285400}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.25, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &5983908806337482432
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7609895005444285400}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &5458771465546163180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7609895005444285400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91c8ab7f86824428abb547f7b23309af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  detectionStrategy: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4261917937068650886}
+        m_TargetAssemblyTypeName: Interactions.SoundEmitter, Assembly-CSharp
+        m_MethodName: Emit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &7674366062750168344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7609895005444285400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 209e8bceab0b453089cc49825051ff9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 0c3e6fad54779c643b20da0c9883c38a, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2062661590771862768}
+        m_TargetAssemblyTypeName: Utilities.Timer, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5086132758801476726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7609895005444285400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 209e8bceab0b453089cc49825051ff9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: fd10a5b602983354cb6362432c123af6, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2062661590771862768}
+        m_TargetAssemblyTypeName: Utilities.Timer, Assembly-CSharp
+        m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2062661590771862768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7609895005444285400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 845d8a908b813524f93466f982c738e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time:
+    useVariable: 0
+    variableValue: {fileID: 0}
+    fieldValue: 0
+  currentValue: 0
+  loop: 1
+  autoPlay: 0
+  onFinish:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4261917937068650886}
+        m_TargetAssemblyTypeName: Interactions.SoundEmitter, Assembly-CSharp
+        m_MethodName: Emit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4261917937068650886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7609895005444285400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c89161d738720b7468f6a2744fa9a0b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius:
+    useVariable: 1
+    variableValue: {fileID: 11400000, guid: 1a8a51556fc74f94ca42299ecdcf3768, type: 2}
+    fieldValue: 3
+  obstacleLayers:
+    serializedVersion: 2
+    m_Bits: 1088
+  gizmosColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &7821165331639407918
 GameObject:
   m_ObjectHideFlags: 0
@@ -1645,7 +2046,7 @@ GameObject:
   - component: {fileID: 8146542470890621007}
   - component: {fileID: 3215867966410637775}
   m_Layer: 8
-  m_Name: Moving State
+  m_Name: Walking State
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1983,6 +2384,9 @@ GameObject:
   - component: {fileID: 3061927065939345723}
   - component: {fileID: 4372614390296489336}
   - component: {fileID: 742861418150916382}
+  - component: {fileID: 6931112820245252167}
+  - component: {fileID: 5296557630343984961}
+  - component: {fileID: 6172371443534334811}
   - component: {fileID: 4627805159289693158}
   m_Layer: 8
   m_Name: Sound Emitter
@@ -2048,7 +2452,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLayers:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 64
   detectionStrategy: 1
   onEnter:
     m_PersistentCalls:
@@ -2068,6 +2472,96 @@ MonoBehaviour:
   onExit:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6931112820245252167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8809200469159954052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 209e8bceab0b453089cc49825051ff9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 0c3e6fad54779c643b20da0c9883c38a, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6172371443534334811}
+        m_TargetAssemblyTypeName: Utilities.Timer, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5296557630343984961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8809200469159954052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 209e8bceab0b453089cc49825051ff9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: fd10a5b602983354cb6362432c123af6, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6172371443534334811}
+        m_TargetAssemblyTypeName: Utilities.Timer, Assembly-CSharp
+        m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6172371443534334811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8809200469159954052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 845d8a908b813524f93466f982c738e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time:
+    useVariable: 0
+    variableValue: {fileID: 0}
+    fieldValue: 0
+  currentValue: 0
+  loop: 1
+  autoPlay: 0
+  onFinish:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4627805159289693158}
+        m_TargetAssemblyTypeName: Interactions.SoundEmitter, Assembly-CSharp
+        m_MethodName: Emit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4627805159289693158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2080,8 +2574,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c89161d738720b7468f6a2744fa9a0b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 10
+  radius:
+    useVariable: 1
+    variableValue: {fileID: 11400000, guid: 93ce3bfcc0ba6a44586a60c94afd13d2, type: 2}
+    fieldValue: 3
   obstacleLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1088
   gizmosColor: {r: 1, g: 1, b: 1, a: 1}

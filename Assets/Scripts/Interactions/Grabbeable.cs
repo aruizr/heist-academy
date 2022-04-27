@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 namespace Interactions
 {
-    public class Grabbeable : Selectible, IGrabbeable
+    public class Grabbeable : Selectible, IGrabbeable, IInteractable
     {
         [SerializeField] private new Rigidbody rigidbody;
         [SerializeField] private UnityEvent onGrabbed;
@@ -11,37 +11,44 @@ namespace Interactions
         [SerializeField] private UnityEvent onThrown;
 
         private bool _isKinematic;
-        private Transform _originalParent;
-        private Transform _transform;
+        private Transform _toFollow;
 
         private void Awake()
         {
-            _transform = transform;
-            _originalParent = _transform.parent;
             _isKinematic = rigidbody.isKinematic;
+        }
+
+        private void FixedUpdate()
+        {
+            if (!_toFollow) return;
+            rigidbody.MovePosition(_toFollow.position);
+            rigidbody.MoveRotation(_toFollow.rotation);
         }
 
         public void Grab(Transform parent)
         {
-            _transform.position = parent.position;
-            _transform.parent = parent;
+            _toFollow = parent;
             rigidbody.isKinematic = true;
             onGrabbed?.Invoke();
         }
 
         public void Drop()
         {
-            _transform.parent = _originalParent;
+            _toFollow = null;
             rigidbody.isKinematic = _isKinematic;
             onDropped?.Invoke();
         }
 
         public void Throw(Vector3 velocity)
         {
-            _transform.parent = _originalParent;
+            _toFollow = null;
             rigidbody.isKinematic = _isKinematic;
-            rigidbody.velocity = velocity;
+            rigidbody.velocity += velocity;
             onThrown?.Invoke();
+        }
+
+        public void Interact()
+        {
         }
     }
 }
