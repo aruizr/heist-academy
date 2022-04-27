@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5392421614472314783}
   - component: {fileID: 5392421614472314778}
   - component: {fileID: 4009653834610468697}
+  - component: {fileID: -5524329988298909951}
   m_Layer: 0
   m_Name: Player Camera
   m_TagString: MainCamera
@@ -104,13 +105,6 @@ MonoBehaviour:
   anglesPerStep: {fileID: 11400000, guid: dc47c05e533062a49a78648ba5298217, type: 2}
   currentPlayerPosition: {fileID: 11400000, guid: cc95fedd6ea9e3747ac9bad73face292, type: 2}
   distanceToPlayer: {fileID: 11400000, guid: fad7b9af4df95e94aa582efd262119cb, type: 2}
-  visibleLayerOnRayHit: {fileID: 0}
-  startEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  endEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &4009653834610468697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,3 +133,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &-5524329988298909951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5392421614472314782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffe71d73606c455489efd34c760e0b4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionOffset: {fileID: 11400000, guid: 3ecf1c18c36635349a11a03c097c1590, type: 2}
+  currentPlayerPosition: {fileID: 11400000, guid: cc95fedd6ea9e3747ac9bad73face292, type: 2}
+  distanceToPlayer: {fileID: 11400000, guid: fad7b9af4df95e94aa582efd262119cb, type: 2}
+  visibleLayerOnRayHit: {fileID: 11400000, guid: 41df6f7d54b349e4dac17b79318603fb, type: 2}
+  wallMaterialAlpha: {fileID: 11400000, guid: f2f01fcc026085d4f9ed9a2d3246ea12, type: 2}
