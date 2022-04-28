@@ -46,17 +46,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   navMeshAgent: {fileID: 6370949494528218386}
   movingSpeed:
-    useVariable: 1
+    useField: 0
+    fieldValue: 0
     variableValue: {fileID: 11400000, guid: ce71c14bd653ef54d83f7273aae75a02, type: 2}
-    fieldValue: 0
   acceleration:
-    useVariable: 0
-    variableValue: {fileID: 0}
+    useField: 0
     fieldValue: 5
+    variableValue: {fileID: 0}
   turningSpeed:
-    useVariable: 1
-    variableValue: {fileID: 11400000, guid: 0e66256cb154213468ecd17d8beb88d8, type: 2}
+    useField: 0
     fieldValue: 0
+    variableValue: {fileID: 11400000, guid: 0e66256cb154213468ecd17d8beb88d8, type: 2}
   onDestinationReached:
     m_PersistentCalls:
       m_Calls:
@@ -85,9 +85,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time:
-    useVariable: 1
-    variableValue: {fileID: 11400000, guid: d1593b7addcc2114080bea1edc8d234a, type: 2}
+    useField: 0
     fieldValue: 0
+    variableValue: {fileID: 11400000, guid: d1593b7addcc2114080bea1edc8d234a, type: 2}
   currentValue: 0
   loop: 0
   autoPlay: 0
@@ -228,7 +228,7 @@ MonoBehaviour:
     m_Bits: 256
   obstacleLayers:
     serializedVersion: 2
-    m_Bits: 1088
+    m_Bits: 5184
   scanRate: 10
   gizmosColor: {r: 1, g: 0.8265475, b: 0, a: 1}
   gizmosConeDetail: 1
@@ -281,7 +281,7 @@ MonoBehaviour:
     m_Bits: 256
   obstacleLayers:
     serializedVersion: 2
-    m_Bits: 1088
+    m_Bits: 5184
   scanRate: 10
   gizmosColor: {r: 1, g: 0, b: 0, a: 1}
   gizmosConeDetail: 1
@@ -527,7 +527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 3
-  fieldOfView: 20
+  fieldOfView: 60
   targetLayers:
     serializedVersion: 2
     m_Bits: 128
@@ -542,7 +542,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7559850834151196432}
         m_TargetAssemblyTypeName: AI.DoorController, Assembly-CSharp
-        m_MethodName: OpenDoor
+        m_MethodName: EvaluateDoor
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -834,7 +834,7 @@ MonoBehaviour:
     m_Bits: 256
   obstacleLayers:
     serializedVersion: 2
-    m_Bits: 1088
+    m_Bits: 5184
   scanRate: 10
   gizmosColor: {r: 1, g: 0, b: 0, a: 1}
   gizmosConeDetail: 1
@@ -926,13 +926,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   navMeshAgent: {fileID: 6370949494528218386}
   movementSpeed:
-    useVariable: 1
-    variableValue: {fileID: 11400000, guid: 8c064dcfd495e2045bcb0d0cd97c335d, type: 2}
+    useField: 0
     fieldValue: 0
+    variableValue: {fileID: 11400000, guid: 8c064dcfd495e2045bcb0d0cd97c335d, type: 2}
   acceleration:
-    useVariable: 0
-    variableValue: {fileID: 0}
+    useField: 1
     fieldValue: 5
+    variableValue: {fileID: 0}
   route: []
   onRouteComplete:
     m_PersistentCalls:
@@ -1258,21 +1258,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   navMeshAgent: {fileID: 6370949494528218386}
   movementSpeed:
-    useVariable: 1
+    useField: 0
+    fieldValue: 0
     variableValue: {fileID: 11400000, guid: 84d7c43851d7ae148817c5ae55916e16, type: 2}
-    fieldValue: 0
   acceleration:
-    useVariable: 0
-    variableValue: {fileID: 0}
+    useField: 0
     fieldValue: 100
+    variableValue: {fileID: 0}
   maxRange:
-    useVariable: 1
+    useField: 0
+    fieldValue: 0
     variableValue: {fileID: 11400000, guid: 392426bdef3f3584396d6fca5abd1f90, type: 2}
-    fieldValue: 0
   rangeToBustTarget:
-    useVariable: 1
-    variableValue: {fileID: 11400000, guid: 606ad03df36fcd741a594590029b141e, type: 2}
+    useField: 0
     fieldValue: 0
+    variableValue: {fileID: 11400000, guid: 606ad03df36fcd741a594590029b141e, type: 2}
   target: {fileID: 0}
   onTargetLost:
     m_PersistentCalls:

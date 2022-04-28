@@ -555,7 +555,7 @@ GameObject:
   - component: {fileID: 410100408994641051}
   - component: {fileID: 7748320919184570851}
   - component: {fileID: 6578311250473764388}
-  m_Layer: 8
+  m_Layer: 2
   m_Name: Sound Emitter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -708,9 +708,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time:
-    useVariable: 0
-    variableValue: {fileID: 0}
+    useField: 1
     fieldValue: 0
+    variableValue: {fileID: 0}
   currentValue: 0
   loop: 1
   autoPlay: 0
@@ -742,12 +742,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius:
-    useVariable: 1
-    variableValue: {fileID: 11400000, guid: 488f7a1cadb83e1469a70fc4452bd064, type: 2}
+    useField: 0
     fieldValue: 3
+    variableValue: {fileID: 11400000, guid: 488f7a1cadb83e1469a70fc4452bd064, type: 2}
   obstacleLayers:
     serializedVersion: 2
-    m_Bits: 1088
+    m_Bits: 5184
   gizmosColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &3414784461999760556
 GameObject:
@@ -1839,7 +1839,7 @@ GameObject:
   - component: {fileID: 5086132758801476726}
   - component: {fileID: 2062661590771862768}
   - component: {fileID: 4261917937068650886}
-  m_Layer: 8
+  m_Layer: 2
   m_Name: Sound Emitter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1992,9 +1992,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time:
-    useVariable: 0
-    variableValue: {fileID: 0}
+    useField: 1
     fieldValue: 0
+    variableValue: {fileID: 0}
   currentValue: 0
   loop: 1
   autoPlay: 0
@@ -2026,12 +2026,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius:
-    useVariable: 1
-    variableValue: {fileID: 11400000, guid: 1a8a51556fc74f94ca42299ecdcf3768, type: 2}
+    useField: 0
     fieldValue: 3
+    variableValue: {fileID: 11400000, guid: 1a8a51556fc74f94ca42299ecdcf3768, type: 2}
   obstacleLayers:
     serializedVersion: 2
-    m_Bits: 1088
+    m_Bits: 5184
   gizmosColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &7821165331639407918
 GameObject:
@@ -2388,7 +2388,7 @@ GameObject:
   - component: {fileID: 5296557630343984961}
   - component: {fileID: 6172371443534334811}
   - component: {fileID: 4627805159289693158}
-  m_Layer: 8
+  m_Layer: 2
   m_Name: Sound Emitter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2541,9 +2541,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time:
-    useVariable: 0
-    variableValue: {fileID: 0}
+    useField: 1
     fieldValue: 0
+    variableValue: {fileID: 0}
   currentValue: 0
   loop: 1
   autoPlay: 0
@@ -2575,10 +2575,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius:
-    useVariable: 1
-    variableValue: {fileID: 11400000, guid: 93ce3bfcc0ba6a44586a60c94afd13d2, type: 2}
+    useField: 0
     fieldValue: 3
+    variableValue: {fileID: 11400000, guid: 93ce3bfcc0ba6a44586a60c94afd13d2, type: 2}
   obstacleLayers:
     serializedVersion: 2
-    m_Bits: 1088
+    m_Bits: 5184
   gizmosColor: {r: 1, g: 1, b: 1, a: 1}

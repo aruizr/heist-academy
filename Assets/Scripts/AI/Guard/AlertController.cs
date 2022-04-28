@@ -14,7 +14,9 @@ namespace AI.Guard
         [SerializeField] private ValueReference<float> movingSpeed;
         [SerializeField] private ValueReference<float> acceleration;
         [SerializeField] private ValueReference<float> turningSpeed;
-        [SerializeField] private UnityEvent onDestinationReached;
+
+        public UnityEvent onDestinationReached;
+        private Transform _controlTransform;
 
         private Tweener _currentTween;
 
@@ -23,27 +25,31 @@ namespace AI.Guard
             if (navMeshAgent.HasReachedDestination()) onDestinationReached?.Invoke();
         }
 
+        private void OnEnable()
+        {
+            _controlTransform = navMeshAgent.transform;
+        }
+
         private void OnDisable()
         {
             _currentTween?.Kill();
             navMeshAgent.isStopped = false;
         }
 
-        public void SetAlert(Vector3 position)
+        public void SetAlert(Vector3 point)
         {
-            var t = navMeshAgent.transform;
-            var transformPosition = t.position;
-            var horizontalPosition = new Vector3(position.x, transformPosition.y, position.z);
-            var direction = t.DirectionTo(horizontalPosition);
-            var angle = Vector3.Angle(t.forward, direction);
+            var finalPoint = new Vector3(point.x, _controlTransform.position.y, point.z);
+            var direction = _controlTransform.DirectionTo(finalPoint);
+            var angle = Vector3.Angle(_controlTransform.forward, direction);
             var time = angle / turningSpeed.Value;
 
             navMeshAgent.speed = movingSpeed.Value;
             navMeshAgent.acceleration = acceleration.Value;
             navMeshAgent.isStopped = true;
-            navMeshAgent.SetDestination(position);
+            navMeshAgent.SetDestination(point);
             _currentTween?.Kill();
-            _currentTween = t.DOLookAt(horizontalPosition, time).OnComplete(() => navMeshAgent.isStopped = false);
+            _currentTween = _controlTransform.DOLookAt(finalPoint, time)
+                .OnComplete(() => navMeshAgent.isStopped = false);
         }
 
         public void SetAlert(GameObject target)
