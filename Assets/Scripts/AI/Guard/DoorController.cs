@@ -11,18 +11,25 @@ namespace AI.Guard
 
         private Door _current;
 
-        public void EvaluateDoor(GameObject target)
+        public void OpenDoor(GameObject target)
         {
-            target.Send<Door>(EvaluateDoor, MessageScope.Parents);
+            target.Send<Door>(OpenDoor, MessageScope.Parents);
         }
 
-        public void EvaluateDoor(Door door)
+        public void CloseDoor(GameObject target)
         {
-            if (!door.IsOpen) Open(door);
+            target.Send<Door>(CloseDoor, MessageScope.Parents);
         }
 
-        private void Open(Door door)
+        private void CloseDoor(Door door)
         {
+            if (!door.IsOpen) return;
+            door.Close();
+        }
+
+        public void OpenDoor(Door door)
+        {
+            if (door.IsOpen) return;
             _current = door;
             navMeshAgent.isStopped = true;
             _current.Open();
