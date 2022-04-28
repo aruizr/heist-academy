@@ -221,7 +221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLayers:
     serializedVersion: 2
-    m_Bits: 1088
+    m_Bits: 5184
   detectionStrategy: 0
   onEnter:
     m_PersistentCalls:
@@ -254,10 +254,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius:
-    useVariable: 0
-    variableValue: {fileID: 0}
+    useField: 1
     fieldValue: 10
+    variableValue: {fileID: 0}
   obstacleLayers:
     serializedVersion: 2
-    m_Bits: 1088
+    m_Bits: 5184
   gizmosColor: {r: 0, g: 0.5462053, b: 1, a: 1}

@@ -1,6 +1,5 @@
 ﻿using Codetox.Attributes;
 using Codetox.Core;
-using Codetox.Variables;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
@@ -17,24 +16,37 @@ namespace AI.Guard
         [SerializeField] private ValueReference<float> maxRange;
         [SerializeField] private ValueReference<float> rangeToBustTarget;
         [SerializeField] [Disabled] private GameObject target;
-        [SerializeField] private UnityEvent onTargetLost;
-        [SerializeField] private UnityEvent onTargetBusted;
+
+        public UnityEvent onTargetLost;
+        public UnityEvent onTargetBusted;
+
+        private Transform _controlTransform;
 
         private void Update()
         {
             if (!target) return;
-            
-            navMeshAgent.SetDestination(target.transform.position);
 
-            if (navMeshAgent.transform.DistanceTo(target) > maxRange.Value || !navMeshAgent.CanReachDestination())
+            var distance = _controlTransform.DistanceTo(target);
+
+            if (!navMeshAgent.isStopped && distance > maxRange.Value || !navMeshAgent.CanReachDestination())
             {
                 StopChasing();
                 onTargetLost?.Invoke();
+                return;
             }
-            else if (navMeshAgent.transform.DistanceTo(target) <= rangeToBustTarget.Value)
+
+            if (distance <= rangeToBustTarget.Value)
             {
                 onTargetBusted?.Invoke();
+                return;
             }
+
+            navMeshAgent.SetDestination(target.transform.position);
+        }
+
+        private void OnEnable()
+        {
+            _controlTransform = navMeshAgent.transform;
         }
 
         public void StartChasing(GameObject target)

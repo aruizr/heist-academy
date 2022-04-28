@@ -1,5 +1,4 @@
-﻿using System;
-using Codetox.Core;
+﻿using Codetox.Core;
 using Codetox.GameEvents;
 using UnityEngine;
 using Variables;
@@ -25,6 +24,11 @@ namespace AI.Camera
             controlTransform.rotation = Quaternion.RotateTowards(controlTransform.rotation, targetRotation, deltaDegrees);
         }
 
+        private void OnDisable()
+        {
+            StopLookingAtTarget();
+        }
+
         public void PlayerDetected()
         {
             if (playerDetectedEvent) playerDetectedEvent.Invoke(_target);
@@ -33,11 +37,6 @@ namespace AI.Camera
         public void StartLookingAtTarget(GameObject target)
         {
             _target = target;
-        }
-
-        private void OnDisable()
-        {
-            StopLookingAtTarget();
         }
 
         public void StopLookingAtTarget()
