@@ -600,6 +600,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   navMeshAgent: {fileID: 6370949494528218386}
+  closingTime:
+    useField: 1
+    fieldValue: 2
+    variableValue: {fileID: 0}
 --- !u!1 &3108455040149868601
 GameObject:
   m_ObjectHideFlags: 0
