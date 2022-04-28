@@ -50,7 +50,7 @@ MonoBehaviour:
     fieldValue: 0
     variableValue: {fileID: 11400000, guid: ce71c14bd653ef54d83f7273aae75a02, type: 2}
   acceleration:
-    useField: 0
+    useField: 1
     fieldValue: 5
     variableValue: {fileID: 0}
   turningSpeed:
@@ -600,10 +600,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   navMeshAgent: {fileID: 6370949494528218386}
-  closingTime:
-    useField: 1
-    fieldValue: 2
-    variableValue: {fileID: 0}
 --- !u!1 &3108455040149868601
 GameObject:
   m_ObjectHideFlags: 0
@@ -1298,7 +1294,7 @@ MonoBehaviour:
     fieldValue: 0
     variableValue: {fileID: 11400000, guid: 84d7c43851d7ae148817c5ae55916e16, type: 2}
   acceleration:
-    useField: 0
+    useField: 1
     fieldValue: 100
     variableValue: {fileID: 0}
   maxRange:
