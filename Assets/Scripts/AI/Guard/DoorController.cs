@@ -10,7 +10,7 @@ namespace AI.Guard
     public class DoorController : MonoBehaviour
     {
         [SerializeField] private NavMeshAgent navMeshAgent;
-        // [SerializeField] private ValueReference<float> closingTime;
+        [SerializeField] private ValueReference<float> closingTime;
 
         private Door _current;
 
@@ -27,8 +27,7 @@ namespace AI.Guard
         private void CloseDoor(Door door)
         {
             if (!door.IsOpen) return;
-            // this.Coroutine().WaitForSeconds(closingTime.Value).Invoke(()=>door.Close());
-            door.Close();
+            this.Coroutine().WaitForSeconds(closingTime.Value).Invoke(door.Close).Run();
         }
 
         public void OpenDoor(Door door)
