@@ -5,7 +5,7 @@ using Utilities;
 
 namespace Input
 {
-    [CreateAssetMenu(fileName = nameof(InputIconMap), menuName = "Trashy Games/Input Icon Map", order = 0)]
+    [CreateAssetMenu(fileName = nameof(InputIconMap), menuName = "Trashy Games/Input/Icon Map", order = 0)]
     public class InputIconMap : ScriptableObject
     {
         [SerializeField] private Sprite defaultIcon;

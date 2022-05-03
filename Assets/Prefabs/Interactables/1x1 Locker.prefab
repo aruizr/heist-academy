@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 1x1 Locker
       objectReference: {fileID: 0}
+    - target: {fileID: 2382099351372770196, guid: adc93afdcaddfb1468105344253e61c0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2705761943339829828, guid: adc93afdcaddfb1468105344253e61c0, type: 3}
       propertyPath: m_Size.z
       value: 2.2055576
@@ -98,6 +102,10 @@ PrefabInstance:
     - target: {fileID: 6873788995319967003, guid: adc93afdcaddfb1468105344253e61c0, type: 3}
       propertyPath: m_LocalPosition.z
       value: -1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6873788995319967007, guid: adc93afdcaddfb1468105344253e61c0, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6873788995486915049, guid: adc93afdcaddfb1468105344253e61c0, type: 3}
       propertyPath: m_LocalScale.z

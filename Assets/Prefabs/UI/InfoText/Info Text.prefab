@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6868176066443371105}
   - component: {fileID: 6868176066443371118}
   - component: {fileID: 6868176066443371104}
-  - component: {fileID: 6868176066443371107}
   m_Layer: 5
   m_Name: Info Text
   m_TagString: Untagged
@@ -182,18 +181,3 @@ MonoBehaviour:
       type: {class: StringVariable, ns: UnityEngine.Localization.SmartFormat.PersistentVariables, asm: Unity.Localization}
       data:
         m_Value: <sprite=0>
---- !u!114 &6868176066443371107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6868176066443371116}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06e706bd8c464977ab0c28860a7281d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputActionReference: {fileID: 4151149483586709142, guid: c107002edee2d8b47a518225af51c169, type: 3}
-  inputIconMap: {fileID: 11400000, guid: d7b01a7280b164e4bae01e3c9df9271d, type: 2}
-  text: {fileID: 6868176066443371118}
