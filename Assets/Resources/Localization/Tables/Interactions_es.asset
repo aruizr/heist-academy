@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Interactions_es
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: es
+  m_SharedData: {fileID: 11400000, guid: c66a8bd8801405441bb4753c2e2962e0, type: 2}
+  m_Metadata:
+    m_Items:
+    - id: 0
+  m_TableData:
+  - m_Id: 26689331200
+    m_Localized: '{icon} Abrir'
+    m_Metadata:
+      m_Items:
+      - id: 0
+  - m_Id: 227596492800
+    m_Localized: Necesitas una llave para abrir esta puerta.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 416243703808
+    m_Localized: '{icon} Cerrar'
+    m_Metadata:
+      m_Items:
+      - id: 0
+  - m_Id: 405868536557568
+    m_Localized: '{icon} Recoger llave'
+    m_Metadata:
+      m_Items:
+      - id: 0
+  - m_Id: 422427241902080
+    m_Localized: '{icon} Agarrar'
+    m_Metadata:
+      m_Items:
+      - id: 0
+  - m_Id: 422706465107968
+    m_Localized: '{icon} Soltar'
+    m_Metadata:
+      m_Items:
+      - id: 0
+  - m_Id: 423206413561856
+    m_Localized: '{icon} Lanzar'
+    m_Metadata:
+      m_Items:
+      - id: 0
+  references:
+    version: 1
+    00000000:
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 00e0ce360600000000e00eea600000000070f2a1227101000070b201328001000070b204738001000070f26be7800100

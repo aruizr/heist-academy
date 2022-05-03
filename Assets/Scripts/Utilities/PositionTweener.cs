@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Utilities
 {
-    public class PositionTweener : PropertyTweener<Vector3>
+    public class PositionTweener : PropertyTweener<Transform, Vector3>
     {
         private Vector3 _original;
 

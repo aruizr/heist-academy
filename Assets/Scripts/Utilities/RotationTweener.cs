@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Utilities
 {
-    public class RotationTweener : PropertyTweener<Vector3>
+    public class RotationTweener : PropertyTweener<Transform, Vector3>
     {
         private Vector3 _original;
 

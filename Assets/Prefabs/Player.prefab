@@ -809,8 +809,7 @@ GameObject:
   - component: {fileID: 178439825466326651}
   - component: {fileID: 8310423702285012753}
   - component: {fileID: 6076884349590622814}
-  - component: {fileID: 5273302180526281039}
-  - component: {fileID: 9092278924195701456}
+  - component: {fileID: 3494661009105227917}
   m_Layer: 8
   m_Name: Interaction Controller
   m_TagString: Untagged
@@ -858,8 +857,8 @@ MonoBehaviour:
   onTargetDetected:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9092278924195701456}
-        m_TargetAssemblyTypeName: Interactions.Selector, Assembly-CSharp
+      - m_Target: {fileID: 3494661009105227917}
+        m_TargetAssemblyTypeName: Interactions.Final.InteractionController, Assembly-CSharp
         m_MethodName: Select
         m_Mode: 0
         m_Arguments:
@@ -873,8 +872,8 @@ MonoBehaviour:
   onTargetUndetected:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9092278924195701456}
-        m_TargetAssemblyTypeName: Interactions.Selector, Assembly-CSharp
+      - m_Target: {fileID: 3494661009105227917}
+        m_TargetAssemblyTypeName: Interactions.Final.InteractionController, Assembly-CSharp
         m_MethodName: Unselect
         m_Mode: 0
         m_Arguments:
@@ -901,21 +900,9 @@ MonoBehaviour:
   unityEventResponse:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9092278924195701456}
-        m_TargetAssemblyTypeName: Interactions.Interactor, Assembly-CSharp
+      - m_Target: {fileID: 3494661009105227917}
+        m_TargetAssemblyTypeName: Interactions.Final.InteractionController, Assembly-CSharp
         m_MethodName: Interact
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 9092278924195701456}
-        m_TargetAssemblyTypeName: Player.GrabbingController, Assembly-CSharp
-        m_MethodName: ToggleGrabDrop
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -941,8 +928,8 @@ MonoBehaviour:
   unityEventResponse:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9092278924195701456}
-        m_TargetAssemblyTypeName: Player.GrabbingController, Assembly-CSharp
+      - m_Target: {fileID: 3494661009105227917}
+        m_TargetAssemblyTypeName: Interactions.Final.InteractionController, Assembly-CSharp
         m_MethodName: Throw
         m_Mode: 1
         m_Arguments:
@@ -953,7 +940,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5273302180526281039
+--- !u!114 &3494661009105227917
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -962,27 +949,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 3467710189829130772}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db5898ae7a9b47b2862c6267bd6232e1, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fd2766740dd48faa868620c08e6a0a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   handTransform: {fileID: 7550446084287989354}
   playerTransform: {fileID: 1018530998528239112}
-  throwingVelocity: {fileID: 11400000, guid: 87695016005af2449840e2986d1de9cb, type: 2}
---- !u!114 &9092278924195701456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3467710189829130772}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e0d92d7cd0545f98f8e41c426dce286, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  handTransform: {fileID: 7550446084287989354}
-  playerTransform: {fileID: 1018530998528239112}
-  throwingVelocity: {fileID: 11400000, guid: 87695016005af2449840e2986d1de9cb, type: 2}
+  throwingVelocity:
+    useField: 0
+    fieldValue: {x: 0, y: 0}
+    variableValue: {fileID: 11400000, guid: 87695016005af2449840e2986d1de9cb, type: 2}
 --- !u!1 &3875122925696227561
 GameObject:
   m_ObjectHideFlags: 0
