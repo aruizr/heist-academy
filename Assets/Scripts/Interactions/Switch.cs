@@ -3,14 +3,14 @@ using UnityEngine.Events;
 
 namespace Interactions
 {
-    public class Switch : MonoBehaviour
+    public class Switch : MonoBehaviour, ISwitch
     {
-        [SerializeField] private UnityEvent onActivated;
-        [SerializeField] private UnityEvent onDeactivated;
+        public UnityEvent onActivated;
+        public UnityEvent onDeactivated;
 
         private bool _isActivated;
 
-        public void Flip()
+        public void Toggle()
         {
             _isActivated = !_isActivated;
             (_isActivated ? onActivated : onDeactivated)?.Invoke();

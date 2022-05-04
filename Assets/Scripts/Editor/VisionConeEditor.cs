@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿using Codetox.Messaging;
+using UnityEditor;
 using UnityEngine;
 using Utilities;
 
@@ -24,7 +25,10 @@ namespace Editor
             for (var a = 0f; a < 180f; a += deltaAngle) DrawArea(position, forward, up, fov, distance, a);
             
             Handles.color = Color.red;
-            cone.VisibleObjects.ForEach(obj => Handles.DrawLine(position, obj.transform.position));
+            foreach (var obj in cone.VisibleObjects)
+            {
+                obj.Send<Collider>(coll => Handles.DrawLine(position, coll.ClosestPoint(position)));
+            }
         }
 
         private void DrawArea(Vector3 position, Vector3 forward, Vector3 up, float fovAngle, float distance,

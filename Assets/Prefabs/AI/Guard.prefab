@@ -222,6 +222,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distance: 2.2
   fieldOfView: 75
+  raycastOffset: 0
+  raycastCount: 0
   targetLayers:
     serializedVersion: 2
     m_Bits: 128
@@ -275,7 +277,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 898658790373299738}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.35, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8437134968484428329}
@@ -295,6 +297,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distance: 15
   fieldOfView: 160
+  raycastOffset: 0
+  raycastCount: 0
   targetLayers:
     serializedVersion: 2
     m_Bits: 256
@@ -348,6 +352,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distance: 10
   fieldOfView: 45
+  raycastOffset: 0
+  raycastCount: 0
   targetLayers:
     serializedVersion: 2
     m_Bits: 256
@@ -791,8 +797,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3493472565943616635}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.35, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1147143918587659618}
@@ -812,6 +818,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distance: 15
   fieldOfView: 160
+  raycastOffset: 0
+  raycastCount: 0
   targetLayers:
     serializedVersion: 2
     m_Bits: 256
@@ -865,6 +873,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distance: 12
   fieldOfView: 90
+  raycastOffset: 0
+  raycastCount: 0
   targetLayers:
     serializedVersion: 2
     m_Bits: 256
@@ -1385,6 +1395,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distance: 2.2
   fieldOfView: 75
+  raycastOffset: 0
+  raycastCount: 0
   targetLayers:
     serializedVersion: 2
     m_Bits: 128
