@@ -11,13 +11,16 @@ namespace Utilities
     {
         [SerializeField] private float distance;
         [SerializeField] [Range(0, 360)] private float fieldOfView;
+        [SerializeField] [Range(0, 360)] private float raycastOffset;
+        [SerializeField] [Min(0)] private int raycastCount;
         [SerializeField] private LayerMask targetLayers;
         [SerializeField] private LayerMask obstacleLayers;
         [SerializeField] private float scanRate = 10;
         [SerializeField] private Color gizmosColor = Color.white;
         [SerializeField] [Min(1)] private int gizmosConeDetail = 1;
-        [SerializeField] private UnityEvent<GameObject> onTargetDetected;
-        [SerializeField] private UnityEvent<GameObject> onTargetUndetected;
+
+        public UnityEvent<GameObject> onTargetDetected;
+        public UnityEvent<GameObject> onTargetUndetected;
 
         public readonly List<GameObject> VisibleObjects = new List<GameObject>();
 
@@ -49,7 +52,8 @@ namespace Utilities
 
         private void Scan()
         {
-            var scannedColliders = Physics.OverlapSphere(_transform.position, distance, targetLayers).Where(IsValid).ToArray();
+            var scannedColliders = Physics.OverlapSphere(_transform.position, distance, targetLayers).Where(IsValid)
+                .ToArray();
             var scannedObjects = scannedColliders.Select(coll => coll.gameObject).ToArray();
 
             for (var i = VisibleObjects.Count - 1; i >= 0; i--)
@@ -63,7 +67,7 @@ namespace Utilities
             foreach (var coll in scannedColliders)
             {
                 var obj = coll.gameObject;
-                var isVisible = IsInFieldOfView(obj) && !IsBlockedByObstacle(coll);
+                var isVisible = IsInFieldOfView(coll) && !IsBlockedByObstacle(coll);
                 var isAlreadySeen = VisibleObjects.Contains(obj);
 
                 switch (isVisible)
@@ -95,14 +99,16 @@ namespace Utilities
             return distanceToObstacle < distanceToTarget;
         }
 
-        private bool IsInFieldOfView(GameObject target)
+        private bool IsInFieldOfView(Collider target)
         {
+            var currentPosition = _transform.position;
+            var closestPoint = target.ClosestPoint(currentPosition);
             var currentForward = _transform.forward;
-            var vectorToTarget = _transform.VectorTo(target);
+            var vectorToTarget = _transform.VectorTo(closestPoint);
 
             return Vector3.Angle(currentForward, vectorToTarget) <= fieldOfView * 0.5f;
         }
-        
+
         private static bool IsValid(Collider coll)
         {
             return coll is SphereCollider || coll is BoxCollider || coll is CapsuleCollider;
