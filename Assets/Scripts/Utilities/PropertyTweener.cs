@@ -5,14 +5,16 @@ using UnityEngine.Events;
 
 namespace Utilities
 {
-    public abstract class PropertyTweener<T> : MonoBehaviour
+    public abstract class PropertyTweener<T, TV> : MonoBehaviour
     {
-        [SerializeField] protected T offset;
+        [SerializeField] protected T target;
+        [SerializeField] protected TV offset;
         [SerializeField] protected float duration;
         [SerializeField] private Ease ease;
         [SerializeField] [Min(-1)] private int loops = 1;
         [SerializeField] private LoopType loopType;
         [SerializeField] private bool autoPlay;
+        
         public UnityEvent onComplete;
 
         private bool _forward;

@@ -1,5 +1,5 @@
-﻿using Codetox.Messaging;
-using Codetox.Core;
+﻿using Codetox.Core;
+using Codetox.Messaging;
 using Interactions;
 using UnityEngine;
 using UnityEngine.AI;
@@ -35,14 +35,14 @@ namespace AI.Guard
             if (door.IsOpen) return;
             _current = door;
             navMeshAgent.isStopped = true;
-            _current.Open();
-            _current.onFinishOpening.AddListener(OnDoorFinishedOpening);
+            _current.ForceOpen();
+            _current.onFinishedOpening.AddListener(OnDoorFinishedOpening);
         }
 
         private void OnDoorFinishedOpening()
         {
             navMeshAgent.isStopped = false;
-            _current.onFinishOpening.RemoveListener(OnDoorFinishedOpening);
+            _current.onFinishedOpening.RemoveListener(OnDoorFinishedOpening);
             _current = null;
         }
     }

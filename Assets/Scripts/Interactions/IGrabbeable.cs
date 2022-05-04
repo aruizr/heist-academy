@@ -2,10 +2,8 @@
 
 namespace Interactions
 {
-    public interface IGrabbeable: ISelectible
+    public interface IGrabbeable
     {
-        void Grab(Transform parent);
-        void Drop();
-        void Throw(Vector3 velocity);
+        void ToggleGrabDrop(Transform parent);
     }
 }
