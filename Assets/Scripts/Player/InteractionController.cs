@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Codetox.Messaging;
+using Interactions;
 using UnityEngine;
 using UnityEngine.Events;
 using Variables;
 
-namespace Interactions
+namespace Player
 {
     public class InteractionController : MonoBehaviour
     {

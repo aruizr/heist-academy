@@ -1,23 +1,27 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &1419221983456892002
+--- !u!1001 &6676834918358432626
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6868176066443371104, guid: 8e999df0da4a97f4ebfc502114ba5c33, type: 3}
-      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
-      value: 445018056847360
-      objectReference: {fileID: 0}
+    - target: {fileID: -9129398325842865743, guid: 8e999df0da4a97f4ebfc502114ba5c33, type: 3}
+      propertyPath: gameEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: ec7901181808126418c07c28bcf9e048, type: 2}
+    - target: {fileID: 3494626470099358318, guid: 8e999df0da4a97f4ebfc502114ba5c33, type: 3}
+      propertyPath: gameEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 69f69d00dd8d7b646bd433851de0abe8, type: 2}
     - target: {fileID: 6868176066443371104, guid: 8e999df0da4a97f4ebfc502114ba5c33, type: 3}
       propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
       value: GUID:c66a8bd8801405441bb4753c2e2962e0
       objectReference: {fileID: 0}
     - target: {fileID: 6868176066443371116, guid: 8e999df0da4a97f4ebfc502114ba5c33, type: 3}
       propertyPath: m_Name
-      value: Info Text Switch Selection
+      value: Info Text Switch Action
       objectReference: {fileID: 0}
     - target: {fileID: 6868176066443371118, guid: 8e999df0da4a97f4ebfc502114ba5c33, type: 3}
       propertyPath: m_spriteAsset
