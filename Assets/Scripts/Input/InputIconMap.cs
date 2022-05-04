@@ -13,7 +13,11 @@ namespace Input
 
         public Sprite GetIcon(string path)
         {
-            foreach (var pair in map.Where(pair => pair.Key.bindings[0].path.Equals(path))) return pair.Value;
+            foreach (var pair in from pair in map
+                let bindings = pair.Key.bindings
+                where bindings.Count != 0
+                where bindings[0].path.Equals(path)
+                select pair) return pair.Value;
 
             return defaultIcon;
         }

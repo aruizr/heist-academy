@@ -2,6 +2,7 @@
 using System.Linq;
 using Codetox.Messaging;
 using UnityEngine;
+using UnityEngine.Events;
 using Variables;
 
 namespace Interactions.Final
@@ -12,13 +13,25 @@ namespace Interactions.Final
         [SerializeField] private Transform playerTransform;
         [SerializeField] private ValueReference<Vector2> throwingVelocity;
 
+        public UnityEvent onMultipleSelection;
+        public UnityEvent onSingleSelection;
+
         private Queue<GameObject> _selection = new Queue<GameObject>();
 
         public void Select(GameObject o)
         {
             o.Send<ISelectible>(selectible =>
             {
-                if (_selection.Count == 0) selectible.Select();
+                switch (_selection.Count)
+                {
+                    case 0:
+                        selectible.Select();
+                        break;
+                    case 1:
+                        onMultipleSelection?.Invoke();
+                        break;
+                }
+
                 _selection.Enqueue(o);
             });
         }
@@ -32,12 +45,22 @@ namespace Interactions.Final
                 {
                     selectible.Unselect();
                     _selection.Dequeue();
-                    if (_selection.Count == 0) return;
+
+                    switch (_selection.Count)
+                    {
+                        case 0:
+                            return;
+                        case 1:
+                            onSingleSelection.Invoke();
+                            break;
+                    }
+
                     _selection.Peek().Send<ISelectible>(s => s.Select());
                     return;
                 }
 
                 _selection = new Queue<GameObject>(_selection.Where(obj => !obj.Equals(o)));
+                if (_selection.Count == 1) onSingleSelection.Invoke();
             });
         }
 
@@ -64,7 +87,7 @@ namespace Interactions.Final
             });
         }
 
-        public void Switch()
+        public void SwitchSelection()
         {
             if (_selection.Count == 0) return;
             var o = _selection.Dequeue();

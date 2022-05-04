@@ -60,5 +60,11 @@ namespace Interactions.Final
             _isGrabbed = false;
             onDropped?.Invoke();
         }
+
+        public override void Unselect()
+        {
+            Drop();
+            base.Unselect();
+        }
     }
 }

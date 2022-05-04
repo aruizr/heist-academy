@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Codetox;
 using TMPro;
 using UnityEngine;
@@ -40,13 +41,19 @@ namespace Input
             _currentDevice = device;
             _currentScheme =
                 inputActionReference.asset.controlSchemes.First(scheme => scheme.SupportsDevice(_currentDevice));
-
-            var inputAction = inputActionReference.action;
-            var currentBindingIndex = inputAction.GetBindingIndex(_currentScheme.bindingGroup);
-            var currentBinding = inputAction.bindings[currentBindingIndex];
-            var currentSprite = inputIconMap.GetIcon(currentBinding.path);
-
-            spriteAsset.material.SetTexture(ShaderUtilities.ID_MainTex, currentSprite.texture);
+            
+            try
+            {
+                var inputAction = inputActionReference.action;
+                var currentBindingIndex = inputAction.GetBindingIndex(_currentScheme.bindingGroup);
+                var currentBinding = inputAction.bindings[currentBindingIndex];
+                var currentSprite = inputIconMap.GetIcon(currentBinding.path);
+                spriteAsset.material.SetTexture(ShaderUtilities.ID_MainTex, currentSprite.texture);
+            }
+            catch (Exception e)
+            {
+                // ignored
+            }
         }
     }
 }
