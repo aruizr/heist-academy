@@ -11,8 +11,6 @@ namespace Utilities
     {
         [SerializeField] private float distance;
         [SerializeField] [Range(0, 360)] private float fieldOfView;
-        [SerializeField] [Range(0, 360)] private float raycastOffset;
-        [SerializeField] [Min(0)] private int raycastCount;
         [SerializeField] private LayerMask targetLayers;
         [SerializeField] private LayerMask obstacleLayers;
         [SerializeField] private float scanRate = 10;
