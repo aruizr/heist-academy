@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 1738095834086822402}
   - component: {fileID: 9137269545970780347}
   m_Layer: 11
-  m_Name: Player Detected Event Listener
+  m_Name: Alarm Listener
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -228,6 +228,7 @@ MonoBehaviour:
   obstacleLayers:
     serializedVersion: 2
     m_Bits: 64
+  detectionStrategy: 1
   scanRate: 10
   gizmosColor: {r: 0.040607214, g: 1, b: 0, a: 1}
   gizmosConeDetail: 2
@@ -275,7 +276,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 898658790373299738}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.35, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8437134968484428329}
@@ -301,6 +302,7 @@ MonoBehaviour:
   obstacleLayers:
     serializedVersion: 2
     m_Bits: 5184
+  detectionStrategy: 0
   scanRate: 10
   gizmosColor: {r: 1, g: 0.8265475, b: 0, a: 1}
   gizmosConeDetail: 1
@@ -323,6 +325,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: AI.AlertController, Assembly-CSharp
         m_MethodName: SetAlert
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 17d20b9b988eec840a3178e4270fd616, type: 2}
+        m_TargetAssemblyTypeName: Codetox.GameEvents.VoidGameEvent, com.aruizrab.codetox
+        m_MethodName: Invoke
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -354,36 +368,13 @@ MonoBehaviour:
   obstacleLayers:
     serializedVersion: 2
     m_Bits: 5184
+  detectionStrategy: 0
   scanRate: 10
   gizmosColor: {r: 1, g: 0, b: 0, a: 1}
   gizmosConeDetail: 1
   onTargetDetected:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2668861588266500096}
-        m_TargetAssemblyTypeName: FSM.StateMachine, Assembly-CSharp
-        m_MethodName: SetState
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 303988728433614849}
-          m_ObjectArgumentAssemblyTypeName: FSM.State, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 5734008768725890237}
-        m_TargetAssemblyTypeName: AI.ChaseController, Assembly-CSharp
-        m_MethodName: StartChasing
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 11400000, guid: 4ec8675af9d55a54bab3f97e7979db15, type: 2}
         m_TargetAssemblyTypeName: Codetox.GameEvents.GameEvent`1[[UnityEngine.GameObject,
           UnityEngine
@@ -494,7 +485,7 @@ GameObject:
   - component: {fileID: 5033987883669253691}
   - component: {fileID: 2460505171100861557}
   m_Layer: 11
-  m_Name: Player Detected Event Listener
+  m_Name: Alarm Listener
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -602,7 +593,7 @@ MonoBehaviour:
   navMeshAgent: {fileID: 6370949494528218386}
   closingTime:
     useField: 1
-    fieldValue: 1
+    fieldValue: 3
     variableValue: {fileID: 0}
 --- !u!1 &3108455040149868601
 GameObject:
@@ -792,7 +783,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3493472565943616635}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.35, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1147143918587659618}
@@ -817,7 +808,8 @@ MonoBehaviour:
     m_Bits: 256
   obstacleLayers:
     serializedVersion: 2
-    m_Bits: 1088
+    m_Bits: 5184
+  detectionStrategy: 0
   scanRate: 10
   gizmosColor: {r: 1, g: 0.8265475, b: 0, a: 1}
   gizmosConeDetail: 1
@@ -871,36 +863,13 @@ MonoBehaviour:
   obstacleLayers:
     serializedVersion: 2
     m_Bits: 5184
+  detectionStrategy: 0
   scanRate: 10
   gizmosColor: {r: 1, g: 0, b: 0, a: 1}
   gizmosConeDetail: 1
   onTargetDetected:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2668861588266500096}
-        m_TargetAssemblyTypeName: FSM.StateMachine, Assembly-CSharp
-        m_MethodName: SetState
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 303988728433614849}
-          m_ObjectArgumentAssemblyTypeName: FSM.State, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 5734008768725890237}
-        m_TargetAssemblyTypeName: AI.ChaseController, Assembly-CSharp
-        m_MethodName: StartChasing
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 11400000, guid: 4ec8675af9d55a54bab3f97e7979db15, type: 2}
         m_TargetAssemblyTypeName: Codetox.GameEvents.GameEvent`1[[UnityEngine.GameObject,
           UnityEngine
@@ -1069,6 +1038,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f74e698019c728445b24d0f77612be59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  soundAlertEvent: {fileID: 11400000, guid: 592991c2045853648a693e1fd319993c, type: 2}
   onSoundReceived:
     m_PersistentCalls:
       m_Calls:
@@ -1142,10 +1115,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onEnterState:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: a4b28fecd8bc9cd4ca0671e2ac673395, type: 2}
+        m_TargetAssemblyTypeName: RuntimeSets.RuntimeSet`1[[UnityEngine.GameObject,
+          UnityEngine
+        m_MethodName: Add
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8599264231736999223}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onExitState:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: a4b28fecd8bc9cd4ca0671e2ac673395, type: 2}
+        m_TargetAssemblyTypeName: RuntimeSets.RuntimeSet`1[[UnityEngine.GameObject,
+          UnityEngine
+        m_MethodName: Remove
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8599264231736999223}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6867231293247661898
 GameObject:
   m_ObjectHideFlags: 0
@@ -1222,6 +1221,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f74e698019c728445b24d0f77612be59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  soundAlertEvent: {fileID: 0}
   onSoundReceived:
     m_PersistentCalls:
       m_Calls:
@@ -1391,6 +1394,7 @@ MonoBehaviour:
   obstacleLayers:
     serializedVersion: 2
     m_Bits: 64
+  detectionStrategy: 1
   scanRate: 10
   gizmosColor: {r: 1, g: 0, b: 0, a: 1}
   gizmosConeDetail: 2

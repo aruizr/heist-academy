@@ -1,76 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &85734452288073789
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8835192865383562697}
-  - component: {fileID: 2471788492560594853}
-  m_Layer: 11
-  m_Name: Player Detected Event Listener
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &8835192865383562697
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 85734452288073789}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 293740392053633298}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2471788492560594853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 85734452288073789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af9b3702dc9244469419224be9b115fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 4ec8675af9d55a54bab3f97e7979db15, type: 2}
-  unityEventResponse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7681931479642617573}
-        m_TargetAssemblyTypeName: FSM.StateMachine, Assembly-CSharp
-        m_MethodName: SetState
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 3102166923741021233}
-          m_ObjectArgumentAssemblyTypeName: FSM.State, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2055222306748762585}
-        m_TargetAssemblyTypeName: AI.Camera.TargetingController, Assembly-CSharp
-        m_MethodName: StartLookingAtTarget
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &768963163345453677
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,11 +97,86 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controlTransform: {fileID: 1098700496953961051}
+  range:
+    useField: 1
+    fieldValue: 0
+    variableValue: {fileID: 0}
   rotationSpeed:
     useField: 0
     fieldValue: 30
     variableValue: {fileID: 11400000, guid: d64b8480b751a7e4d9492e1a85d5cbea, type: 2}
   playerDetectedEvent: {fileID: 11400000, guid: 4ec8675af9d55a54bab3f97e7979db15, type: 2}
+  onTargetLost:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!1 &920445620003666690
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1464262798038779276}
+  - component: {fileID: 158456664413151696}
+  m_Layer: 0
+  m_Name: Targeting Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1464262798038779276
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920445620003666690}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8715575594005986731}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &158456664413151696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920445620003666690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 289a9ee86d404b03ab60a94ee03a42ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controlTransform: {fileID: 1098700496953961051}
+  range:
+    useField: 1
+    fieldValue: 20
+    variableValue: {fileID: 0}
+  rotationSpeed:
+    useField: 0
+    fieldValue: 30
+    variableValue: {fileID: 11400000, guid: d64b8480b751a7e4d9492e1a85d5cbea, type: 2}
+  playerDetectedEvent: {fileID: 0}
+  onTargetLost:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7681931479642617573}
+        m_TargetAssemblyTypeName: FSM.StateMachine, Assembly-CSharp
+        m_MethodName: SetState
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 53953519953860854}
+          m_ObjectArgumentAssemblyTypeName: FSM.State, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2071197030027232799
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,6 +226,7 @@ MonoBehaviour:
   states:
   - {fileID: 53953519953860854}
   - {fileID: 3102166923741021233}
+  - {fileID: 2731065162044241081}
   - {fileID: 7755465163046839323}
 --- !u!1 &2752208237706633986
 GameObject:
@@ -252,9 +257,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6840159245556456007}
-  - {fileID: 6863938098315136189}
   - {fileID: 4491229860741091132}
-  - {fileID: 8835192865383562697}
+  - {fileID: 6863938098315136189}
+  - {fileID: 5543014834573615795}
   m_Father: {fileID: 914919538451080152}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -272,7 +277,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onEnterState:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 95e764e7430a79b43a2cdd0bc98c7ec0, type: 2}
+        m_TargetAssemblyTypeName: Codetox.GameEvents.VoidGameEvent, com.aruizrab.codetox
+        m_MethodName: Invoke
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onExitState:
     m_PersistentCalls:
       m_Calls: []
@@ -328,6 +345,201 @@ MonoBehaviour:
   onExitState:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &3722873382763665904
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5543014834573615795}
+  - component: {fileID: 6258973669978470742}
+  m_Layer: 11
+  m_Name: Alarm Listener
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5543014834573615795
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3722873382763665904}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 293740392053633298}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6258973669978470742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3722873382763665904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af9b3702dc9244469419224be9b115fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 4ec8675af9d55a54bab3f97e7979db15, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7681931479642617573}
+        m_TargetAssemblyTypeName: FSM.StateMachine, Assembly-CSharp
+        m_MethodName: SetState
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2731065162044241081}
+          m_ObjectArgumentAssemblyTypeName: FSM.State, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 158456664413151696}
+        m_TargetAssemblyTypeName: AI.Camera.TargetingController, Assembly-CSharp
+        m_MethodName: StartLookingAtTarget
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!1 &4778616252161959768
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6510527847156030099}
+  - component: {fileID: 7236292002260331918}
+  - component: {fileID: 3573362003339493893}
+  m_Layer: 0
+  m_Name: Vision
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6510527847156030099
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4778616252161959768}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8715575594005986731}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7236292002260331918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4778616252161959768}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd4eb5ccdf2e4acf98771a2d0dba2735, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 20
+  fieldOfView: 90
+  targetLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  obstacleLayers:
+    serializedVersion: 2
+    m_Bits: 5184
+  detectionStrategy: 0
+  scanRate: 10
+  gizmosColor: {r: 1, g: 0, b: 0, a: 1}
+  gizmosConeDetail: 4
+  onTargetDetected:
+    m_PersistentCalls:
+      m_Calls: []
+  onTargetUndetected:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!108 &3573362003339493893
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4778616252161959768}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 0
+  m_Shape: 0
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Intensity: 5
+  m_Range: 14
+  m_SpotAngle: 90
+  m_InnerSpotAngle: 9
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 1
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1 &4872975485997438157
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,9 +567,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 14001307106044135}
   m_Father: {fileID: 914919538451080152}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7755465163046839323
 MonoBehaviour:
@@ -406,6 +619,7 @@ Transform:
   m_Children:
   - {fileID: 6950907256234821966}
   - {fileID: 293740392053633298}
+  - {fileID: 8715575594005986731}
   - {fileID: 1484774578746382568}
   m_Father: {fileID: 1098700496953961051}
   m_RootOrder: 1
@@ -421,7 +635,7 @@ GameObject:
   - component: {fileID: 6863938098315136189}
   - component: {fileID: 949247167978315913}
   m_Layer: 0
-  m_Name: Alert Timer
+  m_Name: Alarm Timer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -439,7 +653,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 293740392053633298}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &949247167978315913
 MonoBehaviour:
@@ -507,7 +721,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 293740392053633298}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2658568945041879835
 MonoBehaviour:
@@ -529,12 +743,25 @@ MonoBehaviour:
   obstacleLayers:
     serializedVersion: 2
     m_Bits: 5184
+  detectionStrategy: 0
   scanRate: 10
   gizmosColor: {r: 1, g: 1, b: 1, a: 1}
   gizmosConeDetail: 4
   onTargetDetected:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2055222306748762585}
+        m_TargetAssemblyTypeName: AI.Camera.TargetingController, Assembly-CSharp
+        m_MethodName: StartLookingAtTarget
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onTargetUndetected:
     m_PersistentCalls:
       m_Calls:
@@ -570,6 +797,7 @@ MonoBehaviour:
   obstacleLayers:
     serializedVersion: 2
     m_Bits: 5184
+  detectionStrategy: 0
   scanRate: 10
   gizmosColor: {r: 1, g: 0, b: 0, a: 1}
   gizmosConeDetail: 4
@@ -612,6 +840,7 @@ MonoBehaviour:
   obstacleLayers:
     serializedVersion: 2
     m_Bits: 5184
+  detectionStrategy: 0
   scanRate: 10
   gizmosColor: {r: 1, g: 0.47757202, b: 0, a: 1}
   gizmosConeDetail: 4
@@ -644,7 +873,7 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.4784314, b: 0, a: 1}
   m_Intensity: 5
   m_Range: 14
   m_SpotAngle: 90
@@ -695,6 +924,144 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &6086416028791902068
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 14001307106044135}
+  - component: {fileID: 3905199819827199510}
+  m_Layer: 0
+  m_Name: Surveillance Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &14001307106044135
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6086416028791902068}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1484774578746382568}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3905199819827199510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6086416028791902068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579cec5f7fbc489db593d4d171593d85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controlTransform: {fileID: 1098700496953961051}
+  surveillanceSteps:
+  - rotation:
+      useField: 1
+      fieldValue: {x: 50, y: 0, z: 0}
+      variableValue: {fileID: 0}
+    time:
+      useField: 1
+      fieldValue: 10
+      variableValue: {fileID: 0}
+  rotationSpeed:
+    useField: 0
+    fieldValue: 45
+    variableValue: {fileID: 11400000, guid: d64b8480b751a7e4d9492e1a85d5cbea, type: 2}
+  rotationEase: 3
+  onStepSequenceComplete:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!1 &6269630955093448280
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8715575594005986731}
+  - component: {fileID: 2731065162044241081}
+  m_Layer: 0
+  m_Name: Alarm State
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8715575594005986731
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6269630955093448280}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1464262798038779276}
+  - {fileID: 6510527847156030099}
+  m_Father: {fileID: 914919538451080152}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2731065162044241081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6269630955093448280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da25411e9c62447dafd53c384955dcef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onEnterState:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: a4b28fecd8bc9cd4ca0671e2ac673395, type: 2}
+        m_TargetAssemblyTypeName: RuntimeSets.RuntimeSet`1[[UnityEngine.GameObject,
+          UnityEngine
+        m_MethodName: Add
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2071197030027232799}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onExitState:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: a4b28fecd8bc9cd4ca0671e2ac673395, type: 2}
+        m_TargetAssemblyTypeName: RuntimeSets.RuntimeSet`1[[UnityEngine.GameObject,
+          UnityEngine
+        m_MethodName: Remove
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2071197030027232799}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6621139561906639695
 GameObject:
   m_ObjectHideFlags: 0
@@ -738,12 +1105,12 @@ GameObject:
   - component: {fileID: 6723803223745624693}
   - component: {fileID: 7035691049121166231}
   m_Layer: 11
-  m_Name: Player Detected Event Listener
+  m_Name: Alarm Listener
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6723803223745624693
 Transform:
   m_ObjectHideFlags: 0
@@ -779,14 +1146,14 @@ MonoBehaviour:
         m_MethodName: SetState
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 3102166923741021233}
+          m_ObjectArgument: {fileID: 2731065162044241081}
           m_ObjectArgumentAssemblyTypeName: FSM.State, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2055222306748762585}
+      - m_Target: {fileID: 158456664413151696}
         m_TargetAssemblyTypeName: AI.Camera.TargetingController, Assembly-CSharp
         m_MethodName: StartLookingAtTarget
         m_Mode: 0
@@ -1046,6 +1413,7 @@ MonoBehaviour:
   obstacleLayers:
     serializedVersion: 2
     m_Bits: 5184
+  detectionStrategy: 0
   scanRate: 10
   gizmosColor: {r: 1, g: 1, b: 1, a: 1}
   gizmosConeDetail: 4
@@ -1059,18 +1427,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 3102166923741021233}
           m_ObjectArgumentAssemblyTypeName: FSM.State, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2055222306748762585}
-        m_TargetAssemblyTypeName: AI.Camera.TargetingController, Assembly-CSharp
-        m_MethodName: StartLookingAtTarget
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1099,36 +1455,13 @@ MonoBehaviour:
   obstacleLayers:
     serializedVersion: 2
     m_Bits: 5184
+  detectionStrategy: 0
   scanRate: 10
   gizmosColor: {r: 1, g: 0, b: 0, a: 1}
   gizmosConeDetail: 4
   onTargetDetected:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7681931479642617573}
-        m_TargetAssemblyTypeName: FSM.StateMachine, Assembly-CSharp
-        m_MethodName: SetState
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 3102166923741021233}
-          m_ObjectArgumentAssemblyTypeName: FSM.State, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2055222306748762585}
-        m_TargetAssemblyTypeName: AI.Camera.TargetingController, Assembly-CSharp
-        m_MethodName: StartLookingAtTarget
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 11400000, guid: 4ec8675af9d55a54bab3f97e7979db15, type: 2}
         m_TargetAssemblyTypeName: Codetox.GameEvents.GameEvent`1[[UnityEngine.GameObject,
           UnityEngine
@@ -1156,7 +1489,7 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.9197526, b: 0, a: 1}
   m_Intensity: 5
   m_Range: 14
   m_SpotAngle: 90
