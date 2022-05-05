@@ -13,6 +13,7 @@ namespace Utilities
         [SerializeField] [Range(0, 360)] private float fieldOfView;
         [SerializeField] private LayerMask targetLayers;
         [SerializeField] private LayerMask obstacleLayers;
+        [SerializeField] private CollisionDetectionStrategy detectionStrategy;
         [SerializeField] private float scanRate = 10;
         [SerializeField] private Color gizmosColor = Color.white;
         [SerializeField] [Min(1)] private int gizmosConeDetail = 1;
@@ -49,7 +50,8 @@ namespace Utilities
 
         private void Scan()
         {
-            var scannedColliders = Physics.OverlapSphere(_transform.position, distance, targetLayers).Where(IsValid).ToArray();
+            var scannedColliders = Physics.OverlapSphere(_transform.position, distance, targetLayers).Where(IsValid)
+                .ToArray();
             var scannedObjects = scannedColliders.Select(coll => coll.gameObject).ToArray();
 
             for (var i = VisibleObjects.Count - 1; i >= 0; i--)
@@ -102,10 +104,17 @@ namespace Utilities
 
             return Vector3.Angle(currentForward, vectorToTarget) <= fieldOfView * 0.5f;
         }
-        
-        private static bool IsValid(Collider coll)
+
+        private bool IsValid(Collider coll)
         {
-            return coll is SphereCollider || coll is BoxCollider || coll is CapsuleCollider;
+            var isValidType = coll is SphereCollider || coll is BoxCollider || coll is CapsuleCollider;
+            var isValidForStrategy = coll.isTrigger switch
+            {
+                true when detectionStrategy == CollisionDetectionStrategy.Colliders => false,
+                false when detectionStrategy == CollisionDetectionStrategy.TriggerColliders => false,
+                _ => true
+            };
+            return isValidType && isValidForStrategy;
         }
     }
 }

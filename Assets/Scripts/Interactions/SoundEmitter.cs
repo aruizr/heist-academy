@@ -26,7 +26,7 @@ namespace Interactions
 
                 if (Physics.Raycast(ray, transform.DistanceTo(point), obstacleLayers)) continue;
 
-                coll.gameObject.Send<ISoundReceptor>(receptor => receptor.ReceiveSound(position),
+                coll.gameObject.Send<ISoundReceptor>(receptor => receptor.ReceiveSound(gameObject),
                     MessageScope.Children);
             }
         }

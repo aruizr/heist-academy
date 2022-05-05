@@ -4,6 +4,6 @@ namespace Interactions
 {
     public interface ISoundReceptor
     {
-        void ReceiveSound(Vector3 sourcePoint);
+        void ReceiveSound(GameObject source);
     }
 }

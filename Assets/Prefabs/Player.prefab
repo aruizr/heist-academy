@@ -505,6 +505,7 @@ MonoBehaviour:
   obstacleLayers:
     serializedVersion: 2
     m_Bits: 64
+  detectionStrategy: 2
   scanRate: 10
   gizmosColor: {r: 1, g: 1, b: 1, a: 1}
   gizmosConeDetail: 2
@@ -1704,7 +1705,7 @@ GameObject:
   - component: {fileID: 5296557630343984961}
   - component: {fileID: 6172371443534334811}
   - component: {fileID: 4627805159289693158}
-  m_Layer: 2
+  m_Layer: 8
   m_Name: Sound Emitter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1736,7 +1737,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.25, z: 1}
+  m_Size: {x: 0.25, y: 0.25, z: 0.25}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &4372614390296489336
 Rigidbody:

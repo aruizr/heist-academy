@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03db741c381f4b36bb0019454bf52d42, type: 3}
-  m_Name: RuntimeSet_Player_Inventory
+  m_Script: {fileID: 11500000, guid: 2827f61a5eca444e9b33be033565d90d, type: 3}
+  m_Name: Int_Guard_Sound_Alert_Count
   m_EditorClassIdentifier: 
   details:
     title: 
-    description: 
+    description: Cantidad de veces que el jugador ha hecho saltar la alarma
     author: 
-  items: []
+  value: 0
+  readOnly: 0
