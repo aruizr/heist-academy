@@ -1,3 +1,7 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "HeistAcademy/OutlineSurface"
 {
     Properties
@@ -9,8 +13,8 @@ Shader "HeistAcademy/OutlineSurface"
         [HDR] _Emission ("Emission", color) = (0,0,0)
         
         // OUTLINE PASS PROPERTIES
-        _OutColor("Outline Color", Color) = (0, 0, 0, 1) // Amount to extrude the outline mesh
-        _OutValue("Outline Value", Range(0, 1)) = 0.006 // Outline color
+        _OutColor("Outline Color", Color) = (0, 0, 0, 1) // Outline color
+        _OutValue("Outline Value", Range(0, .1)) = 0.006 // Amount to extrude the outline mesh
     }
     SubShader
     {
@@ -77,7 +81,10 @@ Shader "HeistAcademy/OutlineSurface"
                 v2f o;
 
                 // Convert vertex position from object to clip space
-                o.position = UnityObjectToClipPos(v.vertex + normalize(v.normal) * _OutValue);
+                //o.position = UnityObjectToClipPos(v.vertex + normalize(v.normal) * _OutValue);
+                //o.position = UnityObjectToClipPos(v.vertex*_Scale + normalize(v.normal) * _OutValue);
+                //o.position = UnityObjectToClipPos(v.vertex + normalize(v.normal) * _OutValue * _Scale);
+                o.position = UnityObjectToClipPos(v.vertex + v.normal * _OutValue);
                 
                 return o;
             }
