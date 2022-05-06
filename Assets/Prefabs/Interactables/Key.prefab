@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4d5932699c486a94ecd3c393eb7156, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInventory: {fileID: 11400000, guid: 0127a9be5813a61418a1c50a6c061ea2, type: 2}
+  inventory: {fileID: 11400000, guid: 0127a9be5813a61418a1c50a6c061ea2, type: 2}
 --- !u!1 &3999802033947499853
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,7 +356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f5737055d87456eb7c48eda27a7678e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 6423743437548706994}
   offset: {x: 0, y: 90, z: 0}
   duration: 1
   ease: 1
@@ -378,7 +378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8284dfbf9f045c1bf69fd7dbcbca122, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 6423743437548706994}
   offset: {x: 0, y: 0.5, z: 0}
   duration: 1
   ease: 4

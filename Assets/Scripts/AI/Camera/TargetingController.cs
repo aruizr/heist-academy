@@ -1,5 +1,4 @@
-﻿using Codetox.Attributes;
-using Codetox.Core;
+﻿using Codetox.Core;
 using Codetox.GameEvents;
 using UnityEngine;
 using UnityEngine.Events;
@@ -13,20 +12,21 @@ namespace AI.Camera
         [SerializeField] private ValueReference<float> range;
         [SerializeField] private ValueReference<float> rotationSpeed;
         [SerializeField] private GameObjectGameEvent playerDetectedEvent;
-        [Disabled] public GameObject target;
 
         public UnityEvent onTargetLost;
 
+        public GameObject Target { get; set; }
+
         private void Update()
         {
-            if (!target) return;
+            if (!Target) return;
             if (!IsTargetInRange())
             {
                 onTargetLost?.Invoke();
                 return;
             }
 
-            var directionToTarget = controlTransform.DirectionTo(target);
+            var directionToTarget = controlTransform.DirectionTo(Target);
             var currentRotation = controlTransform.rotation;
             var rotationToTarget = Quaternion.LookRotation(directionToTarget);
             var deltaDegrees = rotationSpeed.Value * Time.deltaTime;
@@ -36,17 +36,17 @@ namespace AI.Camera
 
         private void OnDisable()
         {
-            target = null;
+            Target = null;
         }
 
         public void PlayerDetected()
         {
-            if (target && playerDetectedEvent) playerDetectedEvent.Invoke(target);
+            if (Target && playerDetectedEvent) playerDetectedEvent.Invoke(Target);
         }
 
         private bool IsTargetInRange()
         {
-            return range.Value >= 0 || controlTransform.DistanceTo(target) <= range.Value;
+            return range.Value >= 0 || controlTransform.DistanceTo(Target) <= range.Value;
         }
     }
 }

@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   navMeshAgent: {fileID: 6370949494528218386}
-  movingSpeed:
+  movementSpeed:
     useField: 0
     fieldValue: 0
     variableValue: {fileID: 11400000, guid: ce71c14bd653ef54d83f7273aae75a02, type: 2}
@@ -106,77 +106,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!1 &524173787986784279
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1738095834086822402}
-  - component: {fileID: 9137269545970780347}
-  m_Layer: 11
-  m_Name: Alarm Listener
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1738095834086822402
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 524173787986784279}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1147143918587659618}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9137269545970780347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 524173787986784279}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af9b3702dc9244469419224be9b115fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 4ec8675af9d55a54bab3f97e7979db15, type: 2}
-  unityEventResponse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2668861588266500096}
-        m_TargetAssemblyTypeName: FSM.StateMachine, Assembly-CSharp
-        m_MethodName: SetState
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 303988728433614849}
-          m_ObjectArgumentAssemblyTypeName: FSM.State, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 5734008768725890237}
-        m_TargetAssemblyTypeName: AI.ChaseController, Assembly-CSharp
-        m_MethodName: StartChasing
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &826466330473605647
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,11 +152,17 @@ MonoBehaviour:
   distance: 2.2
   fieldOfView: 75
   targetLayers:
-    serializedVersion: 2
-    m_Bits: 128
+    useField: 0
+    fieldValue:
+      serializedVersion: 2
+      m_Bits: 0
+    variableValue: {fileID: 11400000, guid: 45b54c17cc720674f8ffedf90819bc10, type: 2}
   obstacleLayers:
-    serializedVersion: 2
-    m_Bits: 64
+    useField: 0
+    fieldValue:
+      serializedVersion: 2
+      m_Bits: 0
+    variableValue: {fileID: 11400000, guid: 70fa69cbbedd85d47b67a78db46eb690, type: 2}
   detectionStrategy: 1
   scanRate: 10
   gizmosColor: {r: 0.040607214, g: 1, b: 0, a: 1}
@@ -297,11 +232,17 @@ MonoBehaviour:
   distance: 15
   fieldOfView: 160
   targetLayers:
-    serializedVersion: 2
-    m_Bits: 256
+    useField: 0
+    fieldValue:
+      serializedVersion: 2
+      m_Bits: 0
+    variableValue: {fileID: 11400000, guid: a743532de73c3734bb819e68b101fc75, type: 2}
   obstacleLayers:
-    serializedVersion: 2
-    m_Bits: 5184
+    useField: 0
+    fieldValue:
+      serializedVersion: 2
+      m_Bits: 0
+    variableValue: {fileID: 11400000, guid: 49d6add7eedf72842bb3cf37fa7d61f0, type: 2}
   detectionStrategy: 0
   scanRate: 10
   gizmosColor: {r: 1, g: 0.8265475, b: 0, a: 1}
@@ -363,11 +304,17 @@ MonoBehaviour:
   distance: 10
   fieldOfView: 45
   targetLayers:
-    serializedVersion: 2
-    m_Bits: 256
+    useField: 0
+    fieldValue:
+      serializedVersion: 2
+      m_Bits: 0
+    variableValue: {fileID: 11400000, guid: a743532de73c3734bb819e68b101fc75, type: 2}
   obstacleLayers:
-    serializedVersion: 2
-    m_Bits: 5184
+    useField: 0
+    fieldValue:
+      serializedVersion: 2
+      m_Bits: 0
+    variableValue: {fileID: 11400000, guid: 49d6add7eedf72842bb3cf37fa7d61f0, type: 2}
   detectionStrategy: 0
   scanRate: 10
   gizmosColor: {r: 1, g: 0, b: 0, a: 1}
@@ -391,6 +338,71 @@ MonoBehaviour:
   onTargetUndetected:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1007284654108095414
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4020066304146865460}
+  - component: {fileID: 8742379494003731019}
+  m_Layer: 11
+  m_Name: Sound Receptor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4020066304146865460
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007284654108095414}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1147143918587659618}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8742379494003731019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007284654108095414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f74e698019c728445b24d0f77612be59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerLayer:
+    useField: 1
+    fieldValue:
+      serializedVersion: 2
+      m_Bits: 256
+    variableValue: {fileID: 0}
+  soundAlertEvent: {fileID: 11400000, guid: 592991c2045853648a693e1fd319993c, type: 2}
+  onSoundReceived:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3634463368378679747}
+        m_TargetAssemblyTypeName: AI.AlertController, Assembly-CSharp
+        m_MethodName: SetAlert
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1351191218787691627
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,8 +546,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 5734008768725890237}
-        m_TargetAssemblyTypeName: AI.ChaseController, Assembly-CSharp
-        m_MethodName: StartChasing
+        m_TargetAssemblyTypeName: AI.Guard.ChasingController, Assembly-CSharp
+        m_MethodName: set_Target
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -591,9 +603,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   navMeshAgent: {fileID: 6370949494528218386}
-  closingTime:
+  closeDoorDelay:
     useField: 1
-    fieldValue: 3
+    fieldValue: 2
     variableValue: {fileID: 0}
 --- !u!1 &3108455040149868601
 GameObject:
@@ -804,11 +816,17 @@ MonoBehaviour:
   distance: 15
   fieldOfView: 160
   targetLayers:
-    serializedVersion: 2
-    m_Bits: 256
+    useField: 0
+    fieldValue:
+      serializedVersion: 2
+      m_Bits: 0
+    variableValue: {fileID: 11400000, guid: a743532de73c3734bb819e68b101fc75, type: 2}
   obstacleLayers:
-    serializedVersion: 2
-    m_Bits: 5184
+    useField: 0
+    fieldValue:
+      serializedVersion: 2
+      m_Bits: 0
+    variableValue: {fileID: 11400000, guid: 49d6add7eedf72842bb3cf37fa7d61f0, type: 2}
   detectionStrategy: 0
   scanRate: 10
   gizmosColor: {r: 1, g: 0.8265475, b: 0, a: 1}
@@ -858,11 +876,17 @@ MonoBehaviour:
   distance: 12
   fieldOfView: 90
   targetLayers:
-    serializedVersion: 2
-    m_Bits: 256
+    useField: 0
+    fieldValue:
+      serializedVersion: 2
+      m_Bits: 0
+    variableValue: {fileID: 11400000, guid: a743532de73c3734bb819e68b101fc75, type: 2}
   obstacleLayers:
-    serializedVersion: 2
-    m_Bits: 5184
+    useField: 0
+    fieldValue:
+      serializedVersion: 2
+      m_Bits: 0
+    variableValue: {fileID: 11400000, guid: 49d6add7eedf72842bb3cf37fa7d61f0, type: 2}
   detectionStrategy: 0
   scanRate: 10
   gizmosColor: {r: 1, g: 0, b: 0, a: 1}
@@ -939,9 +963,6 @@ MonoBehaviour:
     fieldValue: 5
     variableValue: {fileID: 0}
   route: []
-  onRouteComplete:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &6089239890986756026
 GameObject:
   m_ObjectHideFlags: 0
@@ -971,9 +992,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4574601709196606452}
-  - {fileID: 613498901692817236}
+  - {fileID: 4020066304146865460}
   - {fileID: 4514973930265537994}
-  - {fileID: 1738095834086822402}
+  - {fileID: 2009494615445946896}
   m_Father: {fileID: 6559672275276733362}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1039,8 +1060,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerLayer:
-    serializedVersion: 2
-    m_Bits: 256
+    useField: 1
+    fieldValue:
+      serializedVersion: 2
+      m_Bits: 256
+    variableValue: {fileID: 0}
   soundAlertEvent: {fileID: 11400000, guid: 592991c2045853648a693e1fd319993c, type: 2}
   onSoundReceived:
     m_PersistentCalls:
@@ -1178,7 +1202,7 @@ Transform:
   m_Father: {fileID: 7277745775732218537}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7784726831213518684
+--- !u!1 &7294711237857227707
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1186,64 +1210,61 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 613498901692817236}
-  - component: {fileID: 172186968657580493}
+  - component: {fileID: 2009494615445946896}
+  - component: {fileID: 4478695258511111055}
   m_Layer: 11
-  m_Name: Sound Receptor
+  m_Name: Alarm Listener
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &613498901692817236
+--- !u!4 &2009494615445946896
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7784726831213518684}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_GameObject: {fileID: 7294711237857227707}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1147143918587659618}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &172186968657580493
+--- !u!114 &4478695258511111055
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7784726831213518684}
+  m_GameObject: {fileID: 7294711237857227707}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f74e698019c728445b24d0f77612be59, type: 3}
+  m_Script: {fileID: 11500000, guid: af9b3702dc9244469419224be9b115fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 256
-  soundAlertEvent: {fileID: 0}
-  onSoundReceived:
+  gameEvent: {fileID: 11400000, guid: 4ec8675af9d55a54bab3f97e7979db15, type: 2}
+  unityEventResponse:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3634463368378679747}
-        m_TargetAssemblyTypeName: AI.AlertController, Assembly-CSharp
-        m_MethodName: SetAlert
-        m_Mode: 0
+      - m_Target: {fileID: 2668861588266500096}
+        m_TargetAssemblyTypeName: FSM.StateMachine, Assembly-CSharp
+        m_MethodName: SetState
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 303988728433614849}
+          m_ObjectArgumentAssemblyTypeName: FSM.State, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 6812957582243639598}
-        m_TargetAssemblyTypeName: Utilities.Timer, Assembly-CSharp
-        m_MethodName: Stop
-        m_Mode: 1
+      - m_Target: {fileID: 5734008768725890237}
+        m_TargetAssemblyTypeName: AI.Guard.ChasingController, Assembly-CSharp
+        m_MethodName: set_Target
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1304,15 +1325,14 @@ MonoBehaviour:
     useField: 1
     fieldValue: 100
     variableValue: {fileID: 0}
-  maxRange:
+  chasingRange:
     useField: 0
     fieldValue: 0
-    variableValue: {fileID: 11400000, guid: 392426bdef3f3584396d6fca5abd1f90, type: 2}
-  rangeToBustTarget:
+    variableValue: {fileID: 11400000, guid: 84d7c43851d7ae148817c5ae55916e16, type: 2}
+  bustingRange:
     useField: 0
     fieldValue: 0
     variableValue: {fileID: 11400000, guid: 606ad03df36fcd741a594590029b141e, type: 2}
-  target: {fileID: 0}
   onTargetLost:
     m_PersistentCalls:
       m_Calls:
@@ -1389,11 +1409,17 @@ MonoBehaviour:
   distance: 2.2
   fieldOfView: 75
   targetLayers:
-    serializedVersion: 2
-    m_Bits: 128
+    useField: 0
+    fieldValue:
+      serializedVersion: 2
+      m_Bits: 0
+    variableValue: {fileID: 11400000, guid: 45b54c17cc720674f8ffedf90819bc10, type: 2}
   obstacleLayers:
-    serializedVersion: 2
-    m_Bits: 64
+    useField: 0
+    fieldValue:
+      serializedVersion: 2
+      m_Bits: 0
+    variableValue: {fileID: 11400000, guid: 70fa69cbbedd85d47b67a78db46eb690, type: 2}
   detectionStrategy: 1
   scanRate: 10
   gizmosColor: {r: 1, g: 0, b: 0, a: 1}

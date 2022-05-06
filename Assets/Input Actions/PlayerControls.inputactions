@@ -33,7 +33,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "MoveCamera",
+                    "name": "Move Camera",
                     "type": "Value",
                     "id": "f2200a8a-256f-4f97-bdeb-fe6ab6a92d4a",
                     "expectedControlType": "Vector2",
@@ -176,9 +176,9 @@
                     "id": "b48866ff-7078-414c-9601-cbe884d90fb3",
                     "path": "2DVector(mode=2)",
                     "interactions": "",
-                    "processors": "ScaleVector2(x=5,y=5)",
+                    "processors": "ScaleVector2(x=4,y=4)",
                     "groups": "",
-                    "action": "MoveCamera",
+                    "action": "Move Camera",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -189,7 +189,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "MoveCamera",
+                    "action": "Move Camera",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -200,7 +200,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "MoveCamera",
+                    "action": "Move Camera",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -211,7 +211,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "MoveCamera",
+                    "action": "Move Camera",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -222,7 +222,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "MoveCamera",
+                    "action": "Move Camera",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -233,7 +233,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse and Keyboard",
-                    "action": "MoveCamera",
+                    "action": "Move Camera",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

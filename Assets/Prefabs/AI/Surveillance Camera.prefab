@@ -44,15 +44,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controlTransform: {fileID: 1098700496953961051}
-  surveillanceSteps: []
   rotationSpeed:
     useField: 0
     fieldValue: 45
     variableValue: {fileID: 11400000, guid: d64b8480b751a7e4d9492e1a85d5cbea, type: 2}
   rotationEase: 1
-  onStepSequenceComplete:
-    m_PersistentCalls:
-      m_Calls: []
+  surveillanceSteps: []
 --- !u!1 &900106224664842970
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,7 +256,7 @@ Transform:
   - {fileID: 6840159245556456007}
   - {fileID: 4491229860741091132}
   - {fileID: 6863938098315136189}
-  - {fileID: 5543014834573615795}
+  - {fileID: 8400471325326903039}
   m_Father: {fileID: 914919538451080152}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -345,77 +342,6 @@ MonoBehaviour:
   onExitState:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &3722873382763665904
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5543014834573615795}
-  - component: {fileID: 6258973669978470742}
-  m_Layer: 11
-  m_Name: Alarm Listener
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5543014834573615795
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3722873382763665904}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 293740392053633298}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6258973669978470742
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3722873382763665904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af9b3702dc9244469419224be9b115fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 4ec8675af9d55a54bab3f97e7979db15, type: 2}
-  unityEventResponse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7681931479642617573}
-        m_TargetAssemblyTypeName: FSM.StateMachine, Assembly-CSharp
-        m_MethodName: SetState
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2731065162044241081}
-          m_ObjectArgumentAssemblyTypeName: FSM.State, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 158456664413151696}
-        m_TargetAssemblyTypeName: AI.Camera.TargetingController, Assembly-CSharp
-        m_MethodName: SetTarget
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &4778616252161959768
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,11 +389,17 @@ MonoBehaviour:
   distance: 20
   fieldOfView: 90
   targetLayers:
-    serializedVersion: 2
-    m_Bits: 256
+    useField: 0
+    fieldValue:
+      serializedVersion: 2
+      m_Bits: 0
+    variableValue: {fileID: 11400000, guid: a743532de73c3734bb819e68b101fc75, type: 2}
   obstacleLayers:
-    serializedVersion: 2
-    m_Bits: 5184
+    useField: 0
+    fieldValue:
+      serializedVersion: 2
+      m_Bits: 0
+    variableValue: {fileID: 11400000, guid: 49d6add7eedf72842bb3cf37fa7d61f0, type: 2}
   detectionStrategy: 0
   scanRate: 10
   gizmosColor: {r: 1, g: 0, b: 0, a: 1}
@@ -738,11 +670,17 @@ MonoBehaviour:
   distance: 20
   fieldOfView: 90
   targetLayers:
-    serializedVersion: 2
-    m_Bits: 256
+    useField: 0
+    fieldValue:
+      serializedVersion: 2
+      m_Bits: 0
+    variableValue: {fileID: 11400000, guid: a743532de73c3734bb819e68b101fc75, type: 2}
   obstacleLayers:
-    serializedVersion: 2
-    m_Bits: 5184
+    useField: 0
+    fieldValue:
+      serializedVersion: 2
+      m_Bits: 0
+    variableValue: {fileID: 11400000, guid: 49d6add7eedf72842bb3cf37fa7d61f0, type: 2}
   detectionStrategy: 0
   scanRate: 10
   gizmosColor: {r: 1, g: 1, b: 1, a: 1}
@@ -752,7 +690,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2055222306748762585}
         m_TargetAssemblyTypeName: AI.Camera.TargetingController, Assembly-CSharp
-        m_MethodName: SetTarget
+        m_MethodName: set_Target
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -792,11 +730,17 @@ MonoBehaviour:
   distance: 10
   fieldOfView: 90
   targetLayers:
-    serializedVersion: 2
-    m_Bits: 256
+    useField: 0
+    fieldValue:
+      serializedVersion: 2
+      m_Bits: 0
+    variableValue: {fileID: 11400000, guid: a743532de73c3734bb819e68b101fc75, type: 2}
   obstacleLayers:
-    serializedVersion: 2
-    m_Bits: 5184
+    useField: 0
+    fieldValue:
+      serializedVersion: 2
+      m_Bits: 0
+    variableValue: {fileID: 11400000, guid: 49d6add7eedf72842bb3cf37fa7d61f0, type: 2}
   detectionStrategy: 0
   scanRate: 10
   gizmosColor: {r: 1, g: 0, b: 0, a: 1}
@@ -835,11 +779,17 @@ MonoBehaviour:
   distance: 20
   fieldOfView: 20
   targetLayers:
-    serializedVersion: 2
-    m_Bits: 256
+    useField: 0
+    fieldValue:
+      serializedVersion: 2
+      m_Bits: 0
+    variableValue: {fileID: 11400000, guid: a743532de73c3734bb819e68b101fc75, type: 2}
   obstacleLayers:
-    serializedVersion: 2
-    m_Bits: 5184
+    useField: 0
+    fieldValue:
+      serializedVersion: 2
+      m_Bits: 0
+    variableValue: {fileID: 11400000, guid: 49d6add7eedf72842bb3cf37fa7d61f0, type: 2}
   detectionStrategy: 0
   scanRate: 10
   gizmosColor: {r: 1, g: 0.47757202, b: 0, a: 1}
@@ -968,6 +918,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controlTransform: {fileID: 1098700496953961051}
+  rotationSpeed:
+    useField: 0
+    fieldValue: 45
+    variableValue: {fileID: 11400000, guid: d64b8480b751a7e4d9492e1a85d5cbea, type: 2}
+  rotationEase: 3
   surveillanceSteps:
   - rotation:
       useField: 1
@@ -977,14 +932,6 @@ MonoBehaviour:
       useField: 1
       fieldValue: 10
       variableValue: {fileID: 0}
-  rotationSpeed:
-    useField: 0
-    fieldValue: 45
-    variableValue: {fileID: 11400000, guid: d64b8480b751a7e4d9492e1a85d5cbea, type: 2}
-  rotationEase: 3
-  onStepSequenceComplete:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &6269630955093448280
 GameObject:
   m_ObjectHideFlags: 0
@@ -1155,7 +1102,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 158456664413151696}
         m_TargetAssemblyTypeName: AI.Camera.TargetingController, Assembly-CSharp
-        m_MethodName: SetTarget
+        m_MethodName: set_Target
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1360,6 +1307,77 @@ Transform:
   m_Father: {fileID: 9022590274711427289}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8783148459229083764
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8400471325326903039}
+  - component: {fileID: 8276783331956408673}
+  m_Layer: 11
+  m_Name: Alarm Listener
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8400471325326903039
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8783148459229083764}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 293740392053633298}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8276783331956408673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8783148459229083764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af9b3702dc9244469419224be9b115fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 4ec8675af9d55a54bab3f97e7979db15, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7681931479642617573}
+        m_TargetAssemblyTypeName: FSM.StateMachine, Assembly-CSharp
+        m_MethodName: SetState
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2731065162044241081}
+          m_ObjectArgumentAssemblyTypeName: FSM.State, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 158456664413151696}
+        m_TargetAssemblyTypeName: AI.Camera.TargetingController, Assembly-CSharp
+        m_MethodName: set_Target
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8947849525347683467
 GameObject:
   m_ObjectHideFlags: 0
@@ -1408,11 +1426,17 @@ MonoBehaviour:
   distance: 20
   fieldOfView: 90
   targetLayers:
-    serializedVersion: 2
-    m_Bits: 256
+    useField: 0
+    fieldValue:
+      serializedVersion: 2
+      m_Bits: 0
+    variableValue: {fileID: 11400000, guid: a743532de73c3734bb819e68b101fc75, type: 2}
   obstacleLayers:
-    serializedVersion: 2
-    m_Bits: 5184
+    useField: 0
+    fieldValue:
+      serializedVersion: 2
+      m_Bits: 0
+    variableValue: {fileID: 11400000, guid: 49d6add7eedf72842bb3cf37fa7d61f0, type: 2}
   detectionStrategy: 0
   scanRate: 10
   gizmosColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1450,11 +1474,17 @@ MonoBehaviour:
   distance: 10
   fieldOfView: 90
   targetLayers:
-    serializedVersion: 2
-    m_Bits: 256
+    useField: 0
+    fieldValue:
+      serializedVersion: 2
+      m_Bits: 0
+    variableValue: {fileID: 11400000, guid: a743532de73c3734bb819e68b101fc75, type: 2}
   obstacleLayers:
-    serializedVersion: 2
-    m_Bits: 5184
+    useField: 0
+    fieldValue:
+      serializedVersion: 2
+      m_Bits: 0
+    variableValue: {fileID: 11400000, guid: 49d6add7eedf72842bb3cf37fa7d61f0, type: 2}
   detectionStrategy: 0
   scanRate: 10
   gizmosColor: {r: 1, g: 0, b: 0, a: 1}

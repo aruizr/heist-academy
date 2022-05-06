@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21a632cccf2b4116b09ffa5e3b602f74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tweener: {fileID: 2843709377925432669}
+  animator: {fileID: 2843709377925432669}
   isLocked: 0
   unlockedBy: {fileID: 0}
   inventory: {fileID: 0}
@@ -362,9 +362,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onFinishedOpening:
-    m_PersistentCalls:
-      m_Calls:
       - m_Target: {fileID: 3597346128699829301}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -377,6 +374,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  onFinishedOpening:
+    m_PersistentCalls:
+      m_Calls: []
   onStartedClosing:
     m_PersistentCalls:
       m_Calls:
@@ -405,9 +405,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onFinishedClosing:
-    m_PersistentCalls:
-      m_Calls:
       - m_Target: {fileID: 1210420382137631723}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -420,6 +417,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  onFinishedClosing:
+    m_PersistentCalls:
+      m_Calls: []
   onLocked:
     m_PersistentCalls:
       m_Calls: []

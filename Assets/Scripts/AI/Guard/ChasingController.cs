@@ -1,5 +1,4 @@
-﻿using Codetox.Attributes;
-using Codetox.Core;
+﻿using Codetox.Core;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
@@ -15,21 +14,22 @@ namespace AI.Guard
         [SerializeField] private ValueReference<float> acceleration;
         [SerializeField] private ValueReference<float> chasingRange;
         [SerializeField] private ValueReference<float> bustingRange;
-        [Disabled] public GameObject target;
 
         public UnityEvent onTargetLost;
         public UnityEvent onTargetBusted;
 
         private Transform _transform;
 
+        public GameObject Target { get; set; }
+
         private void Update()
         {
-            if (!target) return;
+            if (!Target) return;
             if (navMeshAgent.isStopped) return;
 
             if (!CanReachTarget())
             {
-                target = null;
+                Target = null;
                 onTargetLost?.Invoke();
                 return;
             }
@@ -42,7 +42,7 @@ namespace AI.Guard
 
             navMeshAgent.speed = movementSpeed.Value;
             navMeshAgent.acceleration = acceleration.Value;
-            navMeshAgent.SetDestination(target.transform.position);
+            navMeshAgent.SetDestination(Target.transform.position);
         }
 
         private void OnEnable()
@@ -52,12 +52,12 @@ namespace AI.Guard
 
         private void OnDisable()
         {
-            target = null;
+            Target = null;
         }
 
         private bool CanReachTarget()
         {
-            var isTargetInRange = _transform.DistanceTo(target) <= chasingRange.Value;
+            var isTargetInRange = _transform.DistanceTo(Target) <= chasingRange.Value;
             var isTargetReachable = navMeshAgent.CanReachDestination();
 
             return isTargetInRange && isTargetReachable;
@@ -65,7 +65,7 @@ namespace AI.Guard
 
         private bool CanBustTarget()
         {
-            return _transform.DistanceTo(target) <= bustingRange.Value;
+            return _transform.DistanceTo(Target) <= bustingRange.Value;
         }
     }
 }
