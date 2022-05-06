@@ -1,6 +1,6 @@
 ﻿namespace Interactions
 {
-    public interface IInteractable: ISelectible
+    public interface IInteractable
     {
         void Interact();
     }

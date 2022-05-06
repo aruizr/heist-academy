@@ -1,6 +1,7 @@
 ﻿using Codetox.Core;
 using Codetox.GameEvents;
 using UnityEngine;
+using UnityEngine.Events;
 using Variables;
 
 namespace AI.Camera
@@ -8,20 +9,29 @@ namespace AI.Camera
     public class TargetingController : MonoBehaviour
     {
         [SerializeField] private Transform controlTransform;
+        [SerializeField] private ValueReference<float> range;
         [SerializeField] private ValueReference<float> rotationSpeed;
         [SerializeField] private GameObjectGameEvent playerDetectedEvent;
 
-        private GameObject _target;
+        public UnityEvent onTargetLost;
+
+        public GameObject Target { get; private set; }
 
         private void Update()
         {
-            if (!_target) return;
+            if (!Target) return;
+            if (range.Value > 0 && controlTransform.DistanceTo(Target) > range.Value)
+            {
+                onTargetLost?.Invoke();
+                return;
+            }
 
-            var directionToTarget = controlTransform.DirectionTo(_target);
+            var directionToTarget = controlTransform.DirectionTo(Target);
             var targetRotation = Quaternion.LookRotation(directionToTarget);
             var deltaDegrees = rotationSpeed.Value * Time.deltaTime;
 
-            controlTransform.rotation = Quaternion.RotateTowards(controlTransform.rotation, targetRotation, deltaDegrees);
+            controlTransform.rotation =
+                Quaternion.RotateTowards(controlTransform.rotation, targetRotation, deltaDegrees);
         }
 
         private void OnDisable()
@@ -29,19 +39,19 @@ namespace AI.Camera
             StopLookingAtTarget();
         }
 
-        public void PlayerDetected()
-        {
-            if (playerDetectedEvent) playerDetectedEvent.Invoke(_target);
-        }
-
         public void StartLookingAtTarget(GameObject target)
         {
-            _target = target;
+            Target = target;
         }
 
         public void StopLookingAtTarget()
         {
-            _target = null;
+            Target = null;
+        }
+
+        public void PlayerDetected()
+        {
+            if (Target && playerDetectedEvent) playerDetectedEvent.Invoke(Target);
         }
     }
 }

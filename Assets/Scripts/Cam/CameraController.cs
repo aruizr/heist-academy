@@ -31,9 +31,7 @@ namespace Cam
         private void Start()
         {
             camera = Camera.main;
-
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
+            
             if(camera != null)
                 cameraTransform = camera.transform;
         }

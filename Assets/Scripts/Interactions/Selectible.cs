@@ -7,13 +7,13 @@ namespace Interactions
     {
         [SerializeField] private UnityEvent onSelected;
         [SerializeField] private UnityEvent onUnselected;
-        
-        public void Select()
+
+        public virtual void Select()
         {
             onSelected?.Invoke();
         }
 
-        public void Unselect()
+        public virtual void Unselect()
         {
             onUnselected?.Invoke();
         }

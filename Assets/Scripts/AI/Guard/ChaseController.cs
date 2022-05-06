@@ -1,5 +1,6 @@
 ﻿using Codetox.Attributes;
 using Codetox.Core;
+using RuntimeSets;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
@@ -17,7 +18,7 @@ namespace AI.Guard
         [SerializeField] private ValueReference<float> rangeToBustTarget;
         [SerializeField] [Disabled] private GameObject target;
 
-        public UnityEvent onTargetLost;
+        public UnityEvent<GameObject> onTargetLost;
         public UnityEvent onTargetBusted;
 
         private Transform _controlTransform;
@@ -30,8 +31,9 @@ namespace AI.Guard
 
             if (!navMeshAgent.isStopped && distance > maxRange.Value || !navMeshAgent.CanReachDestination())
             {
-                StopChasing();
-                onTargetLost?.Invoke();
+                var target = this.target;
+                this.target = null;
+                onTargetLost?.Invoke(target);
                 return;
             }
 
@@ -59,7 +61,7 @@ namespace AI.Guard
         public void StopChasing()
         {
             target = null;
-            navMeshAgent.SetDestination(transform.position);
+            //navMeshAgent.SetDestination(transform.position);
         }
     }
 }

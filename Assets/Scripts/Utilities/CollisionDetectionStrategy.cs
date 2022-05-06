@@ -2,6 +2,6 @@
 {
     public enum CollisionDetectionStrategy
     {
-        Colliders, TriggerColliders, Both
+        Colliders, TriggerColliders, Everything
     }
 }

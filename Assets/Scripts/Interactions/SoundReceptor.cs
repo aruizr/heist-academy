@@ -1,15 +1,21 @@
-﻿using UnityEngine;
+﻿using Codetox.Core;
+using Codetox.GameEvents;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace Interactions
 {
     public class SoundReceptor : MonoBehaviour, ISoundReceptor
     {
-        [SerializeField] private UnityEvent<Vector3> onSoundReceived;
+        [SerializeField] private LayerMask playerLayer;
+        [SerializeField] private VoidGameEvent soundAlertEvent;
+        
+        public UnityEvent<Vector3> onSoundReceived;
 
-        public void ReceiveSound(Vector3 sourcePoint)
+        public void ReceiveSound(GameObject source)
         {
-            onSoundReceived?.Invoke(sourcePoint);
+            if (source.IsInLayerMask(playerLayer) && soundAlertEvent) soundAlertEvent.Invoke();
+            onSoundReceived?.Invoke(source.transform.position);
         }
     }
 }
