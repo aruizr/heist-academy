@@ -1,4 +1,5 @@
-﻿using Codetox.Core;
+﻿using Codetox.Attributes;
+using Codetox.Core;
 using Codetox.GameEvents;
 using UnityEngine;
 using UnityEngine.Events;
@@ -12,46 +13,40 @@ namespace AI.Camera
         [SerializeField] private ValueReference<float> range;
         [SerializeField] private ValueReference<float> rotationSpeed;
         [SerializeField] private GameObjectGameEvent playerDetectedEvent;
+        [Disabled] public GameObject target;
 
         public UnityEvent onTargetLost;
 
-        public GameObject Target { get; private set; }
-
         private void Update()
         {
-            if (!Target) return;
-            if (range.Value > 0 && controlTransform.DistanceTo(Target) > range.Value)
+            if (!target) return;
+            if (!IsTargetInRange())
             {
                 onTargetLost?.Invoke();
                 return;
             }
 
-            var directionToTarget = controlTransform.DirectionTo(Target);
-            var targetRotation = Quaternion.LookRotation(directionToTarget);
+            var directionToTarget = controlTransform.DirectionTo(target);
+            var currentRotation = controlTransform.rotation;
+            var rotationToTarget = Quaternion.LookRotation(directionToTarget);
             var deltaDegrees = rotationSpeed.Value * Time.deltaTime;
 
-            controlTransform.rotation =
-                Quaternion.RotateTowards(controlTransform.rotation, targetRotation, deltaDegrees);
+            controlTransform.rotation = Quaternion.RotateTowards(currentRotation, rotationToTarget, deltaDegrees);
         }
 
         private void OnDisable()
         {
-            StopLookingAtTarget();
-        }
-
-        public void StartLookingAtTarget(GameObject target)
-        {
-            Target = target;
-        }
-
-        public void StopLookingAtTarget()
-        {
-            Target = null;
+            target = null;
         }
 
         public void PlayerDetected()
         {
-            if (Target && playerDetectedEvent) playerDetectedEvent.Invoke(Target);
+            if (target && playerDetectedEvent) playerDetectedEvent.Invoke(target);
+        }
+
+        private bool IsTargetInRange()
+        {
+            return range.Value >= 0 || controlTransform.DistanceTo(target) <= range.Value;
         }
     }
 }

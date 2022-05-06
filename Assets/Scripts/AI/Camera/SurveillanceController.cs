@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.Events;
+using Utilities;
 using Variables;
 
 namespace AI.Camera
@@ -10,14 +12,17 @@ namespace AI.Camera
     public class SurveillanceController : MonoBehaviour
     {
         [SerializeField] private Transform controlTransform;
-        [SerializeField] private SurveillanceStep[] surveillanceSteps;
         [SerializeField] private ValueReference<float> rotationSpeed;
         [SerializeField] private Ease rotationEase;
+        [SerializeField] private SurveillanceStep[] surveillanceSteps;
 
-        public UnityEvent onStepSequenceComplete;
         private Tweener _currentTween;
+        private IEnumerator<SurveillanceStep> _enumerator;
 
-        private int _index;
+        private void Awake()
+        {
+            _enumerator = surveillanceSteps.Cast<SurveillanceStep>().GetEnumerator();
+        }
 
         private void OnEnable()
         {
@@ -36,29 +41,21 @@ namespace AI.Camera
             {
                 if (surveillanceSteps.Length == 0) yield return new WaitUntil(() => surveillanceSteps.Length > 0);
 
-                var step = surveillanceSteps[_index];
-                var rotation = Quaternion.Euler(step.rotation.Value);
-                var angle = Quaternion.Angle(controlTransform.rotation, rotation);
-                var time = angle / rotationSpeed.Value;
-                var isComplete = false;
+                var currentStep = _enumerator.GetWrapAroundNext();
+                var stepRotation = Quaternion.Euler(currentStep.rotation.Value);
+                var angleToRotation = Quaternion.Angle(controlTransform.rotation, stepRotation);
+                var timeToReachRotation = angleToRotation / rotationSpeed.Value;
+                var isRotationComplete = false;
 
                 _currentTween?.Kill();
-                _currentTween = controlTransform.DOLocalRotate(step.rotation.Value, time).SetEase(rotationEase)
-                    .OnComplete(() => isComplete = true);
+                _currentTween = controlTransform.
+                    DOLocalRotate(currentStep.rotation.Value, timeToReachRotation).
+                    SetEase(rotationEase).
+                    OnComplete(() => isRotationComplete = true);
 
-                yield return new WaitUntil(() => isComplete);
-                yield return new WaitForSeconds(step.time.Value);
-
-                IncrementIndex();
+                yield return new WaitUntil(() => isRotationComplete);
+                yield return new WaitForSeconds(currentStep.time.Value);
             }
-        }
-
-        private void IncrementIndex()
-        {
-            _index++;
-            if (_index < surveillanceSteps.Length) return;
-            _index = 0;
-            onStepSequenceComplete.Invoke();
         }
 
         [Serializable]

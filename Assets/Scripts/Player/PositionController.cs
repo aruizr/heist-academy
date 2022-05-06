@@ -12,10 +12,5 @@ namespace Player
         {
             currentPosition.Value = target.position;
         }
-
-        // private void OnEnable()
-        // {
-        //     target.position = currentPosition.Value;
-        // }
     }
 }

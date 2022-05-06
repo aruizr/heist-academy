@@ -16,7 +16,7 @@ namespace Cam
         [SerializeField] private FloatVariable distanceToPlayer;
     
         [Header("Environment")] 
-        [SerializeField] private LayerMaskEnumVariable visibleLayerOnRayHit;
+        [SerializeField] private LayerMaskVariable visibleLayerOnRayHit;
         [SerializeField] private FloatVariable wallMaterialAlpha;
     
         private new Camera camera;

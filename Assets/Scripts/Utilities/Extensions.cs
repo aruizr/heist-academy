@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.AI;
 
 namespace Utilities
@@ -20,6 +21,12 @@ namespace Utilities
         public static Vector3 Rotate(this Vector3 vector, float angle, Vector3 axis)
         {
             return Quaternion.AngleAxis(angle, axis) * vector;
+        }
+
+        public static T GetWrapAroundNext<T>(this IEnumerator<T> enumerator)
+        {
+            if (!enumerator.MoveNext()) enumerator.Reset();
+            return enumerator.Current;
         }
     }
 }

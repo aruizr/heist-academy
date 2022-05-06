@@ -12,8 +12,7 @@ namespace FSM
 
         private void OnEnable()
         {
-            states.Where(state => !state.Equals(initialState)).ToList()
-                .ForEach(state => state.gameObject.SetActive(false));
+            foreach (var state in states.Where(state => !state.Equals(initialState))) state.gameObject.SetActive(false);
             SetState(initialState);
         }
 
