@@ -97,11 +97,13 @@ namespace Sensors
             var rayToTarget = new Ray(currentPosition, directionToTarget);
             var distanceToTarget = _transform.DistanceTo(closestPoint);
 
-            if (!Physics.Raycast(rayToTarget, out var hit, distanceToTarget, obstacleLayers.Value)) return false;
+            // if (!Physics.Raycast(rayToTarget, out var hit, distanceToTarget, obstacleLayers.Value)) return false;
+            //
+            // var distanceToObstacle = _transform.DistanceTo(hit.point);
+            //
+            // return distanceToObstacle < distanceToTarget;
 
-            var distanceToObstacle = _transform.DistanceTo(hit.point);
-
-            return distanceToObstacle < distanceToTarget;
+            return Physics.Raycast(rayToTarget, distanceToTarget, obstacleLayers.Value);
         }
 
         private bool IsInFieldOfView(Collider target)

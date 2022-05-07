@@ -23,10 +23,11 @@ namespace Utilities
             return Quaternion.AngleAxis(angle, axis) * vector;
         }
 
-        public static T GetWrapAroundNext<T>(this IEnumerator<T> enumerator)
+        public static IEnumerable<T> WrappedAround<T>(this IEnumerable<T> enumerable)
         {
-            if (!enumerator.MoveNext()) enumerator.Reset();
-            return enumerator.Current;
+            while (true)
+                foreach (var item in enumerable)
+                    yield return item;
         }
     }
 }

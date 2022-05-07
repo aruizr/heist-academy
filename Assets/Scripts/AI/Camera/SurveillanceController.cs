@@ -17,12 +17,6 @@ namespace AI.Camera
         [SerializeField] private SurveillanceStep[] surveillanceSteps;
 
         private Tweener _currentTween;
-        private IEnumerator<SurveillanceStep> _enumerator;
-
-        private void Awake()
-        {
-            _enumerator = surveillanceSteps.Cast<SurveillanceStep>().GetEnumerator();
-        }
 
         private void OnEnable()
         {
@@ -37,32 +31,30 @@ namespace AI.Camera
 
         private IEnumerator DoSurveillance()
         {
-            while (true)
+            if (surveillanceSteps.Length == 0) yield return new WaitUntil(() => surveillanceSteps.Length > 0);
+            foreach (var step in surveillanceSteps.WrappedAround())
             {
-                if (surveillanceSteps.Length == 0) yield return new WaitUntil(() => surveillanceSteps.Length > 0);
-
-                var currentStep = _enumerator.GetWrapAroundNext();
-                var stepRotation = Quaternion.Euler(currentStep.rotation.Value);
+                var stepRotation = Quaternion.Euler(step.rotation);
                 var angleToRotation = Quaternion.Angle(controlTransform.rotation, stepRotation);
                 var timeToReachRotation = angleToRotation / rotationSpeed.Value;
                 var isRotationComplete = false;
 
                 _currentTween?.Kill();
                 _currentTween = controlTransform.
-                    DOLocalRotate(currentStep.rotation.Value, timeToReachRotation).
+                    DOLocalRotate(step.rotation, timeToReachRotation).
                     SetEase(rotationEase).
                     OnComplete(() => isRotationComplete = true);
 
                 yield return new WaitUntil(() => isRotationComplete);
-                yield return new WaitForSeconds(currentStep.time.Value);
+                yield return new WaitForSeconds(step.time);
             }
         }
 
         [Serializable]
         public struct SurveillanceStep
         {
-            public ValueReference<Vector3> rotation;
-            public ValueReference<float> time;
+            public Vector3 rotation;
+            public float time;
         }
     }
 }

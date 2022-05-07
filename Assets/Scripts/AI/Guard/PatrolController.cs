@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.AI;
@@ -18,12 +16,6 @@ namespace AI.Guard
         [SerializeField] private RouteStep[] route;
 
         private Tweener _currentTween;
-        private IEnumerator<RouteStep> _enumerator;
-
-        public void Awake()
-        {
-            _enumerator = route.Cast<RouteStep>().GetEnumerator();
-        }
 
         private void OnEnable()
         {
@@ -38,15 +30,12 @@ namespace AI.Guard
 
         private IEnumerator DoPatrol()
         {
-            while (true)
+            if (route.Length == 0) yield return new WaitUntil(() => route.Length > 0);
+            foreach (var step in route.WrappedAround())
             {
-                if (route.Length == 0) yield return new WaitUntil(() => route.Length > 0);
-
-                var currentStep = _enumerator.GetWrapAroundNext();
-
                 navMeshAgent.speed = movementSpeed.Value;
                 navMeshAgent.acceleration = acceleration.Value;
-                navMeshAgent.SetDestination(currentStep.transform.position);
+                navMeshAgent.SetDestination(step.transform.position);
 
                 yield return new WaitUntil(() => navMeshAgent.HasReachedDestination());
 
@@ -54,11 +43,11 @@ namespace AI.Guard
 
                 _currentTween?.Kill();
                 _currentTween = navMeshAgent.transform.
-                    DORotate(currentStep.transform.eulerAngles, 1).
+                    DORotate(step.transform.eulerAngles, 1).
                     OnComplete(() => isRotationComplete = true);
 
                 yield return new WaitUntil(() => isRotationComplete);
-                yield return new WaitForSeconds(currentStep.time.Value);
+                yield return new WaitForSeconds(step.time);
             }
         }
 
@@ -66,7 +55,7 @@ namespace AI.Guard
         public struct RouteStep
         {
             public Transform transform;
-            public ValueReference<float> time;
+            public float time;
         }
     }
 }

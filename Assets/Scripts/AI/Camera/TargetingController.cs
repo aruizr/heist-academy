@@ -46,7 +46,8 @@ namespace AI.Camera
 
         private bool IsTargetInRange()
         {
-            return range.Value >= 0 || controlTransform.DistanceTo(Target) <= range.Value;
+            if (range.Value <= 0) return true;
+            return controlTransform.DistanceTo(Target) <= range.Value;
         }
     }
 }
