@@ -1,70 +1,47 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using Codetox.Core;
-using Codetox.Variables;
-using DG.Tweening;
-using Variables;
 using UnityEngine;
-using UnityEngine.Events;
+using Variables;
 
 namespace Cam
 {
     public class CameraController : MonoBehaviour
     {
-        [Header("Camera")] [SerializeField] private Vector3Variable positionOffset;
+        [SerializeField] private ValueReference<Vector3> positionOffset;
+        [SerializeField] private ValueReference<Vector3> rotationOffset;
+        [SerializeField] private ValueReference<float> rotationSpeed;
+        [SerializeField] private ValueReference<float> rotationSmoothTime;
+        [SerializeField] private ValueReference<float> distanceToPlayer;
+        [SerializeField] private ValueReference<Vector3> currentPlayerPosition;
 
-        [SerializeField] private Vector3Variable rotationOffset;
-        [SerializeField] private CameraTypeEnumVariable cameraType;
-        [SerializeField] private FloatVariable rotationSpeed;
-        [SerializeField] private FloatVariable anglesPerStep;
+        private Transform _cameraTransform;
+        private Vector3 _currentRotation;
+        private Vector3 _currentVelocity;
+        private Vector3 _deltaRotation;
 
-        [Header("Player")] [SerializeField] private Vector3Variable currentPlayerPosition;
-
-        [SerializeField] private FloatVariable distanceToPlayer;
-
-        private new Camera camera;
-        private Transform cameraTransform;
-        private Vector3 currentEulerAngles;
-        private Vector3 deltaEulerAngles;
-
-        private void Start()
+        private void Awake()
         {
-            camera = Camera.main;
-            
-            if(camera != null)
-                cameraTransform = camera.transform;
+            if (Camera.main) _cameraTransform = Camera.main.transform;
         }
 
         private void LateUpdate()
         {
-            if (cameraType.Value == CameraType.Continuous)
-            {
-                currentEulerAngles += deltaEulerAngles;
-                cameraTransform.rotation = Quaternion.Euler(currentEulerAngles + rotationOffset.Value);
-            }
-
-            cameraTransform.position = GetFinalPositionValue() - GetFinalDistanceValue();
+            _currentRotation = GetCurrentRotation();
+            _cameraTransform.rotation = Quaternion.Euler(_currentRotation + rotationOffset.Value);
+            _cameraTransform.position = GetFinalPositionValue() - GetFinalDistanceValue();
         }
-
+        
         public void MoveCamera(Vector2 direction)
         {
-            if (cameraType.Value == CameraType.Continuous)
-            {
-                deltaEulerAngles = new Vector3(0f, direction.x, 0f) * rotationSpeed.Value * 0.1f;
-                return;
-            }
+            _deltaRotation = new Vector3(0f, direction.x, 0f) * rotationSpeed.Value;
+        }
 
-            if (direction.x > 0)
-            {
-                currentEulerAngles.y += anglesPerStep.Value;
-                cameraTransform.DORotate(currentEulerAngles + rotationOffset.Value, 0.5f);
-            }
-            else if (direction.x < 0)
-            {
-                currentEulerAngles.y -= anglesPerStep.Value;
-                cameraTransform.DORotate(currentEulerAngles + rotationOffset.Value, 0.5f);
-            }
+        private Vector3 GetCurrentRotation()
+        {
+            return Vector3.SmoothDamp(
+                _currentRotation,
+                _currentRotation + _deltaRotation,
+                ref _currentVelocity,
+                rotationSmoothTime.Value);
         }
 
         private Vector3 GetFinalPositionValue()
@@ -74,7 +51,7 @@ namespace Cam
 
         private Vector3 GetFinalDistanceValue()
         {
-            return cameraTransform.transform.forward * distanceToPlayer.Value;
+            return _cameraTransform.transform.forward * distanceToPlayer.Value;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Interactions;
+using Sensors;
 using UnityEditor;
 
 namespace Editor

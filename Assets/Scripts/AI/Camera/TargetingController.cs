@@ -15,36 +15,26 @@ namespace AI.Camera
 
         public UnityEvent onTargetLost;
 
-        public GameObject Target { get; private set; }
+        public GameObject Target { get; set; }
 
         private void Update()
         {
             if (!Target) return;
-            if (range.Value > 0 && controlTransform.DistanceTo(Target) > range.Value)
+            if (!IsTargetInRange())
             {
                 onTargetLost?.Invoke();
                 return;
             }
 
             var directionToTarget = controlTransform.DirectionTo(Target);
-            var targetRotation = Quaternion.LookRotation(directionToTarget);
+            var currentRotation = controlTransform.rotation;
+            var rotationToTarget = Quaternion.LookRotation(directionToTarget);
             var deltaDegrees = rotationSpeed.Value * Time.deltaTime;
 
-            controlTransform.rotation =
-                Quaternion.RotateTowards(controlTransform.rotation, targetRotation, deltaDegrees);
+            controlTransform.rotation = Quaternion.RotateTowards(currentRotation, rotationToTarget, deltaDegrees);
         }
 
         private void OnDisable()
-        {
-            StopLookingAtTarget();
-        }
-
-        public void StartLookingAtTarget(GameObject target)
-        {
-            Target = target;
-        }
-
-        public void StopLookingAtTarget()
         {
             Target = null;
         }
@@ -52,6 +42,12 @@ namespace AI.Camera
         public void PlayerDetected()
         {
             if (Target && playerDetectedEvent) playerDetectedEvent.Invoke(Target);
+        }
+
+        private bool IsTargetInRange()
+        {
+            if (range.Value <= 0) return true;
+            return controlTransform.DistanceTo(Target) <= range.Value;
         }
     }
 }

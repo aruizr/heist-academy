@@ -21,12 +21,12 @@ namespace Player
 
         public void Select(GameObject o)
         {
-            o.Send<ISelectible>(selectible =>
+            o.Send<ISelectable>(selectable =>
             {
                 switch (_selection.Count)
                 {
                     case 0:
-                        selectible.Select();
+                        selectable.Select();
                         break;
                     case 1:
                         onMultipleSelection?.Invoke();
@@ -39,12 +39,12 @@ namespace Player
 
         public void Unselect(GameObject o)
         {
-            o.Send<ISelectible>(selectible =>
+            o.Send<ISelectable>(selectable =>
             {
                 if (_selection.Count == 0) return;
                 if (_selection.Peek().Equals(o))
                 {
-                    selectible.Unselect();
+                    selectable.Unselect();
                     _selection.Dequeue();
 
                     switch (_selection.Count)
@@ -56,7 +56,7 @@ namespace Player
                             break;
                     }
 
-                    _selection.Peek().Send<ISelectible>(s => s.Select());
+                    _selection.Peek().Send<ISelectable>(s => s.Select());
                     return;
                 }
 
@@ -69,14 +69,14 @@ namespace Player
         {
             if (_selection.Count == 0) return;
             var o = _selection.Peek();
-            o.Send<IInteractable>(interactable => interactable.Interact());
-            o.Send<IGrabbeable>(grabbeable => grabbeable.ToggleGrabDrop(handTransform));
+            o.Send<IInteractive>(interactable => interactable.Interact());
+            o.Send<IGrabbable>(grabbable => grabbable.ToggleGrabDrop(handTransform));
         }
 
         public void Throw()
         {
             if (_selection.Count == 0) return;
-            _selection.Peek().Send<IThroweable>(throweable =>
+            _selection.Peek().Send<IThrowable>(throwable =>
             {
                 var forward = playerTransform.forward;
                 var velocity = throwingVelocity.Value;
@@ -84,7 +84,7 @@ namespace Player
                 var y = velocity.y;
                 var z = forward.z * velocity.x;
                 var finalVelocity = new Vector3(x, y, z);
-                throweable.Throw(finalVelocity);
+                throwable.Throw(finalVelocity);
             });
         }
 
@@ -92,9 +92,9 @@ namespace Player
         {
             if (_selection.Count == 0) return;
             var o = _selection.Dequeue();
-            o.Send<ISelectible>(selectible => selectible.Unselect());
+            o.Send<ISelectable>(selectable => selectable.Unselect());
             _selection.Enqueue(o);
-            _selection.Peek().Send<ISelectible>(selectible => selectible.Select());
+            _selection.Peek().Send<ISelectable>(selectable => selectable.Select());
         }
     }
 }
