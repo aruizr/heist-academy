@@ -352,7 +352,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6510527847156030099}
   - component: {fileID: 7236292002260331918}
-  - component: {fileID: 3573362003339493893}
+  - component: {fileID: 6572895370875266367}
   m_Layer: 0
   m_Name: Vision
   m_TagString: Untagged
@@ -410,68 +410,24 @@ MonoBehaviour:
   onTargetUndetected:
     m_PersistentCalls:
       m_Calls: []
---- !u!108 &3573362003339493893
-Light:
+--- !u!114 &6572895370875266367
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4778616252161959768}
   m_Enabled: 1
-  serializedVersion: 10
-  m_Type: 0
-  m_Shape: 0
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_Intensity: 5
-  m_Range: 14
-  m_SpotAngle: 90
-  m_InnerSpotAngle: 9
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 1
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 4
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66586e0d4c2b4aae84c4c4c7ac83daba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visionCone: {fileID: 7236292002260331918}
+  color: {r: 1, g: 0.07060632, b: 0, a: 1}
+  innerRadius: 0
+  radiusSaturation: 10
+  fieldOfViewSaturation: 10
+  shaderObjectHeight: 8
 --- !u!1 &4872975485997438157
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,7 +589,7 @@ GameObject:
   - component: {fileID: 2658568945041879835}
   - component: {fileID: 3620622856994754650}
   - component: {fileID: 1473832421915059938}
-  - component: {fileID: 3868366459916340361}
+  - component: {fileID: 5102881469032291461}
   m_Layer: 0
   m_Name: Vision
   m_TagString: Untagged
@@ -812,68 +768,24 @@ MonoBehaviour:
   onTargetUndetected:
     m_PersistentCalls:
       m_Calls: []
---- !u!108 &3868366459916340361
-Light:
+--- !u!114 &5102881469032291461
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5856486126833869610}
   m_Enabled: 1
-  serializedVersion: 10
-  m_Type: 0
-  m_Shape: 0
-  m_Color: {r: 1, g: 0.4784314, b: 0, a: 1}
-  m_Intensity: 5
-  m_Range: 14
-  m_SpotAngle: 90
-  m_InnerSpotAngle: 9
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 1
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 4
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66586e0d4c2b4aae84c4c4c7ac83daba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visionCone: {fileID: 2658568945041879835}
+  color: {r: 1, g: 0.5396779, b: 0, a: 1}
+  innerRadius: 0
+  radiusSaturation: 10
+  fieldOfViewSaturation: 10
+  shaderObjectHeight: 8
 --- !u!1 &6086416028791902068
 GameObject:
   m_ObjectHideFlags: 0
@@ -924,14 +836,8 @@ MonoBehaviour:
     variableValue: {fileID: 11400000, guid: d64b8480b751a7e4d9492e1a85d5cbea, type: 2}
   rotationEase: 3
   surveillanceSteps:
-  - rotation:
-      useField: 1
-      fieldValue: {x: 50, y: 0, z: 0}
-      variableValue: {fileID: 0}
-    time:
-      useField: 1
-      fieldValue: 10
-      variableValue: {fileID: 0}
+  - rotation: {x: 0, y: 0, z: 0}
+    time: 0
 --- !u!1 &6269630955093448280
 GameObject:
   m_ObjectHideFlags: 0
@@ -1389,7 +1295,7 @@ GameObject:
   - component: {fileID: 8183620839539393597}
   - component: {fileID: 6631659123813795313}
   - component: {fileID: 4238211366019161386}
-  - component: {fileID: 8218394366859995681}
+  - component: {fileID: 1054688668980623520}
   m_Layer: 0
   m_Name: Vision
   m_TagString: Untagged
@@ -1508,68 +1414,24 @@ MonoBehaviour:
   onTargetUndetected:
     m_PersistentCalls:
       m_Calls: []
---- !u!108 &8218394366859995681
-Light:
+--- !u!114 &1054688668980623520
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8947849525347683467}
   m_Enabled: 1
-  serializedVersion: 10
-  m_Type: 0
-  m_Shape: 0
-  m_Color: {r: 1, g: 0.9197526, b: 0, a: 1}
-  m_Intensity: 5
-  m_Range: 14
-  m_SpotAngle: 90
-  m_InnerSpotAngle: 9
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 1
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 4
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66586e0d4c2b4aae84c4c4c7ac83daba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visionCone: {fileID: 6631659123813795313}
+  color: {r: 1, g: 1, b: 1, a: 1}
+  innerRadius: 0
+  radiusSaturation: 10
+  fieldOfViewSaturation: 10
+  shaderObjectHeight: 8
 --- !u!1 &9065449282294459522
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ using Variables;
 
 namespace Sensors
 {
+    [ExecuteAlways]
     public class VisionCone : MonoBehaviour
     {
         [SerializeField] private float distance;
@@ -25,6 +26,9 @@ namespace Sensors
         public readonly List<GameObject> VisibleObjects = new List<GameObject>();
 
         private Transform _transform;
+
+        public float Distance => distance;
+        public float FieldOfView => fieldOfView;
 
         private void Awake()
         {
@@ -52,14 +56,10 @@ namespace Sensors
 
         private void Scan()
         {
-            var scannedColliders = Physics.
-                OverlapSphere(_transform.position, distance, targetLayers.Value).
-                Where(IsValid).
-                ToArray();
-            
-            var scannedObjects = scannedColliders.
-                Select(coll => coll.gameObject).
-                ToArray();
+            var scannedColliders = Physics.OverlapSphere(_transform.position, distance, targetLayers.Value)
+                .Where(IsValid).ToArray();
+
+            var scannedObjects = scannedColliders.Select(coll => coll.gameObject).ToArray();
 
             for (var i = VisibleObjects.Count - 1; i >= 0; i--)
             {

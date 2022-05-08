@@ -40,14 +40,14 @@ Shader "Custom/Outline Fill" {
       #pragma vertex vert
       #pragma fragment frag
 
-      struct appdata {
+      struct vertex_shader_input {
         float4 vertex : POSITION;
         float3 normal : NORMAL;
         float3 smoothNormal : TEXCOORD3;
         UNITY_VERTEX_INPUT_INSTANCE_ID
       };
 
-      struct v2f {
+      struct vertex_shader_output {
         float4 position : SV_POSITION;
         fixed4 color : COLOR;
         UNITY_VERTEX_OUTPUT_STEREO
@@ -56,8 +56,8 @@ Shader "Custom/Outline Fill" {
       uniform fixed4 _OutlineColor;
       uniform float _OutlineWidth;
 
-      v2f vert(appdata input) {
-        v2f output;
+      vertex_shader_output vert(vertex_shader_input input) {
+        vertex_shader_output output;
 
         UNITY_SETUP_INSTANCE_ID(input);
         UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(output);
@@ -72,7 +72,7 @@ Shader "Custom/Outline Fill" {
         return output;
       }
 
-      fixed4 frag(v2f input) : SV_Target {
+      fixed4 frag(vertex_shader_output input) : SV_Target {
         return input.color;
       }
       ENDCG
