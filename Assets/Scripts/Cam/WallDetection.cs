@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using Codetox.Core;
 using Codetox.Variables;
+using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Localization.SmartFormat.PersistentVariables;
 using Variables;
+using FloatVariable = Codetox.Variables.FloatVariable;
+using IntVariable = Codetox.Variables.IntVariable;
 
 namespace Cam
 {
@@ -14,17 +18,18 @@ namespace Cam
     
         [Header("Player")] [SerializeField] private Vector3Variable currentPlayerPosition;
         [SerializeField] private FloatVariable distanceToPlayer;
-    
+
+        [Header("Transparent Sphere")] 
+        [SerializeField] private GameObject sphereGameObject;
+        [SerializeField] private IntVariable sphereMaxSize;
+        
         [Header("Environment")] 
-        [SerializeField] private LayerMaskVariable visibleLayerOnRayHit;
-        [SerializeField] private FloatVariable wallMaterialAlpha;
+        [SerializeField] private LayerMaskEnumVariable visibleLayerOnRayHit;
     
         private new Camera camera;
         private Transform cameraTransform;
         private Ray ray;
     
-        private readonly List<GameObject> objectsThatAreInvisible = new List<GameObject>();
-        private List<GameObject> objectsToMakeInvisible;
         // Start is called before the first frame update
         private void Start()
         {
@@ -36,6 +41,11 @@ namespace Cam
         // Update is called once per frame
         private void Update()
         {
+            sphereGameObject.transform.LookAt(cameraTransform);
+            var sphereRotation = sphereGameObject.transform.localEulerAngles;
+            sphereRotation.x += 90;
+            sphereGameObject.transform.localEulerAngles = sphereRotation;
+            
             var position = cameraTransform.position;
             //cameraTransform.DirectionTo(currentPlayerPosition.Value);
             Vector3 screenPos = camera.WorldToScreenPoint(currentPlayerPosition.Value);
@@ -44,51 +54,20 @@ namespace Cam
             Vector3 rayEndPoint = GetFinalPositionValue();
             Debug.DrawLine(position, rayEndPoint, Color.blue);
 
-            // ReSharper disable once Unity.PreferNonAllocApi
-            ObjectDetectionManagement(Physics.RaycastAll(ray, distanceToPlayer.Value));
-        }
-    
-        private void ObjectDetectionManagement(RaycastHit[] objectsHit)
-        {
-            var gameObjectsHit = new List<GameObject>();
-                
-            objectsToMakeInvisible = new List<GameObject>();
-            foreach (var raycastHit in objectsHit)
+            RaycastHit hit;
+            
+            if(Physics.Raycast (ray, out hit, distanceToPlayer.Value))
             {
-                var inspectedObject = raycastHit.transform.gameObject;
-                gameObjectsHit.Add(inspectedObject);
-                if (!inspectedObject.IsInLayerMask(visibleLayerOnRayHit.Value)) continue;
-                if (objectsThatAreInvisible.Contains(inspectedObject)) continue;
-                objectsThatAreInvisible.Add(inspectedObject);
-                objectsToMakeInvisible.Add(inspectedObject);
+                if (hit.collider.gameObject.IsInLayerMask(visibleLayerOnRayHit.Value))
+                {
+                    sphereGameObject.transform.DOScale(sphereMaxSize.Value, 0.5f);
+                }
+                else
+                {
+                    sphereGameObject.transform.DOScale(0f, 0.5f);
+                }
             }
-            DetectObjectsOut(objectsThatAreInvisible.Where(obj => !gameObjectsHit.Contains(obj)).ToList());
-        }
-    
-        private void DetectObjectsOut(IEnumerable<GameObject> objectsToEliminate)
-        {
-            foreach (var o in objectsToEliminate)
-            {
-                objectsThatAreInvisible.Remove(o);
-                Color color = o.GetComponent<Renderer>().material.color;
-                color.a += wallMaterialAlpha.Value;
-                o.GetComponent<Renderer>().material.color = color;
-            }
-        }
-
-        private void LateUpdate()
-        {
-            ManageObjectsToMakeInvisible();
-        }
-
-        private void ManageObjectsToMakeInvisible()
-        {
-            foreach (var o in objectsToMakeInvisible)
-            {
-                Color color = o.GetComponent<Renderer>().material.color;
-                color.a -= wallMaterialAlpha.Value;
-                o.GetComponent<Renderer>().material.color = color;
-            }
+            
         }
     
         private Vector3 GetFinalPositionValue()
