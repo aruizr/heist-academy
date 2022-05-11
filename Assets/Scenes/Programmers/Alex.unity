@@ -140,7 +140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1018530998528239112, guid: f2a32efc2e0cd0f4eaf6afb26c701c11, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.99999905
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1018530998528239112, guid: f2a32efc2e0cd0f4eaf6afb26c701c11, type: 3}
       propertyPath: m_LocalPosition.z
@@ -180,6 +180,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2a32efc2e0cd0f4eaf6afb26c701c11, type: 3}
+--- !u!1 &414141441 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 58570822453153564, guid: f2a32efc2e0cd0f4eaf6afb26c701c11, type: 3}
+  m_PrefabInstance: {fileID: 414141440}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &791442533
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -749,6 +754,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5524329988298909951, guid: 42da6c6730d06be469990bd4b39e1d13, type: 3}
+      propertyPath: sphereGameObject
+      value: 
+      objectReference: {fileID: 414141441}
     - target: {fileID: 5392421614472314781, guid: 42da6c6730d06be469990bd4b39e1d13, type: 3}
       propertyPath: m_RootOrder
       value: 8

@@ -24,7 +24,7 @@ namespace Cam
         [SerializeField] private IntVariable sphereMaxSize;
         
         [Header("Environment")] 
-        [SerializeField] private LayerMaskEnumVariable visibleLayerOnRayHit;
+        [SerializeField] private LayerMaskVariable visibleLayerOnRayHit;
     
         private new Camera camera;
         private Transform cameraTransform;
