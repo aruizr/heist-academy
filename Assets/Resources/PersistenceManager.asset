@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14b8f2a15f5b4b25ae99d19f9c198182, type: 3}
+  m_Name: PersistenceManager
+  m_EditorClassIdentifier: 
+  toPersist:
+  - {fileID: 11400000, guid: c5ab75431d900b141876084bd1885c9b, type: 2}
+  - {fileID: 11400000, guid: 0193d8913d0c71a4f973035c832e983a, type: 2}
+  - {fileID: 11400000, guid: 5ad3de6305ef80a4ba0368e3e2f6cce2, type: 2}
