@@ -218,6 +218,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &428902776 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 58570822453153564, guid: f2a32efc2e0cd0f4eaf6afb26c701c11, type: 3}
+  m_PrefabInstance: {fileID: 1977944842}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1128656514
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -225,6 +230,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5524329988298909951, guid: 42da6c6730d06be469990bd4b39e1d13, type: 3}
+      propertyPath: sphereMaxSize
+      value: 
+      objectReference: {fileID: 11400000, guid: 7c9d069ed469f5b42afe580bc40cbc96, type: 2}
+    - target: {fileID: -5524329988298909951, guid: 42da6c6730d06be469990bd4b39e1d13, type: 3}
+      propertyPath: sphereGameObject
+      value: 
+      objectReference: {fileID: 428902776}
+    - target: {fileID: -5524329988298909951, guid: 42da6c6730d06be469990bd4b39e1d13, type: 3}
+      propertyPath: resizeSpeed.m_Value
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5392421614472314781, guid: 42da6c6730d06be469990bd4b39e1d13, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -420,7 +437,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2acc937fe95cc8f43810e159c316c711, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -542,7 +559,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1018530998528239112, guid: f2a32efc2e0cd0f4eaf6afb26c701c11, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.19147253
+      value: 4.67
       objectReference: {fileID: 0}
     - target: {fileID: 1018530998528239112, guid: f2a32efc2e0cd0f4eaf6afb26c701c11, type: 3}
       propertyPath: m_LocalRotation.w
