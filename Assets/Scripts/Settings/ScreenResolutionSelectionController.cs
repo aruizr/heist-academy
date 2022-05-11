@@ -8,24 +8,15 @@ namespace Settings
 {
     public class ScreenResolutionSelectionController : MonoBehaviour
     {
+        private const string Key = "screen-resolution";
+        
         [SerializeField] private TMP_Dropdown dropdown;
-        [SerializeField] private IntVariable resolutionIndex;
 
         private void Awake()
         {
             var resolutions = Screen.resolutions.ToList();
             var resolutionStrings = Screen.resolutions.Select(res => $"{res.width} x {res.height}").ToList();
-            var resolutionsRange = new Range<int>(0, resolutions.Count);
-
-            if (resolutionsRange.IsInRange(resolutionIndex.Value))
-            {
-                var resolution = resolutions[resolutionIndex.Value];
-                Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreenMode);
-            }
-            else
-            {
-                resolutionIndex.Value = resolutions.IndexOf(Screen.currentResolution);
-            }
+            var index = PlayerPrefs.HasKey(Key) ? PlayerPrefs.GetInt(Key) : resolutions.IndexOf(Screen.currentResolution);
 
             dropdown.ClearOptions();
             dropdown.AddOptions(resolutionStrings);
