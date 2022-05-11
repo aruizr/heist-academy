@@ -5,16 +5,16 @@ namespace Interactions
 {
     public class Collectible : MonoBehaviour
     {
-        [SerializeField] private GameObjectRuntimeSet playerInventory;
+        [SerializeField] private GameObjectRuntimeSet inventory;
 
         private void OnDestroy()
         {
-            playerInventory.Remove(gameObject);
+            inventory.Remove(gameObject);
         }
 
         public void Collect()
         {
-            playerInventory.Add(gameObject);
+            inventory.Add(gameObject);
         }
     }
 }

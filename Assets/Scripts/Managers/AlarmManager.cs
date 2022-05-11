@@ -19,6 +19,14 @@ namespace Managers
             alertedEnemies.OnItemAdded += StartAlarm;
             alertedEnemies.OnItemRemoved += StopAlarm;
         }
+        
+        private void StartAlarm(GameObject obj)
+        {
+            if (_isAlarmStarted) return;
+            if (!alertedEnemies.Any()) return;
+            _isAlarmStarted = true;
+            onAlarmStarted?.Invoke();
+        }
 
         private void StopAlarm(GameObject obj)
         {
@@ -26,14 +34,6 @@ namespace Managers
             if (alertedEnemies.Any()) return;
             _isAlarmStarted = false;
             onAlarmStopped?.Invoke();
-        }
-
-        private void StartAlarm(GameObject obj)
-        {
-            if (_isAlarmStarted) return;
-            if (!alertedEnemies.Any()) return;
-            _isAlarmStarted = true;
-            onAlarmStarted?.Invoke();
         }
     }
 }

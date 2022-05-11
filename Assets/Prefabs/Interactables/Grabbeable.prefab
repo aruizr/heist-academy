@@ -129,8 +129,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetLayers:
-    serializedVersion: 2
-    m_Bits: 5184
+    useField: 0
+    fieldValue:
+      serializedVersion: 2
+      m_Bits: 0
+    variableValue: {fileID: 11400000, guid: b92e23cc1b491f446ab08bb1319c8ef3, type: 2}
   detectionStrategy: 0
   onEnter:
     m_PersistentCalls:
@@ -167,8 +170,11 @@ MonoBehaviour:
     fieldValue: 10
     variableValue: {fileID: 0}
   obstacleLayers:
-    serializedVersion: 2
-    m_Bits: 5184
+    useField: 0
+    fieldValue:
+      serializedVersion: 2
+      m_Bits: 0
+    variableValue: {fileID: 11400000, guid: 9bcb1e4be2a17d140b53e1c833258f7f, type: 2}
   gizmosColor: {r: 0, g: 0.5462053, b: 1, a: 1}
 --- !u!114 &6154437331656734775
 MonoBehaviour:

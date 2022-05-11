@@ -98,13 +98,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0430d3622ac5b46b8c74bcb78eac33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  positionOffset: {fileID: 11400000, guid: 3ecf1c18c36635349a11a03c097c1590, type: 2}
-  rotationOffset: {fileID: 11400000, guid: 2d5871b2edb5ba64081079318fb9c236, type: 2}
-  cameraType: {fileID: 11400000, guid: 3e990a81e6f103d4a933644a6befb62c, type: 2}
-  rotationSpeed: {fileID: 11400000, guid: cd3c906e8ad82044aa3985c3e5b47661, type: 2}
-  anglesPerStep: {fileID: 11400000, guid: dc47c05e533062a49a78648ba5298217, type: 2}
-  currentPlayerPosition: {fileID: 11400000, guid: cc95fedd6ea9e3747ac9bad73face292, type: 2}
-  distanceToPlayer: {fileID: 11400000, guid: fad7b9af4df95e94aa582efd262119cb, type: 2}
+  positionOffset:
+    useField: 0
+    fieldValue: {x: 0, y: 0, z: 0}
+    variableValue: {fileID: 11400000, guid: 3ecf1c18c36635349a11a03c097c1590, type: 2}
+  rotationOffset:
+    useField: 0
+    fieldValue: {x: 0, y: 0, z: 0}
+    variableValue: {fileID: 11400000, guid: 2d5871b2edb5ba64081079318fb9c236, type: 2}
+  rotationSpeed:
+    useField: 0
+    fieldValue: 0
+    variableValue: {fileID: 11400000, guid: cd3c906e8ad82044aa3985c3e5b47661, type: 2}
+  rotationSmoothTime:
+    useField: 0
+    fieldValue: 0
+    variableValue: {fileID: 11400000, guid: 7a17ffc9ceeae114989a9329da234d85, type: 2}
+  distanceToPlayer:
+    useField: 0
+    fieldValue: 0
+    variableValue: {fileID: 11400000, guid: fad7b9af4df95e94aa582efd262119cb, type: 2}
+  currentPlayerPosition:
+    useField: 0
+    fieldValue: {x: 0, y: 0, z: 0}
+    variableValue: {fileID: 11400000, guid: cc95fedd6ea9e3747ac9bad73face292, type: 2}
 --- !u!114 &4009653834610468697
 MonoBehaviour:
   m_ObjectHideFlags: 0

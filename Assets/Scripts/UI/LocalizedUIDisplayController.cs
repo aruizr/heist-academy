@@ -12,9 +12,5 @@ namespace UI
             localizeStringEvent.SetEntry(key);
             localizeStringEvent.gameObject.SetActive(true);
         }
-
-        public void HideByKey(string key)
-        {
-        }
     }
 }
