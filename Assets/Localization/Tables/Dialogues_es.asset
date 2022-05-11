@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Dialogues_es
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: es
+  m_SharedData: {fileID: 11400000, guid: b2cbd71095e31ee468fb694430985625, type: 2}
+  m_Metadata:
+    m_Items:
+    - id: 0
+  m_TableData:
+  - m_Id: 15589339136
+    m_Localized: Te han detectado
+    m_Metadata:
+      m_Items: []
+  - m_Id: 139028535078912
+    m_Localized: 'Alarmas activadas: {variable.Value}'
+    m_Metadata:
+      m_Items:
+      - id: 0
+  - m_Id: 146127180689408
+    m_Localized: 'Veces que te han oido los guardias: {variable.Value}'
+    m_Metadata:
+      m_Items:
+      - id: 0
+  - m_Id: 146767491526656
+    m_Localized: 'Veces que te han visto los guardias: {variable.Value}'
+    m_Metadata:
+      m_Items:
+      - id: 0
+  - m_Id: 146921749639168
+    m_Localized: 'Veces que te han visto las camaras: {variable.Value}'
+    m_Metadata:
+      m_Items:
+      - id: 0
+  - m_Id: 147787009388544
+    m_Localized: "Tiempo de misi\xF3n: {variable.Value}"
+    m_Metadata:
+      m_Items:
+      - id: 0
+  references:
+    version: 1
+    00000000:
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 0070721a727e00000070b2e2e6840000007032f87b8500000070b2e29f8500000070325869860000

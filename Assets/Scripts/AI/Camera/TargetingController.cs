@@ -1,6 +1,7 @@
 ﻿using Codetox.Core;
 using Codetox.GameEvents;
 using UnityEngine;
+using UnityEngine.Events;
 using Variables;
 
 namespace AI.Camera
@@ -8,40 +9,45 @@ namespace AI.Camera
     public class TargetingController : MonoBehaviour
     {
         [SerializeField] private Transform controlTransform;
+        [SerializeField] private ValueReference<float> range;
         [SerializeField] private ValueReference<float> rotationSpeed;
         [SerializeField] private GameObjectGameEvent playerDetectedEvent;
 
-        private GameObject _target;
+        public UnityEvent onTargetLost;
+
+        public GameObject Target { get; set; }
 
         private void Update()
         {
-            if (!_target) return;
+            if (!Target) return;
+            if (!IsTargetInRange())
+            {
+                onTargetLost?.Invoke();
+                return;
+            }
 
-            var directionToTarget = controlTransform.DirectionTo(_target);
-            var targetRotation = Quaternion.LookRotation(directionToTarget);
+            var directionToTarget = controlTransform.DirectionTo(Target);
+            var currentRotation = controlTransform.rotation;
+            var rotationToTarget = Quaternion.LookRotation(directionToTarget);
             var deltaDegrees = rotationSpeed.Value * Time.deltaTime;
 
-            controlTransform.rotation = Quaternion.RotateTowards(controlTransform.rotation, targetRotation, deltaDegrees);
+            controlTransform.rotation = Quaternion.RotateTowards(currentRotation, rotationToTarget, deltaDegrees);
         }
 
         private void OnDisable()
         {
-            StopLookingAtTarget();
+            Target = null;
         }
 
         public void PlayerDetected()
         {
-            if (playerDetectedEvent) playerDetectedEvent.Invoke(_target);
+            if (Target && playerDetectedEvent) playerDetectedEvent.Invoke(Target);
         }
 
-        public void StartLookingAtTarget(GameObject target)
+        private bool IsTargetInRange()
         {
-            _target = target;
-        }
-
-        public void StopLookingAtTarget()
-        {
-            _target = null;
+            if (range.Value <= 0) return true;
+            return controlTransform.DistanceTo(Target) <= range.Value;
         }
     }
 }

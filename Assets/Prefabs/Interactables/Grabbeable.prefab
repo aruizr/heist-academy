@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 271404973194847704}
   - component: {fileID: 271404973194847707}
   - component: {fileID: 271404973194847706}
-  - component: {fileID: 271404973194847709}
   - component: {fileID: 271404973194847708}
   - component: {fileID: 271404973194847711}
+  - component: {fileID: 6154437331656734775}
+  - component: {fileID: 5185889696736761523}
   m_Layer: 7
   m_Name: Grabbeable
   m_TagString: Untagged
@@ -115,98 +116,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &271404973194847709
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 271404973194847710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c27c88c64b0446bb81b7cfd5ccb73bfd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onSelected:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: bdb235ef24df22b49b28939ea735818e, type: 2}
-        m_TargetAssemblyTypeName: Codetox.GameEvents.GameEvent`1[[System.String,
-          mscorlib
-        m_MethodName: Invoke
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Grab (E)
-          m_BoolArgument: 0
-        m_CallState: 2
-  onUnselected:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 1f90e57818820a749bcff945cba9a8dd, type: 2}
-        m_TargetAssemblyTypeName: Codetox.GameEvents.VoidGameEvent, com.aruizrab.codetox
-        m_MethodName: Invoke
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  rigidbody: {fileID: 271404973194847706}
-  onGrabbed:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: bdb235ef24df22b49b28939ea735818e, type: 2}
-        m_TargetAssemblyTypeName: Codetox.GameEvents.GameEvent`1[[System.String,
-          mscorlib
-        m_MethodName: Invoke
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Drop (E) | Throw (Q)
-          m_BoolArgument: 0
-        m_CallState: 2
-  onDropped:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: bdb235ef24df22b49b28939ea735818e, type: 2}
-        m_TargetAssemblyTypeName: Codetox.GameEvents.GameEvent`1[[System.String,
-          mscorlib
-        m_MethodName: Invoke
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Grab (E)
-          m_BoolArgument: 0
-        m_CallState: 2
-  onThrown:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: bdb235ef24df22b49b28939ea735818e, type: 2}
-        m_TargetAssemblyTypeName: Codetox.GameEvents.GameEvent`1[[System.String,
-          mscorlib
-        m_MethodName: Invoke
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: YEET
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &271404973194847708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,8 +129,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetLayers:
-    serializedVersion: 2
-    m_Bits: 5184
+    useField: 0
+    fieldValue:
+      serializedVersion: 2
+      m_Bits: 0
+    variableValue: {fileID: 11400000, guid: b92e23cc1b491f446ab08bb1319c8ef3, type: 2}
   detectionStrategy: 0
   onEnter:
     m_PersistentCalls:
@@ -258,6 +170,218 @@ MonoBehaviour:
     fieldValue: 10
     variableValue: {fileID: 0}
   obstacleLayers:
-    serializedVersion: 2
-    m_Bits: 5184
+    useField: 0
+    fieldValue:
+      serializedVersion: 2
+      m_Bits: 0
+    variableValue: {fileID: 11400000, guid: 9bcb1e4be2a17d140b53e1c833258f7f, type: 2}
   gizmosColor: {r: 0, g: 0.5462053, b: 1, a: 1}
+--- !u!114 &6154437331656734775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271404973194847710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ce3627ffe0c4f028844a400ac3cdd63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onSelected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5185889696736761523}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 6e924807c788aee44b33323a6634b853, type: 2}
+        m_TargetAssemblyTypeName: Codetox.GameEvents.GameEvent`1[[System.String,
+          mscorlib
+        m_MethodName: Invoke
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: grabbeable_grab
+          m_BoolArgument: 1
+        m_CallState: 2
+  onUnselected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5185889696736761523}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 2965df58db4c42c4ab3b53b332df6506, type: 2}
+        m_TargetAssemblyTypeName: Codetox.GameEvents.VoidGameEvent, com.aruizrab.codetox
+        m_MethodName: Invoke
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 8014c824c0e70b342a54619817d5d286, type: 2}
+        m_TargetAssemblyTypeName: Codetox.GameEvents.VoidGameEvent, com.aruizrab.codetox
+        m_MethodName: Invoke
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  rigidbody: {fileID: 271404973194847706}
+  onGrabbed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 6e924807c788aee44b33323a6634b853, type: 2}
+        m_TargetAssemblyTypeName: Codetox.GameEvents.GameEvent`1[[System.String,
+          mscorlib
+        m_MethodName: Invoke
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: grabbeable_drop
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: d18fe0efaf2d132428438ca01e3a63ea, type: 2}
+        m_TargetAssemblyTypeName: Codetox.GameEvents.GameEvent`1[[System.String,
+          mscorlib
+        m_MethodName: Invoke
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: grabbeable_throw
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDropped:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 6e924807c788aee44b33323a6634b853, type: 2}
+        m_TargetAssemblyTypeName: Codetox.GameEvents.GameEvent`1[[System.String,
+          mscorlib
+        m_MethodName: Invoke
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: grabbeable_grab
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 8014c824c0e70b342a54619817d5d286, type: 2}
+        m_TargetAssemblyTypeName: Codetox.GameEvents.VoidGameEvent, com.aruizrab.codetox
+        m_MethodName: Invoke
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: grabbeable_throw
+          m_BoolArgument: 0
+        m_CallState: 2
+  onThrown:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 6e924807c788aee44b33323a6634b853, type: 2}
+        m_TargetAssemblyTypeName: Codetox.GameEvents.GameEvent`1[[System.String,
+          mscorlib
+        m_MethodName: Invoke
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: grabbeable_grab
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 8014c824c0e70b342a54619817d5d286, type: 2}
+        m_TargetAssemblyTypeName: Codetox.GameEvents.VoidGameEvent, com.aruizrab.codetox
+        m_MethodName: Invoke
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: grabbeable_throw
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5185889696736761523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271404973194847710}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 6
+  precomputeOutline: 1
+  bakeKeys:
+  - {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  bakeValues:
+  - data:
+    - {x: 0.57735026, y: -0.57735026, z: 0.57735026}
+    - {x: -0.57735026, y: -0.57735026, z: 0.57735026}
+    - {x: 0.57735026, y: 0.57735026, z: 0.57735026}
+    - {x: -0.57735026, y: 0.57735026, z: 0.57735026}
+    - {x: 0.57735026, y: 0.57735026, z: -0.57735026}
+    - {x: -0.57735026, y: 0.57735026, z: -0.57735026}
+    - {x: 0.57735026, y: -0.57735026, z: -0.57735026}
+    - {x: -0.57735026, y: -0.57735026, z: -0.57735026}
+    - {x: 0.57735026, y: 0.57735026, z: 0.57735026}
+    - {x: -0.57735026, y: 0.57735026, z: 0.57735026}
+    - {x: 0.57735026, y: 0.57735026, z: -0.57735026}
+    - {x: -0.57735026, y: 0.57735026, z: -0.57735026}
+    - {x: 0.57735026, y: -0.57735026, z: -0.57735026}
+    - {x: 0.57735026, y: -0.57735026, z: 0.57735026}
+    - {x: -0.57735026, y: -0.57735026, z: 0.57735026}
+    - {x: -0.57735026, y: -0.57735026, z: -0.57735026}
+    - {x: -0.57735026, y: -0.57735026, z: 0.57735026}
+    - {x: -0.57735026, y: 0.57735026, z: 0.57735026}
+    - {x: -0.57735026, y: 0.57735026, z: -0.57735026}
+    - {x: -0.57735026, y: -0.57735026, z: -0.57735026}
+    - {x: 0.57735026, y: -0.57735026, z: -0.57735026}
+    - {x: 0.57735026, y: 0.57735026, z: -0.57735026}
+    - {x: 0.57735026, y: 0.57735026, z: 0.57735026}
+    - {x: 0.57735026, y: -0.57735026, z: 0.57735026}

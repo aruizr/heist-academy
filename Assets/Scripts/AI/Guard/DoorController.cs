@@ -1,5 +1,5 @@
-﻿using Codetox.Messaging;
-using Codetox.Core;
+﻿using Codetox.Core;
+using Codetox.Messaging;
 using Interactions;
 using UnityEngine;
 using UnityEngine.AI;
@@ -10,9 +10,7 @@ namespace AI.Guard
     public class DoorController : MonoBehaviour
     {
         [SerializeField] private NavMeshAgent navMeshAgent;
-        [SerializeField] private ValueReference<float> closingTime;
-
-        private Door _current;
+        [SerializeField] private ValueReference<float> closeDoorDelay;
 
         public void OpenDoor(GameObject target)
         {
@@ -23,27 +21,28 @@ namespace AI.Guard
         {
             target.Send<Door>(CloseDoor, MessageScope.Parents);
         }
-
-        private void CloseDoor(Door door)
-        {
-            if (!door.IsOpen) return;
-            this.Coroutine().WaitForSeconds(closingTime.Value).Invoke(door.Close).Run();
-        }
-
+        
         public void OpenDoor(Door door)
         {
             if (door.IsOpen) return;
-            _current = door;
             navMeshAgent.isStopped = true;
-            _current.Open();
-            _current.onFinishOpening.AddListener(OnDoorFinishedOpening);
+            door.ForceOpen();
+            door.onFinishedOpening.AddListener(() => OnDoorFinishedOpening(door));
         }
 
-        private void OnDoorFinishedOpening()
+        private void CloseDoor(Door door)
+        {
+            door.gameObject.
+                Coroutine().
+                WaitForSeconds(closeDoorDelay.Value).
+                Invoke(() => { if (door.IsOpen) door.Close(); }).
+                Run();
+        }
+
+        private void OnDoorFinishedOpening(Door door)
         {
             navMeshAgent.isStopped = false;
-            _current.onFinishOpening.RemoveListener(OnDoorFinishedOpening);
-            _current = null;
+            door.onFinishedOpening.RemoveListener(() => OnDoorFinishedOpening(door));
         }
     }
 }
