@@ -1,24 +1,36 @@
-﻿using Codetox.Variables;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+using Utilities;
 
 namespace Settings
 {
     public class VSyncController : MonoBehaviour
     {
-        [SerializeField] private Toggle toggle;
-        [SerializeField] private BoolVariable vSync;
+        private const string Key = "v-sync";
 
-        private void Awake()
+        [SerializeField] private Toggle toggle;
+
+        private void Start()
         {
-            QualitySettings.vSyncCount = vSync.Value ? 1 : 0;
-            toggle.isOn = vSync.Value;
+            if (!PlayerPrefs.HasKey(Key))
+            {
+                toggle.isOn = QualitySettings.vSyncCount.ToBool();
+                return;
+            }
+
+            var value = PlayerPrefs.GetInt(Key);
+
+            QualitySettings.vSyncCount = value;
+            toggle.isOn = value.ToBool();
         }
 
-        public void SetVSync(bool value)
+        public void SetVSync(bool active)
         {
-            vSync.Value = value;
-            QualitySettings.vSyncCount = value ? 1 : 0;
+            var value = active.ToInt();
+
+            QualitySettings.vSyncCount = value;
+            PlayerPrefs.SetInt(Key, value);
+            PlayerPrefs.Save();
         }
     }
 }

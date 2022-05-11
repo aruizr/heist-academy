@@ -2,44 +2,48 @@
 using System.Linq;
 using TMPro;
 using UnityEngine;
-using Variables;
 
 namespace Settings
 {
     public class WindowModeSelectionController : MonoBehaviour
     {
-        private const string WindowModeKey = "Window Mode";
-        
-        [SerializeField] private TMP_Dropdown dropdown;
-        [SerializeField] private WindowModeEnumVariable windowMode;
+        private const string Key = "window-mode";
 
-        private readonly Dictionary<FullScreenMode, string> _screenModeNames = new Dictionary<FullScreenMode, string>
+        private static readonly List<string> ScreenModeNames = new List<string>
         {
-            {FullScreenMode.ExclusiveFullScreen, "Full screen"},
-            {FullScreenMode.FullScreenWindow, "Borderless full screen"},
-            {FullScreenMode.MaximizedWindow, "Maximized window"},
-            {FullScreenMode.Windowed, "Windowed"}
+            "Full screen", "Borderless full screen", "Maximized window", "Windowed"
         };
 
-        private void Awake()
+        private static readonly List<FullScreenMode> ScreenModes = new List<FullScreenMode>
         {
-            var windowModeNames = _screenModeNames.Values.ToList();
-            var currentWindowModeName = _screenModeNames[windowMode.Value];
-            var currentWindowModeIndex = windowModeNames.IndexOf(currentWindowModeName);
+            FullScreenMode.ExclusiveFullScreen, FullScreenMode.FullScreenWindow, FullScreenMode.MaximizedWindow,
+            FullScreenMode.Windowed
+        };
 
+        [SerializeField] private TMP_Dropdown dropdown;
+
+        private void Start()
+        {
             dropdown.ClearOptions();
-            dropdown.AddOptions(windowModeNames);
-            dropdown.value = currentWindowModeIndex;
-            Screen.fullScreenMode = windowMode.Value;
+            dropdown.AddOptions(ScreenModeNames.ToList());
+
+            if (!PlayerPrefs.HasKey(Key))
+            {
+                dropdown.value = ScreenModes.IndexOf(Screen.fullScreenMode);
+                return;
+            }
+
+            var index = PlayerPrefs.GetInt(Key);
+
+            Screen.fullScreenMode = ScreenModes[index];
+            dropdown.value = index;
         }
 
         public void SetWindowMode(int index)
         {
-            var selectedWindowModeName = dropdown.options[index].text;
-            var selectedWindowMode = _screenModeNames.First(pair => pair.Value == selectedWindowModeName).Key;
-            
-            Screen.fullScreenMode = selectedWindowMode;
-            windowMode.Value = selectedWindowMode;
+            Screen.fullScreenMode = ScreenModes[index];
+            PlayerPrefs.SetInt(Key, index);
+            PlayerPrefs.Save();
         }
     }
 }
