@@ -45,7 +45,7 @@ namespace Cam
             var sphereRotation = sphereGameObject.transform.localEulerAngles;
             sphereRotation.x += 90;
             sphereGameObject.transform.localEulerAngles = sphereRotation;
-            
+
             var position = cameraTransform.position;
             //cameraTransform.DirectionTo(currentPlayerPosition.Value);
             Vector3 screenPos = camera.WorldToScreenPoint(currentPlayerPosition.Value);
@@ -53,6 +53,8 @@ namespace Cam
 
             Vector3 rayEndPoint = GetFinalPositionValue();
             Debug.DrawLine(position, rayEndPoint, Color.blue);
+
+            sphereGameObject.transform.position = rayEndPoint;
 
             RaycastHit hit;
             
