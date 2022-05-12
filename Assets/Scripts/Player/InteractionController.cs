@@ -21,7 +21,6 @@ namespace Player
 
         public void Select(GameObject o)
         {
-            if (_selection.Contains(o)) return;
             o.Send<ISelectable>(selectable =>
             {
                 switch (_selection.Count)
@@ -40,10 +39,6 @@ namespace Player
 
         public void Unselect(GameObject o)
         {
-            var grabbable = o.GetComponentInChildren<IGrabbable>();
-
-            if (grabbable.IsGrabbed) return;
-
             o.Send<ISelectable>(selectable =>
             {
                 if (_selection.Count == 0) return;

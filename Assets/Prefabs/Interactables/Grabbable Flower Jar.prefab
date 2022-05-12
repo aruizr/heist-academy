@@ -265,6 +265,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grabbable Flower Jar
       objectReference: {fileID: 0}
+    - target: {fileID: 6154437331656734775, guid: 0b5d7753afb61e84195a4e89e8c98ad2, type: 3}
+      propertyPath: rotationOffset.fieldValue.x
+      value: 90
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 271404973194847705, guid: 0b5d7753afb61e84195a4e89e8c98ad2, type: 3}
     - {fileID: 271404973194847704, guid: 0b5d7753afb61e84195a4e89e8c98ad2, type: 3}
@@ -314,7 +318,7 @@ MonoBehaviour:
   rigidbody: {fileID: 8310274256398218039}
   minVelocity:
     useField: 1
-    fieldValue: 0.25
+    fieldValue: 1
     variableValue: {fileID: 0}
   shards:
   - {fileID: 807375188542840230}

@@ -1,59 +1,60 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
+using Variables;
 
 namespace Interactions
 {
     public class Grabbable : Selectable, IGrabbable, IThrowable
     {
         [SerializeField] private new Rigidbody rigidbody;
+        [SerializeField] private ValueReference<Vector3> rotationOffset;
 
         public UnityEvent onGrabbed;
         public UnityEvent onDropped;
         public UnityEvent onThrown;
 
-        private bool _isGrabbed;
         private Transform _toFollow;
-
-        public bool IsGrabbed => _isGrabbed;
 
         private void FixedUpdate()
         {
             if (!_toFollow) return;
             rigidbody.MovePosition(_toFollow.position);
-            rigidbody.MoveRotation(_toFollow.rotation);
+            rigidbody.MoveRotation(Quaternion.Euler(_toFollow.eulerAngles + rotationOffset.Value));
         }
+
+        public bool IsGrabbed { get; private set; }
 
         public void ToggleGrabDrop(Transform parent)
         {
-            if (_isGrabbed) Drop();
+            if (IsGrabbed) Drop();
             else Grab(parent);
         }
 
         public void Throw(Vector3 velocity)
         {
-            if (!_isGrabbed) return;
+            if (!IsGrabbed) return;
             _toFollow = null;
             rigidbody.isKinematic = false;
             rigidbody.velocity += velocity;
-            _isGrabbed = false;
+            IsGrabbed = false;
             onThrown?.Invoke();
         }
 
         private void Grab(Transform parent)
         {
-            if (_isGrabbed) return;
+            if (IsGrabbed) return;
             _toFollow = parent;
             rigidbody.isKinematic = true;
-            _isGrabbed = true;
+            IsGrabbed = true;
             onGrabbed?.Invoke();
         }
 
         private void Drop()
         {
-            if (!_isGrabbed) return;
+            if (!IsGrabbed) return;
             _toFollow = null;
             rigidbody.isKinematic = false;
-            _isGrabbed = false;
+            IsGrabbed = false;
             onDropped?.Invoke();
         }
 
