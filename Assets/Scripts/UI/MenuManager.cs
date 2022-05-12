@@ -8,9 +8,12 @@ public class MenuManager : MonoBehaviour
 {
     [SerializeField] private string sceneName;
 
-    [Header("Settings")] 
-    [SerializeField] private Slider volumeSlider;
+    [Header("Sound Settings")] 
+    [SerializeField] private Slider generalVolumeSlider;
+    [SerializeField] private Slider musicVolumeSlider; 
+    [SerializeField] private Slider sfxVolumeSlider;
     [SerializeField] private float defaultVolume = 0.5f;
+
     
     [SerializeField] private Slider sensitivitySlider;
     [SerializeField] private int defaultSensibility = 4;
@@ -33,17 +36,18 @@ public class MenuManager : MonoBehaviour
 
     public void SetVolume()
     {
-        AudioListener.volume = volumeSlider.value;
+        AudioListener.volume = generalVolumeSlider.value;
         PlayerPrefs.SetFloat("masterVolume", AudioListener.volume);
-        Debug.Log($"Player prefs master volume is: {PlayerPrefs.GetFloat("masterVolume")}");
     }
 
     public void ResetVolume()
     {
         AudioListener.volume = defaultVolume;
         PlayerPrefs.SetFloat("masterVolume", AudioListener.volume);
-        Debug.Log($"Player prefs master volume is: {PlayerPrefs.GetFloat("masterVolume")}");
-        volumeSlider.value = defaultVolume;
+
+        generalVolumeSlider.value = defaultVolume;
+        musicVolumeSlider.value = defaultVolume;
+        sfxVolumeSlider.value = defaultVolume;
     }
 
     public void SetControllerSensitivity()
