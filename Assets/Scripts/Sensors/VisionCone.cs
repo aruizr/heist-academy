@@ -8,7 +8,6 @@ using Variables;
 
 namespace Sensors
 {
-    [ExecuteAlways]
     public class VisionCone : MonoBehaviour
     {
         [SerializeField] private float distance;

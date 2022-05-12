@@ -1300,7 +1300,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8151355960877791297}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4514973930265537994}
@@ -1320,8 +1320,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visionCone: {fileID: 3010505073936525493}
   color: {r: 1, g: 1, b: 1, a: 1}
-  innerRadius: 0.1
-  radiusSaturation: 6
+  innerRadius: 0
+  radiusSaturation: 8
   fieldOfViewSaturation: 10
   shaderObjectHeight: 4
 --- !u!1 &8308287821673316956
@@ -1349,7 +1349,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8308287821673316956}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6293183757059184388}
@@ -1369,8 +1369,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visionCone: {fileID: 6717043720852165409}
   color: {r: 1, g: 1, b: 1, a: 1}
-  innerRadius: 0.1
-  radiusSaturation: 6
+  innerRadius: 0
+  radiusSaturation: 8
   fieldOfViewSaturation: 10
   shaderObjectHeight: 4
 --- !u!1 &8536744814030615073

@@ -18,5 +18,10 @@ namespace Utilities
         {
             Debug.Log(message);
         }
+        
+        public void Log(int message)
+        {
+            Debug.Log(message);
+        }
     }
 }
