@@ -1785,6 +1785,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6027618489745174689, guid: 21a32665f9b804bba96f45be40ef537a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 722
+      objectReference: {fileID: 0}
     - target: {fileID: 6027618489912427829, guid: 21a32665f9b804bba96f45be40ef537a, type: 3}
       propertyPath: m_Name
       value: InGame UI
@@ -1832,6 +1836,22 @@ PrefabInstance:
     - target: {fileID: 6027618489912427830, guid: 21a32665f9b804bba96f45be40ef537a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6027618490263050744, guid: 21a32665f9b804bba96f45be40ef537a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6027618490263050745, guid: 21a32665f9b804bba96f45be40ef537a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 851
+      objectReference: {fileID: 0}
+    - target: {fileID: 6027618490391575850, guid: 21a32665f9b804bba96f45be40ef537a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 722
+      objectReference: {fileID: 0}
+    - target: {fileID: 6027618490664891490, guid: 21a32665f9b804bba96f45be40ef537a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 591
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21a32665f9b804bba96f45be40ef537a, type: 3}
