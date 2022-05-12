@@ -40,12 +40,20 @@ namespace Interactions
 
         public void Open()
         {
-            if (isLocked && !inventory.Contains(unlockedBy))
+            if (!isLocked)
+            {
+                ForceOpen();
+                return;
+            }
+
+            if (!inventory.Contains(unlockedBy))
             {
                 onLocked?.Invoke();
                 return;
             }
 
+            inventory.Remove(unlockedBy);
+            isLocked = false;
             ForceOpen();
         }
 
