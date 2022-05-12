@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6898753946280328801}
   - component: {fileID: 7499223167510245828}
   - component: {fileID: 5761899378998707470}
+  - component: {fileID: 840339194046001798}
   m_Layer: 0
   m_Name: BastidorUnidad
   m_TagString: Untagged
@@ -81,3 +82,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &840339194046001798
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6122252839078896859}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2893039221907779070, guid: 4fc18d67479737940a7d436d29486768, type: 3}
