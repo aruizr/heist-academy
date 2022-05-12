@@ -14,6 +14,8 @@ namespace Interactions
         private bool _isGrabbed;
         private Transform _toFollow;
 
+        public bool IsGrabbed => _isGrabbed;
+
         private void FixedUpdate()
         {
             if (!_toFollow) return;
