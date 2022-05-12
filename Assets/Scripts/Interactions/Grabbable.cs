@@ -12,13 +12,7 @@ namespace Interactions
         public UnityEvent onThrown;
 
         private bool _isGrabbed;
-        private bool _isKinematic;
         private Transform _toFollow;
-
-        private void Awake()
-        {
-            _isKinematic = rigidbody.isKinematic;
-        }
 
         private void FixedUpdate()
         {
@@ -37,7 +31,7 @@ namespace Interactions
         {
             if (!_isGrabbed) return;
             _toFollow = null;
-            rigidbody.isKinematic = _isKinematic;
+            rigidbody.isKinematic = false;
             rigidbody.velocity += velocity;
             _isGrabbed = false;
             onThrown?.Invoke();
@@ -56,7 +50,7 @@ namespace Interactions
         {
             if (!_isGrabbed) return;
             _toFollow = null;
-            rigidbody.isKinematic = _isKinematic;
+            rigidbody.isKinematic = false;
             _isGrabbed = false;
             onDropped?.Invoke();
         }
