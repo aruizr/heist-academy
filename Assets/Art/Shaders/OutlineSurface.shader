@@ -14,7 +14,7 @@ Shader "HeistAcademy/OutlineSurface"
         
         // OUTLINE PASS PROPERTIES
         _OutColor("Outline Color", Color) = (0, 0, 0, 1) // Outline color
-        _OutValue("Outline Value", Range(0, .1)) = 0.006 // Amount to extrude the outline mesh
+        _OutValue("Outline Value", Range(0, .01)) = 0.006 // Amount to extrude the outline mesh
     }
     SubShader
     {
