@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Audio;
 
 namespace Utilities
 {
@@ -28,6 +30,22 @@ namespace Utilities
             while (true)
                 foreach (var item in enumerable)
                     yield return item;
+        }
+
+        public static void SetVolume(this AudioMixer mixer, string parameterName, float percentage)
+        {
+            if (percentage < 0 || percentage > 100) throw new ArgumentOutOfRangeException(nameof(percentage));
+            mixer.SetFloat(parameterName, Mathf.Log10(percentage / 100) * 20);
+        }
+        
+        public static int ToInt(this bool value)
+        {
+            return value ? 1 : 0;
+        }
+        
+        public static bool ToBool(this int value)
+        {
+            return value != 0;
         }
     }
 }
