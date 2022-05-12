@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 632164952844678367}
   - component: {fileID: 4569532089557138298}
   - component: {fileID: 1769574287898693552}
+  - component: {fileID: 3085567001348212365}
   m_Layer: 0
   m_Name: Joya
   m_TagString: Untagged
@@ -81,3 +82,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3085567001348212365
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256201603633278565}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0005587552, y: 0.00079864135, z: 0.0012278944}
+  m_Center: {x: 0.0000016005505, y: 3.395893e-12, z: -0.000113947244}
