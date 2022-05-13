@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6663275460496695031}
   - component: {fileID: 7770800830352232786}
   - component: {fileID: 5490901037875488152}
+  - component: {fileID: 1979609787923794254}
   m_Layer: 0
   m_Name: Wall_3x4 Azul
   m_TagString: Untagged
@@ -81,3 +82,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1979609787923794254
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6283477053862560845}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 3.0000005, z: 4.048298}
+  m_Center: {x: 0, y: 0, z: 2.024149}
