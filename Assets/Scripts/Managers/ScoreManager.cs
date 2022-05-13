@@ -29,6 +29,7 @@ namespace Managers
             guardSoundAlertCount.Value = 0;
             guardSightAlertCount.Value = 0;
             cameraSightAlertCount.Value = 0;
+            _timeCounter = 0;
             optionalObjectInventory.Clear();
         }
 
@@ -60,6 +61,11 @@ namespace Managers
         public void StartLevelTimeCounter()
         {
             _timeCounter = 0f;
+            _isTimeCounting = true;
+        }
+        
+        public void ResumeLevelTimeCounter()
+        {
             _isTimeCounting = true;
         }
 

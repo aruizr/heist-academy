@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using Codetox.Attributes;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace FSM
 {
@@ -9,6 +10,13 @@ namespace FSM
         [SerializeField] private State initialState;
         [Disabled] [SerializeField] private State currentState;
         [SerializeField] private State[] states;
+
+        public UnityEvent onInitialize;
+
+        private void Start()
+        {
+            onInitialize?.Invoke();
+        }
 
         private void OnEnable()
         {

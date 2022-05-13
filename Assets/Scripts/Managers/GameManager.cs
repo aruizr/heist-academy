@@ -11,6 +11,11 @@ namespace Managers
             SceneManager.LoadScene(scene.name);
         }
 
+        public void SwitchToScene(string sceneName)
+        {
+            SceneManager.LoadScene(sceneName);
+        }
+
         public void PauseGame()
         {
             Time.timeScale = 0;
