@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using MyBox;
+using PropertyAnimators;
 using RuntimeSets;
 using UnityEngine;
 using UnityEngine.Events;
@@ -7,9 +8,9 @@ using Utilities;
 
 namespace Interactions
 {
-    public class Door : MonoBehaviour, IDoor, ISwitch
+    public class Door : MonoBehaviour, IDoor, ITogglable
     {
-        [SerializeField] private PropertyTweener<Transform, Vector3> tweener;
+        [SerializeField] private PropertyAnimator<Transform, Vector3> animator;
         [SerializeField] private bool isLocked;
 
         [SerializeField] [ConditionalField(nameof(isLocked))]
@@ -17,7 +18,7 @@ namespace Interactions
 
         [SerializeField] [ConditionalField(nameof(isLocked))]
         private GameObjectRuntimeSet inventory;
-        
+
         public UnityEvent onStartedOpening;
         public UnityEvent onFinishedOpening;
         public UnityEvent onStartedClosing;
@@ -27,24 +28,32 @@ namespace Interactions
 
         private void OnEnable()
         {
-            tweener.onComplete.AddListener(OnComplete);
+            animator.onComplete.AddListener(OnComplete);
         }
 
         private void OnDisable()
         {
-            tweener.onComplete.RemoveListener(OnComplete);
+            animator.onComplete.RemoveListener(OnComplete);
         }
 
         public bool IsOpen { get; private set; }
 
         public void Open()
         {
-            if (isLocked && !inventory.Contains(unlockedBy))
+            if (!isLocked)
+            {
+                ForceOpen();
+                return;
+            }
+
+            if (!inventory.Contains(unlockedBy))
             {
                 onLocked?.Invoke();
                 return;
             }
 
+            inventory.Remove(unlockedBy);
+            isLocked = false;
             ForceOpen();
         }
 

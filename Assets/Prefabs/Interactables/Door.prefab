@@ -147,7 +147,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3305710616621993619
 Transform:
   m_ObjectHideFlags: 0
@@ -160,7 +160,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2.5, z: 0.25}
   m_Children: []
   m_Father: {fileID: 6423743437548706994}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3305710616621993646
 MeshFilter:
@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21a632cccf2b4116b09ffa5e3b602f74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tweener: {fileID: 2843709377925432669}
+  animator: {fileID: 2843709377925432669}
   isLocked: 0
   unlockedBy: {fileID: 0}
   inventory: {fileID: 0}
@@ -362,9 +362,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onFinishedOpening:
-    m_PersistentCalls:
-      m_Calls:
       - m_Target: {fileID: 3597346128699829301}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -377,6 +374,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  onFinishedOpening:
+    m_PersistentCalls:
+      m_Calls: []
   onStartedClosing:
     m_PersistentCalls:
       m_Calls:
@@ -405,9 +405,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onFinishedClosing:
-    m_PersistentCalls:
-      m_Calls:
       - m_Target: {fileID: 1210420382137631723}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -420,6 +417,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  onFinishedClosing:
+    m_PersistentCalls:
+      m_Calls: []
   onLocked:
     m_PersistentCalls:
       m_Calls: []
@@ -578,6 +578,7 @@ Transform:
   m_LocalPosition: {x: -1, y: 1.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 4623126193805004685}
   - {fileID: 3305710616621993619}
   m_Father: {fileID: 3305710618113340715}
   m_RootOrder: 2
@@ -604,3 +605,103 @@ MonoBehaviour:
   onComplete:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1001 &5161720808077289574
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6423743437548706994}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 24a1bf2d8ebbc214485c5d151e0e6a27, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24a1bf2d8ebbc214485c5d151e0e6a27, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2766107
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24a1bf2d8ebbc214485c5d151e0e6a27, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.6456177
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24a1bf2d8ebbc214485c5d151e0e6a27, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.22
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24a1bf2d8ebbc214485c5d151e0e6a27, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24a1bf2d8ebbc214485c5d151e0e6a27, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24a1bf2d8ebbc214485c5d151e0e6a27, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24a1bf2d8ebbc214485c5d151e0e6a27, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24a1bf2d8ebbc214485c5d151e0e6a27, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24a1bf2d8ebbc214485c5d151e0e6a27, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24a1bf2d8ebbc214485c5d151e0e6a27, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 24a1bf2d8ebbc214485c5d151e0e6a27, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 24a1bf2d8ebbc214485c5d151e0e6a27, type: 3}
+      propertyPath: m_Name
+      value: Door
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 24a1bf2d8ebbc214485c5d151e0e6a27, type: 3}
+--- !u!1 &5432313582731482423 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 24a1bf2d8ebbc214485c5d151e0e6a27, type: 3}
+  m_PrefabInstance: {fileID: 5161720808077289574}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4623126193805004685 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 24a1bf2d8ebbc214485c5d151e0e6a27, type: 3}
+  m_PrefabInstance: {fileID: 5161720808077289574}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &3266557222807678944
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5432313582731482423}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.10000001, y: 1.1894646, z: 2.5}
+  m_Center: {x: -0.0000000018626451, y: -0.49017686, z: 1.25}
+--- !u!208 &1945608378455521408
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5432313582731482423}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.05, y: 0.595, z: 1.25}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.49, z: 1.25}
+  m_TimeToStationary: 0.5

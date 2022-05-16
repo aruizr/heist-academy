@@ -39,6 +39,10 @@ PrefabInstance:
       propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3305710616621993618, guid: 1f767cc0a62cb4343bc629afa03f3a29, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3305710618113340713, guid: 1f767cc0a62cb4343bc629afa03f3a29, type: 3}
       propertyPath: m_Name
       value: Locked Door
@@ -222,6 +226,10 @@ PrefabInstance:
     - target: {fileID: 4252665654564335098, guid: 1f767cc0a62cb4343bc629afa03f3a29, type: 3}
       propertyPath: onUnselected.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5432313582731482423, guid: 1f767cc0a62cb4343bc629afa03f3a29, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f767cc0a62cb4343bc629afa03f3a29, type: 3}

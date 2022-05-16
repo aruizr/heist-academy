@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 namespace Interactions
 {
-    public class Switch : MonoBehaviour, ISwitch
+    public class Switch : MonoBehaviour, ITogglable
     {
         public UnityEvent onActivated;
         public UnityEvent onDeactivated;

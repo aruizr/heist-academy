@@ -17,8 +17,9 @@ namespace Player
         {
             var currentHorizontalVelocity = GetCurrentHorizontalVelocity();
             var targetHorizontalVelocity = GetTargetHorizontalVelocity();
-            var finalHorizontalVelocity =
-                GetFinalHorizontalVelocity(currentHorizontalVelocity, targetHorizontalVelocity);
+            var finalHorizontalVelocity = GetFinalHorizontalVelocity(
+                currentHorizontalVelocity, 
+                targetHorizontalVelocity);
             var finalVelocity = GetFinalVelocity(finalHorizontalVelocity);
 
             currentVelocity.Value = finalVelocity;
@@ -32,7 +33,10 @@ namespace Player
 
         private Vector2 GetFinalHorizontalVelocity(Vector2 currentHorizontalVelocity, Vector2 targetHorizontalVelocity)
         {
-            return Vector2.SmoothDamp(currentHorizontalVelocity, targetHorizontalVelocity, ref _currentVelocity,
+            return Vector2.SmoothDamp(
+                currentHorizontalVelocity, 
+                targetHorizontalVelocity, 
+                ref _currentVelocity,
                 smoothTime.Value);
         }
 

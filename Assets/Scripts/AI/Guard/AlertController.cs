@@ -11,13 +11,13 @@ namespace AI.Guard
     public class AlertController : MonoBehaviour
     {
         [SerializeField] private NavMeshAgent navMeshAgent;
-        [SerializeField] private ValueReference<float> movingSpeed;
+        [SerializeField] private ValueReference<float> movementSpeed;
         [SerializeField] private ValueReference<float> acceleration;
         [SerializeField] private ValueReference<float> turningSpeed;
 
         public UnityEvent onDestinationReached;
-        private Transform _controlTransform;
-
+        
+        private Transform _transform;
         private Tweener _currentTween;
 
         private void Update()
@@ -27,7 +27,7 @@ namespace AI.Guard
 
         private void OnEnable()
         {
-            _controlTransform = navMeshAgent.transform;
+            _transform = navMeshAgent.transform;
         }
 
         private void OnDisable()
@@ -35,31 +35,27 @@ namespace AI.Guard
             _currentTween?.Kill();
             navMeshAgent.isStopped = false;
         }
+        
+        public void SetAlert(GameObject target)
+        {
+            SetAlert(target.transform.position);
+        }
 
         public void SetAlert(Vector3 point)
         {
-            var finalPoint = new Vector3(point.x, _controlTransform.position.y, point.z);
-            var direction = _controlTransform.DirectionTo(finalPoint);
-            var angle = Vector3.Angle(_controlTransform.forward, direction);
-            var time = angle / turningSpeed.Value;
+            var destination = new Vector3(point.x, _transform.position.y, point.z);
+            var vectorToDestination = _transform.VectorTo(destination);
+            var angleToDestination = Vector3.Angle(_transform.forward, vectorToDestination);
+            var timeToRotate = angleToDestination / turningSpeed.Value;
 
-            navMeshAgent.speed = movingSpeed.Value;
+            navMeshAgent.speed = movementSpeed.Value;
             navMeshAgent.acceleration = acceleration.Value;
             navMeshAgent.isStopped = true;
             navMeshAgent.SetDestination(point);
             _currentTween?.Kill();
-            _currentTween = _controlTransform.DOLookAt(finalPoint, time)
-                .OnComplete(() => navMeshAgent.isStopped = false);
-        }
-
-        public void SetAlert(GameObject target)
-        {
-            SetAlert(target.transform);
-        }
-
-        public void SetAlert(Transform target)
-        {
-            SetAlert(target.position);
+            _currentTween = _transform.
+                DOLookAt(destination, timeToRotate).
+                OnComplete(() => navMeshAgent.isStopped = false);
         }
     }
 }

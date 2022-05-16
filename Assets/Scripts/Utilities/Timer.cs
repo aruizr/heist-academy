@@ -11,7 +11,8 @@ namespace Utilities
         [SerializeField] [Disabled] private float currentValue;
         [SerializeField] private bool loop;
         [SerializeField] private bool autoPlay;
-        [SerializeField] private UnityEvent onFinish;
+        
+        public UnityEvent onFinish;
 
         private bool _isPlaying;
 
