@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3492686194113900686}
   - component: {fileID: 4262773416399296632}
   - component: {fileID: 8232140058707743900}
-  - component: {fileID: 4890127349916381432}
+  - component: {fileID: 14404996093359703}
   m_Layer: 0
   m_Name: Bottle Bot
   m_TagString: Untagged
@@ -99,8 +99,8 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &4890127349916381432
-CapsuleCollider:
+--- !u!64 &14404996093359703
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -109,7 +109,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.0011
-  m_Height: 0.004
-  m_Direction: 2
-  m_Center: {x: 0, y: 0, z: -0.0013}
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6255687079079774844, guid: e6ab53e12c105944d8a9e060f464593d, type: 3}

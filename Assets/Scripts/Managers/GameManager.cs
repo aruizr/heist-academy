@@ -26,6 +26,11 @@ namespace Managers
             Time.timeScale = 1;
         }
 
+        public void QuitGame()
+        {
+            Application.Quit();
+        }
+
         public void HideCursor()
         {
             Cursor.visible = false;

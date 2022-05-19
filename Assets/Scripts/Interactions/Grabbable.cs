@@ -35,6 +35,7 @@ namespace Interactions
             if (!IsGrabbed) return;
             _toFollow = null;
             rigidbody.isKinematic = false;
+            rigidbody.collisionDetectionMode = CollisionDetectionMode.Continuous;
             rigidbody.velocity += velocity;
             IsGrabbed = false;
             onThrown?.Invoke();
@@ -45,6 +46,7 @@ namespace Interactions
             if (IsGrabbed) return;
             _toFollow = parent;
             rigidbody.isKinematic = true;
+            rigidbody.collisionDetectionMode = CollisionDetectionMode.Discrete;
             IsGrabbed = true;
             onGrabbed?.Invoke();
         }
@@ -54,6 +56,7 @@ namespace Interactions
             if (!IsGrabbed) return;
             _toFollow = null;
             rigidbody.isKinematic = false;
+            rigidbody.collisionDetectionMode = CollisionDetectionMode.Continuous;
             IsGrabbed = false;
             onDropped?.Invoke();
         }
