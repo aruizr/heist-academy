@@ -1,31 +1,61 @@
-﻿using UnityEngine;
+﻿using Codetox.Messaging;
+using UnityEngine;
 
 namespace Sensors
 {
+    [ExecuteAlways]
     public class VisionConeVisualizer : MonoBehaviour
     {
-        [SerializeField] private MeshFilter meshFilter;
+        [SerializeField] private VisionCone visionCone;
+        [SerializeField] private GameObject shaderObject;
+        [SerializeField] private Material shaderMaterial;
+        [SerializeField] private Camera perspectiveCamera;
+        [SerializeField] private Color color = Color.white;
+        [SerializeField] [Range(0, 1)] private float innerRadius;
+        [SerializeField] [Min(0)] private float radiusSaturation = 10;
+        [SerializeField] [Min(0)] private float fieldOfViewSaturation = 10;
 
-        private void Start()
+        private Material _tempMaterial;
+
+        private void Update()
         {
-            var mesh = new Mesh();
-            var vertices = new Vector3[3];
-            var uv = new Vector2[3];
-            var triangles = new int[3];
+            if (!shaderObject || !perspectiveCamera || !visionCone || !shaderMaterial) return;
 
-            vertices[0] = Vector3.zero;
-            vertices[1] = new Vector3(50, 0);
-            vertices[2] = new Vector3(0, -50);
+            var t = shaderObject.transform;
 
-            triangles[0] = 0;
-            triangles[1] = 1;
-            triangles[2] = 2;
+            t.localScale = visionCone.Distance * 2 * Vector3.one;
+            t.localPosition = new Vector3(0, -visionCone.Distance, 0);
+            t.localEulerAngles = new Vector3(0, -90, 0);
 
-            mesh.vertices = vertices;
-            mesh.uv = uv;
-            mesh.triangles = triangles;
+            perspectiveCamera.farClipPlane = visionCone.Distance;
+            perspectiveCamera.fieldOfView = visionCone.FieldOfView;
 
-            meshFilter.mesh = mesh;
+            if (!perspectiveCamera.targetTexture ||
+                perspectiveCamera.targetTexture.width != perspectiveCamera.pixelWidth ||
+                perspectiveCamera.targetTexture.height != perspectiveCamera.pixelHeight)
+                perspectiveCamera.targetTexture = new RenderTexture(
+                    perspectiveCamera.pixelWidth,
+                    perspectiveCamera.pixelHeight,
+                    24,
+                    RenderTextureFormat.Depth);
+
+            perspectiveCamera.Render();
+
+            var matrix = perspectiveCamera.projectionMatrix * perspectiveCamera.worldToCameraMatrix;
+            
+            if (!_tempMaterial)
+            {
+                _tempMaterial = new Material(shaderMaterial);
+                shaderObject.Send<MeshRenderer>(meshRenderer => meshRenderer.sharedMaterial = _tempMaterial);
+            }
+
+            _tempMaterial.SetMatrix("_ViewSpaceMatrix", matrix);
+            _tempMaterial.SetTexture("_ViewDepthTexture", perspectiveCamera.targetTexture);
+            _tempMaterial.SetFloat("_FieldOfView", visionCone.FieldOfView);
+            _tempMaterial.SetColor("_Color", color);
+            _tempMaterial.SetFloat("_InnerRadius", innerRadius);
+            _tempMaterial.SetFloat("_RadiusSaturation", radiusSaturation);
+            _tempMaterial.SetFloat("_FieldOfViewSaturation", fieldOfViewSaturation);
         }
     }
 }
