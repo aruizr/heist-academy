@@ -1919,7 +1919,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1018530998528239112, guid: f2a32efc2e0cd0f4eaf6afb26c701c11, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.25
+      value: -0.55
       objectReference: {fileID: 0}
     - target: {fileID: 1018530998528239112, guid: f2a32efc2e0cd0f4eaf6afb26c701c11, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1927,7 +1927,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1018530998528239112, guid: f2a32efc2e0cd0f4eaf6afb26c701c11, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.53
+      value: 4.92
       objectReference: {fileID: 0}
     - target: {fileID: 1018530998528239112, guid: f2a32efc2e0cd0f4eaf6afb26c701c11, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2243,6 +2243,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &501650521 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4143319056762764980, guid: 8e23be39282531849b85b30edbe1d3a5, type: 3}
+  m_PrefabInstance: {fileID: 1428787194}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &501650522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501650521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &537076903
 GameObject:
   m_ObjectHideFlags: 0
@@ -6082,6 +6102,14 @@ PrefabInstance:
       propertyPath: unlockedBy
       value: 
       objectReference: {fileID: 847357534}
+    - target: {fileID: 2837908119087087161, guid: 8e23be39282531849b85b30edbe1d3a5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2837908119087087161, guid: 8e23be39282531849b85b30edbe1d3a5, type: 3}
+      propertyPath: outlineMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4143319056108176653, guid: 8e23be39282531849b85b30edbe1d3a5, type: 3}
       propertyPath: m_RootOrder
       value: 30
