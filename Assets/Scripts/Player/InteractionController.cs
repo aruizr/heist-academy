@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
+using Codetox.Core;
 using Codetox.Messaging;
 using Interactions;
 using UnityEngine;
@@ -17,7 +17,40 @@ namespace Player
         public UnityEvent onMultipleSelection;
         public UnityEvent onSingleSelection;
 
-        private Queue<GameObject> _selection = new Queue<GameObject>();
+        private readonly List<GameObject> _selection = new List<GameObject>();
+
+        private Vector3 _lastPlayerPosition;
+        private Vector3 _lastPlayerRotation;
+
+        private void Awake()
+        {
+            _lastPlayerPosition = playerTransform.position;
+            _lastPlayerRotation = playerTransform.eulerAngles;
+        }
+
+        private void Update()
+        {
+            if (_selection.Count <= 1) return;
+
+            var playerPosition = playerTransform.position;
+            var playerRotation = playerTransform.eulerAngles;
+
+            if (playerPosition == _lastPlayerPosition && playerRotation == _lastPlayerRotation) return;
+
+            _lastPlayerPosition = playerPosition;
+            _lastPlayerRotation = playerRotation;
+
+            var currentSelected = _selection[0];
+
+            _selection.Sort(CompareByProximity);
+
+            var newSelected = _selection[0];
+
+            if (newSelected.Equals(currentSelected)) return;
+
+            currentSelected.Send<ISelectable>(s => s.Unselect());
+            newSelected.Send<ISelectable>(s => s.Select());
+        }
 
         public void Select(GameObject o)
         {
@@ -33,7 +66,7 @@ namespace Player
                         break;
                 }
 
-                _selection.Enqueue(o);
+                _selection.Add(o);
             });
         }
 
@@ -42,10 +75,10 @@ namespace Player
             o.Send<ISelectable>(selectable =>
             {
                 if (_selection.Count == 0) return;
-                if (_selection.Peek().Equals(o))
+                if (_selection[0].Equals(o))
                 {
                     selectable.Unselect();
-                    _selection.Dequeue();
+                    _selection.RemoveAt(0);
 
                     switch (_selection.Count)
                     {
@@ -56,11 +89,12 @@ namespace Player
                             break;
                     }
 
-                    _selection.Peek().Send<ISelectable>(s => s.Select());
+                    _selection[0].Send<ISelectable>(s => s.Select());
                     return;
                 }
 
-                _selection = new Queue<GameObject>(_selection.Where(obj => !obj.Equals(o)));
+                _selection.Remove(o);
+
                 if (_selection.Count == 1) onSingleSelection.Invoke();
             });
         }
@@ -68,7 +102,9 @@ namespace Player
         public void Interact()
         {
             if (_selection.Count == 0) return;
-            var o = _selection.Peek();
+
+            var o = _selection[0];
+
             o.Send<IInteractive>(interactable => interactable.Interact());
             o.Send<IGrabbable>(grabbable => grabbable.ToggleGrabDrop(handTransform));
         }
@@ -76,7 +112,8 @@ namespace Player
         public void Throw()
         {
             if (_selection.Count == 0) return;
-            _selection.Peek().Send<IThrowable>(throwable =>
+
+            _selection[0].Send<IThrowable>(throwable =>
             {
                 var forward = playerTransform.forward;
                 var velocity = throwingVelocity.Value;
@@ -91,10 +128,30 @@ namespace Player
         public void SwitchSelection()
         {
             if (_selection.Count == 0) return;
-            var o = _selection.Dequeue();
+
+            var o = _selection[0];
+
             o.Send<ISelectable>(selectable => selectable.Unselect());
-            _selection.Enqueue(o);
-            _selection.Peek().Send<ISelectable>(selectable => selectable.Select());
+
+            _selection.RemoveAt(0);
+            _selection.Add(o);
+            _selection[0].Send<ISelectable>(selectable => selectable.Select());
+        }
+
+        private int CompareByProximity(GameObject x, GameObject y)
+        {
+            var px = GetProximityToPlayer(x);
+            var py = GetProximityToPlayer(y);
+
+            return px.CompareTo(py);
+        }
+
+        private float GetProximityToPlayer(GameObject obj)
+        {
+            var directionToObj = playerTransform.DirectionTo(obj);
+            var distanceToObj = playerTransform.DistanceTo(obj);
+
+            return distanceToObj * Vector3.Angle(playerTransform.forward, directionToObj);
         }
     }
 }

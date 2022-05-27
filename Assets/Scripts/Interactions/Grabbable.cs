@@ -45,8 +45,8 @@ namespace Interactions
         {
             if (IsGrabbed) return;
             _toFollow = parent;
-            rigidbody.isKinematic = true;
             rigidbody.collisionDetectionMode = CollisionDetectionMode.Discrete;
+            rigidbody.isKinematic = true;
             IsGrabbed = true;
             onGrabbed?.Invoke();
         }
