@@ -11,13 +11,12 @@ GameObject:
   - component: {fileID: 6321270440897424624}
   - component: {fileID: 8017778744085677477}
   - component: {fileID: 4562905361607933273}
-  - component: {fileID: 3629272406161395279}
-  m_Layer: 0
-  m_Name: Cuadro2
+  m_Layer: 6
+  m_Name: Painting 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6321270440897424624
 Transform:
@@ -83,16 +82,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3629272406161395279
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 129143867867909501}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.003, y: 0.002731955, z: 0.0033616854}
-  m_Center: {x: 0, y: 0, z: 0.000073912306}

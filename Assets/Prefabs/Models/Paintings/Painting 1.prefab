@@ -11,13 +11,12 @@ GameObject:
   - component: {fileID: 7474573634675356474}
   - component: {fileID: 8979981212987289585}
   - component: {fileID: 9078465776661111204}
-  - component: {fileID: 4182439084197706517}
-  m_Layer: 0
-  m_Name: Cuadro1
+  m_Layer: 6
+  m_Name: Painting 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &7474573634675356474
 Transform:
@@ -27,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1583649658388096171}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 0, z: 0.5746658}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 8.086726, y: 126.40063, z: 176.86192}
   m_Children: []
   m_Father: {fileID: 0}
@@ -83,17 +82,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4182439084197706517
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1583649658388096171}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -8678823145569952518, guid: fdfaae99856933c45bc906310f9cb83c, type: 3}
