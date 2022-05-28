@@ -1,3 +1,4 @@
+using System;
 using Codetox.Variables;
 using UnityEngine;
 
@@ -12,6 +13,12 @@ namespace Player
         [SerializeField] private Vector2Variable currentDirection;
 
         private Vector2 _currentVelocity;
+
+        private void Awake()
+        {
+            currentVelocity.Value = Vector3.zero;
+            currentDirection.Value = Vector2.zero;
+        }
 
         private void Update()
         {

@@ -35,7 +35,7 @@ namespace Managers
 
         public void CalculateStats()
         {
-            levelTime.Value = TimeSpan.FromSeconds(_timeCounter).ToString("m\\:ss\\.fff");
+            levelTime.Value = TimeSpan.FromSeconds(_timeCounter).ToString("m\\:ss");
         }
 
         public void OnAlarmTriggered()
