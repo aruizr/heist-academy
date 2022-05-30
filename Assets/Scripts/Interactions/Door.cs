@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using MyBox;
 using PropertyAnimators;
 using RuntimeSets;
@@ -26,14 +27,9 @@ namespace Interactions
 
         [ConditionalField(nameof(isLocked))] public UnityEvent onLocked;
 
-        private void OnEnable()
+        private void Start()
         {
             animator.onComplete.AddListener(OnComplete);
-        }
-
-        private void OnDisable()
-        {
-            animator.onComplete.RemoveListener(OnComplete);
         }
 
         public bool IsOpen { get; private set; }
