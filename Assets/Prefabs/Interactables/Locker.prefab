@@ -286,7 +286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 1
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineColor: {r: 0.34509805, g: 0.60784316, b: 1, a: 1}
   outlineWidth: 6
   precomputeOutline: 1
   bakeKeys:
@@ -503,6 +503,7 @@ MonoBehaviour:
   target: {fileID: 1585874283776197133}
   offset: {x: 0, y: -135, z: 0}
   duration: 1
+  useUnscaledTime: 0
   ease: 0
   loops: 1
   loopType: 0

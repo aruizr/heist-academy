@@ -73,18 +73,6 @@ MonoBehaviour:
           m_StringArgument: key_collect
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8780554916057643820}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
   onUnselected:
     m_PersistentCalls:
       m_Calls:
@@ -92,18 +80,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: Codetox.GameEvents.VoidGameEvent, com.aruizrab.codetox
         m_MethodName: Invoke
         m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8780554916057643820}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -193,13 +169,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3305710618113340713}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 1
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineColor: {r: 0.34509805, g: 0.60784316, b: 1, a: 1}
   outlineWidth: 6
   precomputeOutline: 1
   bakeKeys:
@@ -278,6 +254,7 @@ MonoBehaviour:
   target: {fileID: 6423743437548706994}
   offset: {x: 0, y: 90, z: 0}
   duration: 1
+  useUnscaledTime: 0
   ease: 1
   loops: -1
   loopType: 2
@@ -300,6 +277,7 @@ MonoBehaviour:
   target: {fileID: 6423743437548706994}
   offset: {x: 0, y: 0.5, z: 0}
   duration: 1
+  useUnscaledTime: 0
   ease: 4
   loops: -1
   loopType: 1

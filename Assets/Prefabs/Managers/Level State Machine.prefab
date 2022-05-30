@@ -1490,6 +1490,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4351662981036153156, guid: 622399bb56d903c4e83cabbed5bf60a3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4351662981036153157, guid: 622399bb56d903c4e83cabbed5bf60a3, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 1086
@@ -2159,7 +2163,7 @@ PrefabInstance:
     - target: {fileID: 5868976571948383546, guid: 654c86264a4220a45a0a92dec3957b30, type: 3}
       propertyPath: collectibleID.variableValue
       value: 
-      objectReference: {fileID: 11400000, guid: 4b28031cf797b7c4b8e81cf80a1b769d, type: 2}
+      objectReference: {fileID: 11400000, guid: e02344521fba55e40bd6e76eff36c566, type: 2}
     - target: {fileID: 5868976571948383546, guid: 654c86264a4220a45a0a92dec3957b30, type: 3}
       propertyPath: onGameWon.m_PersistentCalls.m_Calls.Array.size
       value: 1
