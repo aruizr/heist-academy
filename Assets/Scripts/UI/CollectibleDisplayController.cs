@@ -23,6 +23,14 @@ namespace UI
         private void OnEnable()
         {
             inventory.OnItemAdded += OnItemAdded;
+
+            foreach (var o in inventory)
+            {
+                o.Send<Identifier>(identifier =>
+                {
+                    if (identifier.ID.Equals(collectibleID.Value)) image.sprite = slotFilledSprite;
+                });
+            }
         }
 
         private void OnDisable()

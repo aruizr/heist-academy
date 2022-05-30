@@ -21,7 +21,7 @@ namespace Variables
             variable.OnValueChanged -= DisplayVariable;
         }
 
-        private void DisplayVariable(T value)
+        protected virtual void DisplayVariable(T value)
         {
             onDisplayValue?.Invoke(value.ToString());
         }
