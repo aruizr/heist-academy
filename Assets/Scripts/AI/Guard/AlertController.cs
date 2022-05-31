@@ -21,11 +21,6 @@ namespace AI.Guard
         private Transform _transform;
         private Tweener _currentTween;
 
-        private void Update()
-        {
-            if (navMeshAgent.HasReachedDestination()) onDestinationReached?.Invoke();
-        }
-
         private void OnEnable()
         {
             _transform = navMeshAgent.transform;
