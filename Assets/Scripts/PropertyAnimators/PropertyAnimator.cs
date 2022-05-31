@@ -9,6 +9,7 @@ namespace PropertyAnimators
         [SerializeField] protected T target;
         [SerializeField] protected TV offset;
         [SerializeField] protected float duration;
+        [SerializeField] protected bool useUnscaledTime;
         [SerializeField] private Ease ease;
         [SerializeField] [Min(-1)] private int loops = 1;
         [SerializeField] private LoopType loopType;
@@ -17,6 +18,7 @@ namespace PropertyAnimators
         public UnityEvent onComplete;
 
         private bool _forward;
+        private Tweener _tweener;
 
         private void OnEnable()
         {
@@ -25,11 +27,13 @@ namespace PropertyAnimators
 
         private void ConfigTween(Tweener tweener)
         {
-            tweener.
+            _tweener?.Kill();
+            _tweener = tweener.
                 SetEase(ease).
                 SetLoops(loops, loopType).
                 OnStepComplete(() => onComplete?.Invoke()).
-                SetLink(gameObject, LinkBehaviour.PauseOnDisable);
+                SetLink(gameObject, LinkBehaviour.PauseOnDisable).
+                SetUpdate(useUnscaledTime);
         }
 
         public void PlayForward()

@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4babf4dbd07b4d6dbe986d3943cd85d8, type: 3}
+  m_Name: Museum Level Evaluation
+  m_EditorClassIdentifier: 
+  playerInventory: {fileID: 11400000, guid: e3738c8c9677cbe489b89e60dca76969, type: 2}
+  statEvaluations:
+  - stat: {fileID: 11400000, guid: 2810c55761727ed488862413945edf9d, type: 2}
+    bestValue: 0
+    worstValue: 10
+    percentage: 10
+  - stat: {fileID: 11400000, guid: 304ad015776a2bb45b6e557c02287221, type: 2}
+    bestValue: 0
+    worstValue: 10
+    percentage: 2.5
+  - stat: {fileID: 11400000, guid: 9bf50ca2ce1452e4d9391af5454bf79f, type: 2}
+    bestValue: 0
+    worstValue: 10
+    percentage: 2.5
+  - stat: {fileID: 11400000, guid: ffa021b3325362641bd528bd789e064f, type: 2}
+    bestValue: 0
+    worstValue: 10
+    percentage: 2.5
+  collectibleEvaluations:
+  - collectibleID:
+      useField: 0
+      fieldValue: 
+      variableValue: {fileID: 11400000, guid: e02344521fba55e40bd6e76eff36c566, type: 2}
+    percentage: 52.5
+  - collectibleID:
+      useField: 0
+      fieldValue: 
+      variableValue: {fileID: 11400000, guid: 70f5c82988cea1243bf5951e1e8a649b, type: 2}
+    percentage: 10
+  - collectibleID:
+      useField: 0
+      fieldValue: 
+      variableValue: {fileID: 11400000, guid: 4b28031cf797b7c4b8e81cf80a1b769d, type: 2}
+    percentage: 10
+  - collectibleID:
+      useField: 0
+      fieldValue: 
+      variableValue: {fileID: 11400000, guid: 613ded7cad569e148b788229c37a1d8d, type: 2}
+    percentage: 10
