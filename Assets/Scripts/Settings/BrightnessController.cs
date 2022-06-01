@@ -10,7 +10,7 @@ namespace Settings
 
         [SerializeField] private Slider slider;
 
-        private void Start()
+        private void Awake()
         {
             var value = Screen.brightness;
 

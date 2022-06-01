@@ -11,7 +11,7 @@ namespace Settings
 
         [SerializeField] private TMP_Dropdown dropdown;
 
-        private void Start()
+        private void Awake()
         {
             var resolutions = Screen.resolutions.ToList();
             var resolutionStrings = Screen.resolutions.Select(res => $"{res.width} x {res.height}").ToList();

@@ -11,7 +11,7 @@ namespace Settings
         [SerializeField] private AudioMixer mixer;
         [SerializeField] private string parameterName;
 
-        private void Start()
+        private void Awake()
         {
             mixer.GetVolume(parameterName, out var value);
             
