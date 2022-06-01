@@ -1,5 +1,6 @@
 ﻿using Codetox.Messaging;
 using UnityEngine;
+using Variables;
 
 namespace Sensors
 {
@@ -10,7 +11,7 @@ namespace Sensors
         [SerializeField] private GameObject shaderObject;
         [SerializeField] private Material shaderMaterial;
         [SerializeField] private Camera perspectiveCamera;
-        [SerializeField] private Color color = Color.white;
+        [SerializeField] private ValueReference<Color> color;
         [SerializeField] [Range(0, 1)] private float innerRadius;
         [SerializeField] [Min(0)] private float radiusSaturation = 10;
         [SerializeField] [Min(0)] private float fieldOfViewSaturation = 10;
@@ -52,7 +53,7 @@ namespace Sensors
             _tempMaterial.SetMatrix("_ViewSpaceMatrix", matrix);
             _tempMaterial.SetTexture("_ViewDepthTexture", perspectiveCamera.targetTexture);
             _tempMaterial.SetFloat("_FieldOfView", visionCone.FieldOfView);
-            _tempMaterial.SetColor("_Color", color);
+            _tempMaterial.SetColor("_Color", color.Value);
             _tempMaterial.SetFloat("_InnerRadius", innerRadius);
             _tempMaterial.SetFloat("_RadiusSaturation", radiusSaturation);
             _tempMaterial.SetFloat("_FieldOfViewSaturation", fieldOfViewSaturation);
