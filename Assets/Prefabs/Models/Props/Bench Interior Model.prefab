@@ -11,9 +11,8 @@ GameObject:
   - component: {fileID: 6582175939652422558}
   - component: {fileID: 7851829901875479611}
   - component: {fileID: 5409873151717077233}
-  - component: {fileID: 6321149335492714497}
   m_Layer: 0
-  m_Name: Bench Interior
+  m_Name: Bench Interior Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82,16 +81,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6321149335492714497
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5770033098438431012}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.1377733, y: 0.800002, z: 1.0684254}
-  m_Center: {x: -0.018615246, y: -0.00000065565126, z: 0.034212448}
