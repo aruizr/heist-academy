@@ -8,6 +8,7 @@ namespace Settings
     public class WindowModeSelectionController : MonoBehaviour
     {
         private const string Key = "window-mode";
+        private const string Default = "default-window-mode";
 
         private static readonly List<string> ScreenModeNames = new List<string>
         {
@@ -24,19 +25,20 @@ namespace Settings
 
         private void Start()
         {
-            dropdown.ClearOptions();
-            dropdown.AddOptions(ScreenModeNames.ToList());
+            var index = ScreenModes.IndexOf(Screen.fullScreenMode);
 
-            if (!PlayerPrefs.HasKey(Key))
+            PlayerPrefs.SetInt(Default, index);
+            PlayerPrefs.Save();
+
+            if (PlayerPrefs.HasKey(Key))
             {
-                dropdown.value = ScreenModes.IndexOf(Screen.fullScreenMode);
-                return;
+                index = PlayerPrefs.GetInt(Key);
+                Screen.fullScreenMode = ScreenModes[index];
             }
 
-            var index = PlayerPrefs.GetInt(Key);
-
-            Screen.fullScreenMode = ScreenModes[index];
-            dropdown.value = index;
+            dropdown.ClearOptions();
+            dropdown.AddOptions(ScreenModeNames.ToList());
+            dropdown.SetValueWithoutNotify(index);
         }
 
         public void SetWindowMode(int index)
@@ -44,6 +46,11 @@ namespace Settings
             Screen.fullScreenMode = ScreenModes[index];
             PlayerPrefs.SetInt(Key, index);
             PlayerPrefs.Save();
+        }
+
+        public void ResetWindowMode()
+        {
+            dropdown.value = PlayerPrefs.GetInt(Default);
         }
     }
 }

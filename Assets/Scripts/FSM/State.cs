@@ -10,14 +10,14 @@ namespace FSM
 
         public void Enter()
         {
-            onEnterState?.Invoke();
             gameObject.SetActive(true);
+            onEnterState?.Invoke();
         }
 
         public void Exit()
         {
-            onExitState?.Invoke();
             gameObject.SetActive(false);
+            onExitState?.Invoke();
         }
     }
 }

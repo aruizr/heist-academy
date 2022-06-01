@@ -1,4 +1,5 @@
-﻿using Codetox.Core;
+﻿using System.Collections;
+using Codetox.Core;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.AI;
@@ -20,11 +21,6 @@ namespace AI.Guard
         private Transform _transform;
         private Tweener _currentTween;
 
-        private void Update()
-        {
-            if (navMeshAgent.HasReachedDestination()) onDestinationReached?.Invoke();
-        }
-
         private void OnEnable()
         {
             _transform = navMeshAgent.transform;
@@ -43,6 +39,8 @@ namespace AI.Guard
 
         public void SetAlert(Vector3 point)
         {
+            StopCoroutine(DestinationReached());
+            
             var destination = new Vector3(point.x, _transform.position.y, point.z);
             var vectorToDestination = _transform.VectorTo(destination);
             var angleToDestination = Vector3.Angle(_transform.forward, vectorToDestination);
@@ -56,6 +54,13 @@ namespace AI.Guard
             _currentTween = _transform.
                 DOLookAt(destination, timeToRotate).
                 OnComplete(() => navMeshAgent.isStopped = false);
+            StartCoroutine(DestinationReached());
+        }
+
+        private IEnumerator DestinationReached()
+        {
+            yield return new WaitUntil(() => navMeshAgent.HasReachedDestination());
+            onDestinationReached?.Invoke();
         }
     }
 }

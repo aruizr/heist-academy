@@ -37,12 +37,19 @@ namespace Utilities
             if (percentage < 0 || percentage > 100) throw new ArgumentOutOfRangeException(nameof(percentage));
             mixer.SetFloat(parameterName, Mathf.Log10(percentage / 100) * 20);
         }
-        
+
+        public static bool GetVolume(this AudioMixer mixer, string parameterName, out float volume)
+        {
+            if (!mixer.GetFloat(parameterName, out volume)) return false;
+            volume = 100 * Mathf.Pow(10, volume / 20);
+            return true;
+        }
+
         public static int ToInt(this bool value)
         {
             return value ? 1 : 0;
         }
-        
+
         public static bool ToBool(this int value)
         {
             return value != 0;

@@ -16,7 +16,7 @@ namespace Settings
 
             dropdown.ClearOptions();
             dropdown.AddOptions(localesNames);
-            dropdown.value = locales.IndexOf(LocalizationSettings.SelectedLocale);
+            dropdown.SetValueWithoutNotify(locales.IndexOf(LocalizationSettings.SelectedLocale));
         }
 
         public void SetLanguage(int index)

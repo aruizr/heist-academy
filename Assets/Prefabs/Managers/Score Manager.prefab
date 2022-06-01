@@ -47,12 +47,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15e0b35663684edfae0200ae684d7318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelEvaluation: {fileID: 11400000, guid: 9743e11d45e927d4c9f8b00420431282, type: 2}
   alarmTriggerCount: {fileID: 11400000, guid: 2810c55761727ed488862413945edf9d, type: 2}
   guardSoundAlertCount: {fileID: 11400000, guid: ffa021b3325362641bd528bd789e064f, type: 2}
   guardSightAlertCount: {fileID: 11400000, guid: 9bf50ca2ce1452e4d9391af5454bf79f, type: 2}
   cameraSightAlertCount: {fileID: 11400000, guid: 304ad015776a2bb45b6e557c02287221, type: 2}
   optionalObjectInventory: {fileID: 11400000, guid: e3738c8c9677cbe489b89e60dca76969, type: 2}
   levelTime: {fileID: 11400000, guid: 226b8f0f5bf51a14d86c5993d2aac07f, type: 2}
+  finalMark: {fileID: 11400000, guid: 1370b4f4ebb1f85418a144fbad0ad798, type: 2}
 --- !u!114 &7044071551852801566
 MonoBehaviour:
   m_ObjectHideFlags: 0
