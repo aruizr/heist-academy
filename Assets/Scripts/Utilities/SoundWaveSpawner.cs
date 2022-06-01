@@ -10,6 +10,7 @@ namespace Utilities
     public class SoundWaveSpawner : MonoBehaviour
     {
         [SerializeField] private GameObject prefab;
+        [SerializeField] [Range(0, 1)] private float initialAlfa;
         [SerializeField] private int poolSize = 10;
         [SerializeField] private float expansionTime;
         [SerializeField] private Ease waveEase;
@@ -50,7 +51,7 @@ namespace Utilities
                 {
                     var color = spriteRenderer.color;
 
-                    spriteRenderer.color = new Color(color.r, color.g, color.b, 0.5f);
+                    spriteRenderer.color = new Color(color.r, color.g, color.b, initialAlfa);
                     spriteRenderer.DOFade(0, expansionTime).SetEase(waveEase);
                 }, MessageScope.Children);
             });
