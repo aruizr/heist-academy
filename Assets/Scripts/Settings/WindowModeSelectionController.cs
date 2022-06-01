@@ -23,7 +23,7 @@ namespace Settings
 
         [SerializeField] private TMP_Dropdown dropdown;
 
-        private void Start()
+        private void Awake()
         {
             var index = ScreenModes.IndexOf(Screen.fullScreenMode);
 

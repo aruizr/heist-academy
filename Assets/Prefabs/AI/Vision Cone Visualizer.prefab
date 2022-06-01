@@ -49,7 +49,10 @@ MonoBehaviour:
   shaderObject: {fileID: 3123428638468845893}
   shaderMaterial: {fileID: 2100000, guid: ca2d432f06984d845b57c819a03ecbd8, type: 2}
   perspectiveCamera: {fileID: 6641141161425089297}
-  color: {r: 1, g: 0.019607844, b: 0, a: 0.15686275}
+  color:
+    useField: 0
+    fieldValue: {r: 0, g: 0, b: 0, a: 0}
+    variableValue: {fileID: 11400000, guid: af7c8b89a727b63438ac94ae0b358dfa, type: 2}
   innerRadius: 0.068
   radiusSaturation: 15
   fieldOfViewSaturation: 15
