@@ -117,6 +117,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 452487836419077093}
     m_Modifications:
+    - target: {fileID: 5240606214281536449, guid: 089501a1d90b0d94abde636f2a158ce3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fff6032a357d4874ca0ae0ede20ecaf4, type: 2}
+    - target: {fileID: 5240606214281536449, guid: 089501a1d90b0d94abde636f2a158ce3, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9d035d0efa64363419db5e47a1c0ca57, type: 2}
     - target: {fileID: 6033314859982717460, guid: 089501a1d90b0d94abde636f2a158ce3, type: 3}
       propertyPath: m_Name
       value: Cordon Model

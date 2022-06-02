@@ -39,6 +39,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1874731828495099188}
     m_Modifications:
+    - target: {fileID: 5338348283373445524, guid: 00c8d018907fd2041891e85e141c6c58, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e70a1296607328545a6e5ddd0ccc1e8d, type: 2}
     - target: {fileID: 5842684990133223489, guid: 00c8d018907fd2041891e85e141c6c58, type: 3}
       propertyPath: m_Name
       value: Fence Model
