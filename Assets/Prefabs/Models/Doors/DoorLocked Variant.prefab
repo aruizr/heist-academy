@@ -57,7 +57,41 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: d0bce72dd22d2444eba1bf2ab8630aea, type: 2}
     - target: {fileID: 919132149155446097, guid: e18569c16a7b91c4da1b94dec8728910, type: 3}
       propertyPath: m_Name
-      value: DoorLocked
+      value: DoorLocked Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e18569c16a7b91c4da1b94dec8728910, type: 3}
+--- !u!1 &1074680473468433626 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e18569c16a7b91c4da1b94dec8728910, type: 3}
+  m_PrefabInstance: {fileID: 156326242749991307}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2078135323093993682
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074680473468433626}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.46125448, y: 0.45747164, z: 0.36961287}
+  m_Center: {x: -0.04136025, y: -0.02983462, z: 0.13873194}
+--- !u!208 &6750334552934107931
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074680473468433626}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.231, y: 0.22900002, z: 0.185}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.041, y: -0.030000001, z: 0.13900001}
+  m_TimeToStationary: 0.5

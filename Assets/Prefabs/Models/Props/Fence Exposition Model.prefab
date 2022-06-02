@@ -11,9 +11,8 @@ GameObject:
   - component: {fileID: 4788851976071000472}
   - component: {fileID: 8492294569477324349}
   - component: {fileID: 5926252926677568247}
-  - component: {fileID: 8454579728208400883}
   m_Layer: 0
-  m_Name: Fence Exposition
+  m_Name: Fence Exposition Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82,16 +81,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8454579728208400883
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5277862330000206626}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 5.7618723, y: 0.95761806, z: 2.5335054}
-  m_Center: {x: -0.019402862, y: -0.3269522, z: 1.2495768}
