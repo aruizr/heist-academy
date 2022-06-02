@@ -39,6 +39,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7593444132345108984}
     m_Modifications:
+    - target: {fileID: 3429850298099934415, guid: b4511ce0af0250c49922f73204dc842f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d9a76bfd0b11134ab5339bb47e33bfc, type: 2}
+    - target: {fileID: 3429850298099934415, guid: b4511ce0af0250c49922f73204dc842f, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 662f38894085859499f978a88e962c6d, type: 2}
+    - target: {fileID: 3429850298099934415, guid: b4511ce0af0250c49922f73204dc842f, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 75b292ff4b17f62408489332f5a6580c, type: 2}
     - target: {fileID: 3790266018646721818, guid: b4511ce0af0250c49922f73204dc842f, type: 3}
       propertyPath: m_Name
       value: Trash Container Model
