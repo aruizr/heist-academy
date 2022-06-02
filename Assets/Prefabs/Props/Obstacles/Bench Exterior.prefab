@@ -109,6 +109,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7771696287902311827}
     m_Modifications:
+    - target: {fileID: 7987195944811225805, guid: fa0f443c646928040ab5cb9535436031, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e65192407681d6745a0fcc0d4c6f5e54, type: 2}
+    - target: {fileID: 7987195944811225805, guid: fa0f443c646928040ab5cb9535436031, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7e6b1df80a60b874b8a138735d4f4ee1, type: 2}
     - target: {fileID: 8491752691465601816, guid: fa0f443c646928040ab5cb9535436031, type: 3}
       propertyPath: m_Name
       value: Bench Exterior Model
