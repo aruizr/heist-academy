@@ -152,7 +152,7 @@ MonoBehaviour:
   controlTransform: {fileID: 1098700496953961051}
   range:
     useField: 1
-    fieldValue: 20
+    fieldValue: 10
     variableValue: {fileID: 0}
   rotationSpeed:
     useField: 0
@@ -1305,6 +1305,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -20
       objectReference: {fileID: 0}
+    - target: {fileID: 3123428638468845897, guid: 3c4e2ed0f25e10b469965f0c99ac5896, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3123428638468845897, guid: 3c4e2ed0f25e10b469965f0c99ac5896, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3123428638468845899, guid: 3c4e2ed0f25e10b469965f0c99ac5896, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1313,6 +1321,22 @@ PrefabInstance:
       propertyPath: visionCone
       value: 
       objectReference: {fileID: 6631659123813795313}
+    - target: {fileID: 4833668121199936270, guid: 3c4e2ed0f25e10b469965f0c99ac5896, type: 3}
+      propertyPath: color.variableValue
+      value: 
+      objectReference: {fileID: 11400000, guid: 82dbbda4de1ea944aab3829283073c92, type: 2}
+    - target: {fileID: 6641141161425089297, guid: 3c4e2ed0f25e10b469965f0c99ac5896, type: 3}
+      propertyPath: field of view
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6641141161425089297, guid: 3c4e2ed0f25e10b469965f0c99ac5896, type: 3}
+      propertyPath: far clip plane
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6641141161425089297, guid: 3c4e2ed0f25e10b469965f0c99ac5896, type: 3}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c4e2ed0f25e10b469965f0c99ac5896, type: 3}
 --- !u!4 &2369262340363455691 stripped
@@ -1407,6 +1431,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -20
       objectReference: {fileID: 0}
+    - target: {fileID: 3123428638468845897, guid: 3c4e2ed0f25e10b469965f0c99ac5896, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3123428638468845897, guid: 3c4e2ed0f25e10b469965f0c99ac5896, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3123428638468845899, guid: 3c4e2ed0f25e10b469965f0c99ac5896, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1415,6 +1447,22 @@ PrefabInstance:
       propertyPath: visionCone
       value: 
       objectReference: {fileID: 2658568945041879835}
+    - target: {fileID: 4833668121199936270, guid: 3c4e2ed0f25e10b469965f0c99ac5896, type: 3}
+      propertyPath: color.variableValue
+      value: 
+      objectReference: {fileID: 11400000, guid: 058d2a252c827ba408b299329bb9d7b5, type: 2}
+    - target: {fileID: 6641141161425089297, guid: 3c4e2ed0f25e10b469965f0c99ac5896, type: 3}
+      propertyPath: field of view
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6641141161425089297, guid: 3c4e2ed0f25e10b469965f0c99ac5896, type: 3}
+      propertyPath: far clip plane
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6641141161425089297, guid: 3c4e2ed0f25e10b469965f0c99ac5896, type: 3}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c4e2ed0f25e10b469965f0c99ac5896, type: 3}
 --- !u!4 &3781420477572764282 stripped
@@ -1633,6 +1681,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -20
       objectReference: {fileID: 0}
+    - target: {fileID: 3123428638468845897, guid: 3c4e2ed0f25e10b469965f0c99ac5896, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3123428638468845897, guid: 3c4e2ed0f25e10b469965f0c99ac5896, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3123428638468845899, guid: 3c4e2ed0f25e10b469965f0c99ac5896, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1641,6 +1697,22 @@ PrefabInstance:
       propertyPath: visionCone
       value: 
       objectReference: {fileID: 7236292002260331918}
+    - target: {fileID: 4833668121199936270, guid: 3c4e2ed0f25e10b469965f0c99ac5896, type: 3}
+      propertyPath: color.variableValue
+      value: 
+      objectReference: {fileID: 11400000, guid: d10476640caa95b4fbf92c1d2585e8b7, type: 2}
+    - target: {fileID: 6641141161425089297, guid: 3c4e2ed0f25e10b469965f0c99ac5896, type: 3}
+      propertyPath: field of view
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6641141161425089297, guid: 3c4e2ed0f25e10b469965f0c99ac5896, type: 3}
+      propertyPath: far clip plane
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6641141161425089297, guid: 3c4e2ed0f25e10b469965f0c99ac5896, type: 3}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c4e2ed0f25e10b469965f0c99ac5896, type: 3}
 --- !u!4 &5006273599587779529 stripped
