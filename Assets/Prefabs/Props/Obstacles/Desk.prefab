@@ -39,6 +39,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6486497868873173726}
     m_Modifications:
+    - target: {fileID: 706456059656727894, guid: 1434311da2d43c74eba13993c440dc59, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ad0809925ab9080418c00ed9a58938bd, type: 2}
+    - target: {fileID: 706456059656727894, guid: 1434311da2d43c74eba13993c440dc59, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: ad0809925ab9080418c00ed9a58938bd, type: 2}
     - target: {fileID: 1354785771280485507, guid: 1434311da2d43c74eba13993c440dc59, type: 3}
       propertyPath: m_Name
       value: Desk Model

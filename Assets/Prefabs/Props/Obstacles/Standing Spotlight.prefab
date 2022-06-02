@@ -173,6 +173,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Standing Spotlight Model
       objectReference: {fileID: 0}
+    - target: {fileID: 1304100277959924411, guid: d4c82957b26f39a4aa7451bace394236, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f39c958f0e798d3408431382d8d36b6d, type: 2}
+    - target: {fileID: 1304100277959924411, guid: d4c82957b26f39a4aa7451bace394236, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: f637d84f6e3a5a243876dd534f7c491e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4c82957b26f39a4aa7451bace394236, type: 3}
 --- !u!4 &5902828954621016670 stripped
