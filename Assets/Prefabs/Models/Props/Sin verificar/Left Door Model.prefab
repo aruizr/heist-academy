@@ -11,8 +11,10 @@ GameObject:
   - component: {fileID: 7289060400448584569}
   - component: {fileID: 6038973511523806059}
   - component: {fileID: 7542796558158449310}
+  - component: {fileID: 2743880796094460012}
+  - component: {fileID: 5396539438860007870}
   m_Layer: 0
-  m_Name: Puerta Izquierda
+  m_Name: Left Door Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,3 +83,32 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2743880796094460012
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724591700160398869}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2500019, y: 1.2219172, z: 3.2186527}
+  m_Center: {x: 0.12499857, y: 0.61095476, z: 1.6093264}
+--- !u!208 &5396539438860007870
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724591700160398869}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.125, y: 0.611, z: 1.6090001}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.125, y: 0.611, z: 1.6090001}
+  m_TimeToStationary: 0.5
