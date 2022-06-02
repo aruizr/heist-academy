@@ -31,6 +31,7 @@ namespace Player
         private void Update()
         {
             if (_selection.Count <= 1) return;
+            if (_selection[0].TryGetComponent<Grabbable>(out var grabbable) && grabbable.IsGrabbed) return;
 
             var playerPosition = playerTransform.position;
             var playerRotation = playerTransform.eulerAngles;

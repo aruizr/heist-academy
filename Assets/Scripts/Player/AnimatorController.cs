@@ -13,7 +13,7 @@ namespace Player
 
         private void FixedUpdate()
         {
-            animator.SetFloat(velocityParameter.Value, direction.Value.magnitude, smoothTime.Value, Time.fixedDeltaTime);
+            animator.SetFloat(velocityParameter.Value, direction.Value.magnitude);
         }
     }
 }

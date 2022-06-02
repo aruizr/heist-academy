@@ -11,7 +11,7 @@ namespace Settings
 
         [SerializeField] private Toggle toggle;
 
-        private void Start()
+        private void Awake()
         {
             var value = QualitySettings.vSyncCount;
             
