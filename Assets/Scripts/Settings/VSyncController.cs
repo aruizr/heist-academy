@@ -7,21 +7,24 @@ namespace Settings
     public class VSyncController : MonoBehaviour
     {
         private const string Key = "v-sync";
+        private const string Default = "default-v-sync";
 
         [SerializeField] private Toggle toggle;
 
-        private void Start()
+        private void Awake()
         {
-            if (!PlayerPrefs.HasKey(Key))
+            var value = QualitySettings.vSyncCount;
+            
+            PlayerPrefs.SetInt(Default, value);
+            PlayerPrefs.Save();
+            
+            if (PlayerPrefs.HasKey(Key))
             {
-                toggle.isOn = QualitySettings.vSyncCount.ToBool();
-                return;
+                value = PlayerPrefs.GetInt(Key);
+                QualitySettings.vSyncCount = value;
             }
-
-            var value = PlayerPrefs.GetInt(Key);
-
-            QualitySettings.vSyncCount = value;
-            toggle.isOn = value.ToBool();
+            
+            toggle.SetIsOnWithoutNotify(value.ToBool());
         }
 
         public void SetVSync(bool active)
@@ -31,6 +34,11 @@ namespace Settings
             QualitySettings.vSyncCount = value;
             PlayerPrefs.SetInt(Key, value);
             PlayerPrefs.Save();
+        }
+
+        public void ResetVSync()
+        {
+            toggle.isOn = PlayerPrefs.GetInt(Default).ToBool();
         }
     }
 }

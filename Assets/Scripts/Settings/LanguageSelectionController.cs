@@ -9,14 +9,14 @@ namespace Settings
     {
         [SerializeField] private TMP_Dropdown dropdown;
 
-        private void Start()
+        private void Awake()
         {
             var locales = LocalizationSettings.AvailableLocales.Locales;
             var localesNames = locales.Select(locale => locale.LocaleName).ToList();
 
             dropdown.ClearOptions();
             dropdown.AddOptions(localesNames);
-            dropdown.value = locales.IndexOf(LocalizationSettings.SelectedLocale);
+            dropdown.SetValueWithoutNotify(locales.IndexOf(LocalizationSettings.SelectedLocale));
         }
 
         public void SetLanguage(int index)

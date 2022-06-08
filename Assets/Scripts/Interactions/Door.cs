@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using MyBox;
 using PropertyAnimators;
 using RuntimeSets;
@@ -12,6 +13,7 @@ namespace Interactions
     {
         [SerializeField] private PropertyAnimator<Transform, Vector3> animator;
         [SerializeField] private bool isLocked;
+        [SerializeField] private GameObject lockGameObject = null;
 
         [SerializeField] [ConditionalField(nameof(isLocked))]
         private GameObject unlockedBy;
@@ -26,14 +28,9 @@ namespace Interactions
 
         [ConditionalField(nameof(isLocked))] public UnityEvent onLocked;
 
-        private void OnEnable()
+        private void Start()
         {
             animator.onComplete.AddListener(OnComplete);
-        }
-
-        private void OnDisable()
-        {
-            animator.onComplete.RemoveListener(OnComplete);
         }
 
         public bool IsOpen { get; private set; }
@@ -53,6 +50,8 @@ namespace Interactions
             }
 
             inventory.Remove(unlockedBy);
+            if(lockGameObject != null)
+                lockGameObject.SetActive(false);
             isLocked = false;
             ForceOpen();
         }

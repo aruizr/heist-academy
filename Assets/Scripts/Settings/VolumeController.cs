@@ -11,21 +11,20 @@ namespace Settings
         [SerializeField] private AudioMixer mixer;
         [SerializeField] private string parameterName;
 
-        private void Start()
+        private void Awake()
         {
-            float value;
+            mixer.GetVolume(parameterName, out var value);
+            
+            PlayerPrefs.SetFloat("default-" + parameterName, value);
+            PlayerPrefs.Save();
 
-            if (!PlayerPrefs.HasKey(parameterName))
+            if (PlayerPrefs.HasKey(parameterName))
             {
-                mixer.GetFloat(parameterName, out value);
-                slider.value = value;
-                return;
+                value = PlayerPrefs.GetFloat(parameterName);
+                mixer.SetVolume(parameterName, value);
             }
-
-            value = PlayerPrefs.GetFloat(parameterName);
-
-            slider.value = value;
-            mixer.SetVolume(parameterName, value);
+            
+            slider.SetValueWithoutNotify(value);
         }
 
         public void SetVolume(float value)
@@ -33,6 +32,11 @@ namespace Settings
             mixer.SetVolume(parameterName, value);
             PlayerPrefs.SetFloat(parameterName, value);
             PlayerPrefs.Save();
+        }
+
+        public void ResetVolume()
+        {
+            slider.value = PlayerPrefs.GetFloat("default-" + parameterName);
         }
     }
 }

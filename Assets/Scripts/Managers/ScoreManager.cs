@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Codetox.Variables;
 using RuntimeSets;
 using UnityEngine;
@@ -7,12 +8,14 @@ namespace Managers
 {
     public class ScoreManager : MonoBehaviour
     {
+        [SerializeField] private LevelEvaluation levelEvaluation;
         [SerializeField] private IntVariable alarmTriggerCount;
         [SerializeField] private IntVariable guardSoundAlertCount;
         [SerializeField] private IntVariable guardSightAlertCount;
         [SerializeField] private IntVariable cameraSightAlertCount;
         [SerializeField] private GameObjectRuntimeSet optionalObjectInventory;
         [SerializeField] private StringVariable levelTime;
+        [SerializeField] private FloatVariable finalMark;
 
         private bool _isTimeCounting;
         private float _timeCounter;
@@ -35,7 +38,8 @@ namespace Managers
 
         public void CalculateStats()
         {
-            levelTime.Value = TimeSpan.FromSeconds(_timeCounter).ToString("m\\:ss\\.fff");
+            levelTime.Value = TimeSpan.FromSeconds(_timeCounter).ToString("m\\:ss");
+            finalMark.Value = levelEvaluation.GetLevelMark();
         }
 
         public void OnAlarmTriggered()
