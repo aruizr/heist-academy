@@ -45,10 +45,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 6908399716204319641, guid: 2181b69004753714789a3f256f9774a9, type: 3}
-  initialAlfa: 0.35
+  initialAlfa: 0.1
   poolSize: 10
-  expansionTime: 0.75
+  expansionTime: 0.6
   waveEase: 3
+  initialThickness: 0.005
+  finalThickness: 0.0001
 --- !u!114 &4443677157850720720
 MonoBehaviour:
   m_ObjectHideFlags: 0
