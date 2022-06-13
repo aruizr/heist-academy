@@ -145,7 +145,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &5657280447404180041
 Transform:
@@ -365,6 +365,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 7740551806149361674}
   isLocked: 0
+  lockGameObject: {fileID: 0}
   unlockedBy: {fileID: 0}
   inventory: {fileID: 0}
   onStartedOpening:
@@ -658,7 +659,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 9
   m_IsActive: 1
 --- !u!4 &5031136312272496490
 Transform:
