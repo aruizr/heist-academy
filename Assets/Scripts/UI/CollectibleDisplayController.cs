@@ -1,5 +1,6 @@
 ﻿using Codetox.Messaging;
 using RuntimeSets;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Utilities;
@@ -14,10 +15,13 @@ namespace UI
         [SerializeField] private Sprite slotFilledSprite;
         [SerializeField] private ValueReference<string> collectibleID;
         [SerializeField] private GameObjectRuntimeSet inventory;
+        [SerializeField] private TMP_Text text;
+        [SerializeField] private string textPlaceholder;
 
         private void Awake()
         {
             image.sprite = slotSprite;
+            if (text) text.text = textPlaceholder;
         }
 
         private void OnEnable()
@@ -28,7 +32,9 @@ namespace UI
             {
                 o.Send<Identifier>(identifier =>
                 {
-                    if (identifier.ID.Equals(collectibleID.Value)) image.sprite = slotFilledSprite;
+                    if (!identifier.ID.Equals(collectibleID.Value)) return;
+                    image.sprite = slotFilledSprite;
+                    if (text) text.text = identifier.ID;
                 });
             }
         }
@@ -42,7 +48,9 @@ namespace UI
         {
             obj.Send<Identifier>(identifier =>
             {
-                if (identifier.ID.Equals(collectibleID.Value)) image.sprite = slotFilledSprite;
+                if (!identifier.ID.Equals(collectibleID.Value)) return;
+                image.sprite = slotFilledSprite;
+                if (text) text.text = identifier.ID;
             });
         }
     }

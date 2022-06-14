@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
@@ -9,8 +11,10 @@ namespace Settings
     {
         [SerializeField] private TMP_Dropdown dropdown;
 
-        private void Awake()
+        private IEnumerator Start()
         {
+            yield return LocalizationSettings.InitializationOperation;
+
             var locales = LocalizationSettings.AvailableLocales.Locales;
             var localesNames = locales.Select(locale => locale.LocaleName).ToList();
 
