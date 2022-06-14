@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -419,7 +419,6 @@ GameObject:
   - component: {fileID: 68567937}
   - component: {fileID: 68567936}
   - component: {fileID: 68567935}
-  - component: {fileID: 68567938}
   m_Layer: 5
   m_Name: ScreenMode
   m_TagString: Untagged
@@ -510,7 +509,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 68567938}
+      - m_Target: {fileID: 1563073274}
         m_TargetAssemblyTypeName: Settings.WindowModeSelectionController, Assembly-CSharp
         m_MethodName: SetWindowMode
         m_Mode: 0
@@ -561,19 +560,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 68567933}
   m_CullTransparentMesh: 1
---- !u!114 &68567938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 68567933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39289f6749fc48419285de5fd2109a6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dropdown: {fileID: 68567935}
 --- !u!1 &69592986
 GameObject:
   m_ObjectHideFlags: 0
@@ -935,7 +921,6 @@ GameObject:
   m_Component:
   - component: {fileID: 127207372}
   - component: {fileID: 127207373}
-  - component: {fileID: 127207374}
   m_Layer: 5
   m_Name: SFXSlider
   m_TagString: Untagged
@@ -1016,7 +1001,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 127207374}
+      - m_Target: {fileID: 492387695}
         m_TargetAssemblyTypeName: Settings.VolumeController, Assembly-CSharp
         m_MethodName: SetVolume
         m_Mode: 0
@@ -1028,21 +1013,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &127207374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 127207371}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdf38630a66745e0bbe43c7d2fb7b8b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 127207373}
-  mixer: {fileID: 24100000, guid: f5481fc027f25d545a100c32a89a35c0, type: 2}
-  parameterName: SFX Volume
 --- !u!1 &134348288
 GameObject:
   m_ObjectHideFlags: 0
@@ -1939,7 +1909,6 @@ GameObject:
   m_Component:
   - component: {fileID: 189995200}
   - component: {fileID: 189995201}
-  - component: {fileID: 189995202}
   m_Layer: 5
   m_Name: MusicSlider
   m_TagString: Untagged
@@ -2020,7 +1989,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 189995202}
+      - m_Target: {fileID: 2130409550}
         m_TargetAssemblyTypeName: Settings.VolumeController, Assembly-CSharp
         m_MethodName: SetVolume
         m_Mode: 0
@@ -2032,21 +2001,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &189995202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 189995199}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdf38630a66745e0bbe43c7d2fb7b8b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 189995201}
-  mixer: {fileID: 24100000, guid: f5481fc027f25d545a100c32a89a35c0, type: 2}
-  parameterName: Music Volume
 --- !u!1 &197678359
 GameObject:
   m_ObjectHideFlags: 0
@@ -4377,6 +4331,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 485721533}
   m_CullTransparentMesh: 1
+--- !u!1 &492387693
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 492387694}
+  - component: {fileID: 492387695}
+  m_Layer: 0
+  m_Name: SFX Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &492387694
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492387693}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1041902053}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &492387695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492387693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdf38630a66745e0bbe43c7d2fb7b8b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 127207373}
+  mixer: {fileID: 24100000, guid: f5481fc027f25d545a100c32a89a35c0, type: 2}
+  parameterName: SFX Volume
 --- !u!1 &502142004
 GameObject:
   m_ObjectHideFlags: 0
@@ -6550,7 +6550,6 @@ GameObject:
   m_Component:
   - component: {fileID: 907972383}
   - component: {fileID: 907972384}
-  - component: {fileID: 907972385}
   m_Layer: 5
   m_Name: BrightnessSlider
   m_TagString: Untagged
@@ -6631,7 +6630,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 907972385}
+      - m_Target: {fileID: 1563073277}
         m_TargetAssemblyTypeName: Settings.BrightnessController, Assembly-CSharp
         m_MethodName: SetBrightness
         m_Mode: 0
@@ -6643,19 +6642,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &907972385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 907972382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81e82ceb67e4457bbb10e73ecf9c10e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 907972384}
 --- !u!1 &908526390
 GameObject:
   m_ObjectHideFlags: 0
@@ -6962,7 +6948,6 @@ GameObject:
   m_Component:
   - component: {fileID: 995452304}
   - component: {fileID: 995452305}
-  - component: {fileID: 995452306}
   m_Layer: 5
   m_Name: VSync
   m_TagString: Untagged
@@ -7038,7 +7023,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 995452306}
+      - m_Target: {fileID: 1563073273}
         m_TargetAssemblyTypeName: Settings.VSyncController, Assembly-CSharp
         m_MethodName: SetVSync
         m_Mode: 0
@@ -7051,19 +7036,6 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   m_IsOn: 0
---- !u!114 &995452306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 995452303}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e8ee22e9e9b452dbe11a574ad146647, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toggle: {fileID: 995452305}
 --- !u!1 &1010456749
 GameObject:
   m_ObjectHideFlags: 0
@@ -7100,6 +7072,39 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1041902052
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1041902053}
+  m_Layer: 0
+  m_Name: Volume Settings Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1041902053
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041902052}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1479097780}
+  - {fileID: 2130409549}
+  - {fileID: 492387694}
+  m_Father: {fileID: 1990756384}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1043398086
 GameObject:
   m_ObjectHideFlags: 0
@@ -7183,7 +7188,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 127207374}
+      - m_Target: {fileID: 1479097781}
         m_TargetAssemblyTypeName: Settings.VolumeController, Assembly-CSharp
         m_MethodName: ResetVolume
         m_Mode: 1
@@ -7195,7 +7200,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 189995202}
+      - m_Target: {fileID: 2130409550}
         m_TargetAssemblyTypeName: Settings.VolumeController, Assembly-CSharp
         m_MethodName: ResetVolume
         m_Mode: 1
@@ -7207,7 +7212,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1780925718}
+      - m_Target: {fileID: 492387695}
         m_TargetAssemblyTypeName: Settings.VolumeController, Assembly-CSharp
         m_MethodName: ResetVolume
         m_Mode: 1
@@ -8046,7 +8051,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 907972385}
+      - m_Target: {fileID: 1563073277}
         m_TargetAssemblyTypeName: Settings.BrightnessController, Assembly-CSharp
         m_MethodName: ResetBrightness
         m_Mode: 1
@@ -8058,19 +8063,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1842983819}
-        m_TargetAssemblyTypeName: Settings.GraphicsQualitySelectionController, Assembly-CSharp
-        m_MethodName: ResetQualityLevel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1701070133}
+      - m_Target: {fileID: 1563073276}
         m_TargetAssemblyTypeName: Settings.ScreenResolutionSelectionController, Assembly-CSharp
         m_MethodName: ResetResolution
         m_Mode: 1
@@ -8082,7 +8075,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 68567938}
+      - m_Target: {fileID: 1563073275}
+        m_TargetAssemblyTypeName: Settings.GraphicsQualitySelectionController, Assembly-CSharp
+        m_MethodName: ResetQualityLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1563073274}
         m_TargetAssemblyTypeName: Settings.WindowModeSelectionController, Assembly-CSharp
         m_MethodName: ResetWindowMode
         m_Mode: 1
@@ -8094,7 +8099,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 995452306}
+      - m_Target: {fileID: 1563073273}
         m_TargetAssemblyTypeName: Settings.VSyncController, Assembly-CSharp
         m_MethodName: ResetVSync
         m_Mode: 1
@@ -10978,6 +10983,52 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1479097779
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1479097780}
+  - component: {fileID: 1479097781}
+  m_Layer: 0
+  m_Name: General Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1479097780
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479097779}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1041902053}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1479097781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479097779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdf38630a66745e0bbe43c7d2fb7b8b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 1780925717}
+  mixer: {fileID: 24100000, guid: f5481fc027f25d545a100c32a89a35c0, type: 2}
+  parameterName: General Volume
 --- !u!1 &1481707204
 GameObject:
   m_ObjectHideFlags: 0
@@ -11476,7 +11527,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1542794794
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11614,6 +11665,106 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1556848383}
   m_CullTransparentMesh: 1
+--- !u!1 &1563073271
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1563073272}
+  - component: {fileID: 1563073277}
+  - component: {fileID: 1563073276}
+  - component: {fileID: 1563073275}
+  - component: {fileID: 1563073274}
+  - component: {fileID: 1563073273}
+  m_Layer: 0
+  m_Name: Graphic Settings Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1563073272
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563073271}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1990756384}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1563073273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563073271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e8ee22e9e9b452dbe11a574ad146647, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toggle: {fileID: 995452305}
+--- !u!114 &1563073274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563073271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39289f6749fc48419285de5fd2109a6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropdown: {fileID: 68567935}
+--- !u!114 &1563073275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563073271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0021b193706c4682b115249f1bd3ebca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropdown: {fileID: 1842983816}
+--- !u!114 &1563073276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563073271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a58ce48fe9d40a6aebdcf97dba9e601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropdown: {fileID: 1701070130}
+--- !u!114 &1563073277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563073271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e82ceb67e4457bbb10e73ecf9c10e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 907972384}
 --- !u!1 &1567040384
 GameObject:
   m_ObjectHideFlags: 0
@@ -12702,7 +12853,6 @@ GameObject:
   - component: {fileID: 1701070132}
   - component: {fileID: 1701070131}
   - component: {fileID: 1701070130}
-  - component: {fileID: 1701070133}
   m_Layer: 5
   m_Name: Resolution
   m_TagString: Untagged
@@ -12791,7 +12941,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1701070133}
+      - m_Target: {fileID: 1563073276}
         m_TargetAssemblyTypeName: Settings.ScreenResolutionSelectionController, Assembly-CSharp
         m_MethodName: SetResolution
         m_Mode: 0
@@ -12842,19 +12992,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1701070128}
   m_CullTransparentMesh: 1
---- !u!114 &1701070133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1701070128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a58ce48fe9d40a6aebdcf97dba9e601, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dropdown: {fileID: 1701070130}
 --- !u!1 &1715064199
 GameObject:
   m_ObjectHideFlags: 0
@@ -13758,7 +13895,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'ROLE: Programmer'
+  m_text: 'ROLE: Lead Programmer'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4ecb86778195c42fcbf93e065029b2ae, type: 2}
   m_sharedMaterial: {fileID: 3071229406490001238, guid: 4ecb86778195c42fcbf93e065029b2ae, type: 2}
@@ -14124,7 +14261,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1780925716}
   - component: {fileID: 1780925717}
-  - component: {fileID: 1780925718}
   m_Layer: 5
   m_Name: GeneralSlider
   m_TagString: Untagged
@@ -14205,7 +14341,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1780925718}
+      - m_Target: {fileID: 1479097781}
         m_TargetAssemblyTypeName: Settings.VolumeController, Assembly-CSharp
         m_MethodName: SetVolume
         m_Mode: 0
@@ -14217,21 +14353,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1780925718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1780925715}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdf38630a66745e0bbe43c7d2fb7b8b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 1780925717}
-  mixer: {fileID: 24100000, guid: f5481fc027f25d545a100c32a89a35c0, type: 2}
-  parameterName: General Volume
 --- !u!1 &1791090316
 GameObject:
   m_ObjectHideFlags: 0
@@ -14829,7 +14950,6 @@ GameObject:
   - component: {fileID: 1842983818}
   - component: {fileID: 1842983817}
   - component: {fileID: 1842983816}
-  - component: {fileID: 1842983819}
   m_Layer: 5
   m_Name: Quality
   m_TagString: Untagged
@@ -14920,7 +15040,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1842983819}
+      - m_Target: {fileID: 1563073275}
         m_TargetAssemblyTypeName: Settings.GraphicsQualitySelectionController, Assembly-CSharp
         m_MethodName: SetQualityLevel
         m_Mode: 0
@@ -14971,19 +15091,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1842983814}
   m_CullTransparentMesh: 1
---- !u!114 &1842983819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1842983814}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0021b193706c4682b115249f1bd3ebca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dropdown: {fileID: 1842983816}
 --- !u!1 &1846075338
 GameObject:
   m_ObjectHideFlags: 0
@@ -15255,7 +15362,7 @@ MonoBehaviour:
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4ecb86778195c42fcbf93e065029b2ae, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 3071229406490001238, guid: 4ecb86778195c42fcbf93e065029b2ae, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -17088,6 +17195,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1982126508}
   m_CullTransparentMesh: 1
+--- !u!1 &1990756383
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1990756384}
+  m_Layer: 0
+  m_Name: Settings Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1990756384
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990756383}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 960, y: 540, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1563073272}
+  - {fileID: 1041902053}
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2002603286
 GameObject:
   m_ObjectHideFlags: 0
@@ -18864,6 +19003,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2122141500}
   m_CullTransparentMesh: 1
+--- !u!1 &2130409548
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2130409549}
+  - component: {fileID: 2130409550}
+  m_Layer: 0
+  m_Name: Music Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2130409549
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130409548}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1041902053}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2130409550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130409548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdf38630a66745e0bbe43c7d2fb7b8b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 189995201}
+  mixer: {fileID: 24100000, guid: f5481fc027f25d545a100c32a89a35c0, type: 2}
+  parameterName: Music Volume
 --- !u!1 &2143009210
 GameObject:
   m_ObjectHideFlags: 0
