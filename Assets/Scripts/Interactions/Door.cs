@@ -27,6 +27,7 @@ namespace Interactions
         public UnityEvent onFinishedClosing;
 
         [ConditionalField(nameof(isLocked))] public UnityEvent onLocked;
+        [ConditionalField(nameof(isLocked))] public UnityEvent onUnlocked;
 
         private void Start()
         {
@@ -53,6 +54,7 @@ namespace Interactions
             if(lockGameObject != null)
                 lockGameObject.SetActive(false);
             isLocked = false;
+            onUnlocked?.Invoke();
             ForceOpen();
         }
 

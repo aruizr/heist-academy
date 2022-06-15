@@ -2,6 +2,7 @@
 using RuntimeSets;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using Utilities;
 using Variables;
@@ -17,6 +18,8 @@ namespace UI
         [SerializeField] private GameObjectRuntimeSet inventory;
         [SerializeField] private TMP_Text text;
         [SerializeField] private string textPlaceholder;
+
+        public UnityEvent onCollectibleCollected;
 
         private void Awake()
         {
@@ -51,6 +54,7 @@ namespace UI
                 if (!identifier.ID.Equals(collectibleID.Value)) return;
                 image.sprite = slotFilledSprite;
                 if (text) text.text = identifier.ID;
+                onCollectibleCollected?.Invoke();
             });
         }
     }
