@@ -1938,6 +1938,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 603773759758933676, guid: 692b74a19216dc241b3e91bf644ecbc7, type: 3}
+      propertyPath: MaxDistance
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 603773759758933676, guid: 692b74a19216dc241b3e91bf644ecbc7, type: 3}
+      propertyPath: MinDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 603773759758933676, guid: 692b74a19216dc241b3e91bf644ecbc7, type: 3}
+      propertyPath: rolloffMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 991761900711391656, guid: 692b74a19216dc241b3e91bf644ecbc7, type: 3}
       propertyPath: m_Name
       value: Step 3D Audio Source
