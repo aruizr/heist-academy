@@ -13,7 +13,6 @@ namespace Interactions
     {
         [SerializeField] private PropertyAnimator<Transform, Vector3> animator;
         [SerializeField] private bool isLocked;
-        [SerializeField] private GameObject lockGameObject = null;
 
         [SerializeField] [ConditionalField(nameof(isLocked))]
         private GameObject unlockedBy;
@@ -51,8 +50,6 @@ namespace Interactions
             }
 
             inventory.Remove(unlockedBy);
-            if(lockGameObject != null)
-                lockGameObject.SetActive(false);
             isLocked = false;
             onUnlocked?.Invoke();
             ForceOpen();
