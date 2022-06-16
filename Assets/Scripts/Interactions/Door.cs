@@ -43,13 +43,13 @@ namespace Interactions
                 return;
             }
 
-            if (!inventory.Contains(unlockedBy))
+            if (!inventory.Any())
             {
                 onLocked?.Invoke();
                 return;
             }
 
-            inventory.Remove(unlockedBy);
+            inventory.Remove(inventory.ElementAt(0));
             isLocked = false;
             onUnlocked?.Invoke();
             ForceOpen();
