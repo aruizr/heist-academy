@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 2402030913036754514}
   - component: {fileID: 2402030913036754513}
   m_Layer: 6
-  m_Name: Room grande (5)
+  m_Name: Room Pasillito
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 2402030913333419375}
   - component: {fileID: 2402030913333419374}
   m_Layer: 6
-  m_Name: Room1  (3)
+  m_Name: "Room Peque\xF1a final"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -298,7 +298,7 @@ GameObject:
   - component: {fileID: 2402030913413529626}
   - component: {fileID: 2402030913413529625}
   m_Layer: 6
-  m_Name: Plane
+  m_Name: Suelo Almacen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -345,7 +345,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 09b0d956810d01348b245873b3161191, type: 2}
+  - {fileID: 2100000, guid: 6a5dd676ac718c4468b3958049fb4c1e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -393,7 +393,7 @@ GameObject:
   - component: {fileID: 2402030913723985333}
   - component: {fileID: 2402030913723985332}
   m_Layer: 6
-  m_Name: Room grande (4)
+  m_Name: Room Cuadro VAN KEK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -488,7 +488,7 @@ GameObject:
   - component: {fileID: 2402030913777646095}
   - component: {fileID: 2402030913777646094}
   m_Layer: 6
-  m_Name: Room grande (12)
+  m_Name: Room Final Ventana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -535,7 +535,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 19cb95c8584037549aa84f5dace55659, type: 2}
+  - {fileID: 2100000, guid: 726726e4868009544952ebcad32514dd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -630,7 +630,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a61f7916f9221d54e8af6e6a71e51352, type: 2}
+  - {fileID: 2100000, guid: 550a86970c7d09e4f9044eaf97781c63, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -679,7 +679,7 @@ GameObject:
   - component: {fileID: 2402030914287621321}
   - component: {fileID: 2402030914287621320}
   m_Layer: 6
-  m_Name: Room1  (1)
+  m_Name: Room Computer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -726,7 +726,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4de4cf02a37c07648b2215da91b1627d, type: 2}
+  - {fileID: 2100000, guid: 1bfea1598f9d3d44fb5f3dfe69ade0fb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -774,7 +774,7 @@ GameObject:
   - component: {fileID: 2402030914572419462}
   - component: {fileID: 2402030914572419461}
   m_Layer: 6
-  m_Name: Room grande (6)
+  m_Name: Room final Estanterias
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -821,7 +821,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 09b0d956810d01348b245873b3161191, type: 2}
+  - {fileID: 2100000, guid: 33fa727f6fda0d94e93b3fad8d1b1282, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -964,6 +964,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 858570718130933883, guid: 2d74d71b1b17dd14b8c6551df7f9252f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1990992736083307284, guid: 2d74d71b1b17dd14b8c6551df7f9252f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 82d1351ceb0b2114cad8ae95e680c58f, type: 2}
+    - target: {fileID: 1990992736083307284, guid: 2d74d71b1b17dd14b8c6551df7f9252f, type: 3}
+      propertyPath: m_IgnoreNormalsForChartDetection
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1137,9 +1145,13 @@ PrefabInstance:
       value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 3506144985757109081, guid: 7ff20cc974f214b43bfd4948fe6f8651, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3506144985757109081, guid: 7ff20cc974f214b43bfd4948fe6f8651, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a7c2dfbccce012b48be3d3f665f2bc11, type: 2}
+      objectReference: {fileID: 2100000, guid: 74d53870f6717494e9f189a17175dc45, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ff20cc974f214b43bfd4948fe6f8651, type: 3}
 --- !u!4 &7131229810051265501 stripped
@@ -1235,7 +1247,7 @@ PrefabInstance:
     - target: {fileID: 8761825517178974065, guid: ab93e7ba8ff06d948ae6f3d095b4d413, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 550a86970c7d09e4f9044eaf97781c63, type: 2}
+      objectReference: {fileID: 2100000, guid: dbba14e627d632549813e8b02eafd4d7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab93e7ba8ff06d948ae6f3d095b4d413, type: 3}
 --- !u!4 &2182115862705431245 stripped
