@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &126137658654055649
 Transform:
@@ -82,18 +82,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8596738641644179068, guid: 7f58fed3d6848534899fb7fd2f66aa40, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: -5265558064501858721, guid: 7f58fed3d6848534899fb7fd2f66aa40, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a9bf3b600fa0e3b43892e6e002419fe4, type: 2}
+    - target: {fileID: -445137649591765684, guid: 7f58fed3d6848534899fb7fd2f66aa40, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7f58fed3d6848534899fb7fd2f66aa40, type: 3}
       propertyPath: m_Name
       value: FachadaSinPuertas
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7f58fed3d6848534899fb7fd2f66aa40, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 2502432061147645856, guid: 7f58fed3d6848534899fb7fd2f66aa40, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5c6ef285f9e365047aa1e8e46cb76a6d, type: 2}
+    - target: {fileID: 4093095261801647276, guid: 7f58fed3d6848534899fb7fd2f66aa40, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144394004440419581, guid: 7f58fed3d6848534899fb7fd2f66aa40, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 8835409689826365435, guid: 7f58fed3d6848534899fb7fd2f66aa40, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
