@@ -11,12 +11,16 @@ GameObject:
   - component: {fileID: 7625558707450418206}
   - component: {fileID: 6808517583666879419}
   - component: {fileID: 8761825517178974065}
-  m_Layer: 0
+  - component: {fileID: 638546331643558364}
+  - component: {fileID: 5203278433878658419}
+  - component: {fileID: 5589952295075177362}
+  - component: {fileID: 7061556842024265008}
+  m_Layer: 6
   m_Name: Habitacion Grande Arriba
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &7625558707450418206
 Transform:
@@ -81,3 +85,55 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &638546331643558364
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7104636849251438244}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.15862663, y: 0.44199988, z: 0.00042702124}
+  m_Center: {x: -0.007948274, y: -0.08264736, z: 0.00021350633}
+--- !u!65 &5203278433878658419
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7104636849251438244}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.080685705, y: 0.043787584, z: 0}
+  m_Center: {x: 0.1103952, y: 0.11645893, z: -0.00000002665412}
+--- !u!65 &5589952295075177362
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7104636849251438244}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.080685705, y: 0.04003602, z: 0}
+  m_Center: {x: 0.1103952, y: -0.2849378, z: 0.000000018540941}
+--- !u!65 &7061556842024265008
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7104636849251438244}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.08011388, y: 0.20017791, z: 0.00042702124}
+  m_Center: {x: 0.110681094, y: -0.08483608, z: 0.00021350657}

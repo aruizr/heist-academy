@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 6801518420016318615}
   - component: {fileID: 7623471992034182962}
   - component: {fileID: 5632019800122635256}
-  m_Layer: 0
+  - component: {fileID: 5820522543847776274}
+  m_Layer: 6
   m_Name: Room Inicial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6801518420016318615
 Transform:
@@ -81,3 +82,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5820522543847776274
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6136163679578165805}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.37391624, y: 0.44277802, z: 1.9663298e-16}
+  m_Center: {x: 0.017101144, y: -0.0020802761, z: 9.238284e-19}
