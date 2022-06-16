@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &976640268008414251
+--- !u!1 &1696837689956428225
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,31 +8,31 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 488193653950088849}
+  - component: {fileID: 2073820007278097275}
   m_Layer: 0
-  m_Name: CeramicPlate5
+  m_Name: Ceramic Plate Model 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &488193653950088849
+--- !u!4 &2073820007278097275
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 976640268008414251}
+  m_GameObject: {fileID: 1696837689956428225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.74533, y: 0.073, z: 12.566}
+  m_LocalPosition: {x: 17.785217, y: 0.059, z: 10.188781}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 6734681883964209995}
-  - {fileID: 6687592026144945067}
+  - {fileID: 5149792199131713185}
+  - {fileID: 5102226835840271937}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3744175117811183482
+--- !u!1 &3023079367998626448
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,9 +40,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6734681883964209995}
-  - component: {fileID: 5419164491911567679}
-  - component: {fileID: 7115488731457869733}
+  - component: {fileID: 5149792199131713185}
+  - component: {fileID: 5851693933615099093}
+  - component: {fileID: 8700552646990520911}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -50,35 +50,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6734681883964209995
+--- !u!4 &5149792199131713185
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3744175117811183482}
+  m_GameObject: {fileID: 3023079367998626448}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 11.809889}
   m_Children: []
-  m_Father: {fileID: 488193653950088849}
+  m_Father: {fileID: 2073820007278097275}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5419164491911567679
+--- !u!33 &5851693933615099093
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3744175117811183482}
+  m_GameObject: {fileID: 3023079367998626448}
   m_Mesh: {fileID: 2534964839176971238, guid: 6de5ee77e861bf14d9d982b3623203aa, type: 3}
---- !u!23 &7115488731457869733
+--- !u!23 &8700552646990520911
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3744175117811183482}
+  m_GameObject: {fileID: 3023079367998626448}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -91,7 +91,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e4b20b77f1bf2c14596244c489789964, type: 2}
+  - {fileID: 2100000, guid: 9ba442a7a515b1847aae70598a39a33b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -113,7 +113,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &8605144297294692425
+--- !u!1 &7884189829911131555
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,9 +121,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6687592026144945067}
-  - component: {fileID: 4056426872563282283}
-  - component: {fileID: 7164439440927230400}
+  - component: {fileID: 5102226835840271937}
+  - component: {fileID: 2470940702152361089}
+  - component: {fileID: 8749625959002881066}
   m_Layer: 0
   m_Name: Cylinder.001
   m_TagString: Untagged
@@ -131,35 +131,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6687592026144945067
+--- !u!4 &5102226835840271937
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8605144297294692425}
+  m_GameObject: {fileID: 7884189829911131555}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 11.809889}
   m_Children: []
-  m_Father: {fileID: 488193653950088849}
+  m_Father: {fileID: 2073820007278097275}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4056426872563282283
+--- !u!33 &2470940702152361089
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8605144297294692425}
+  m_GameObject: {fileID: 7884189829911131555}
   m_Mesh: {fileID: -7387706064836869012, guid: 6de5ee77e861bf14d9d982b3623203aa, type: 3}
---- !u!23 &7164439440927230400
+--- !u!23 &8749625959002881066
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8605144297294692425}
+  m_GameObject: {fileID: 7884189829911131555}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -172,7 +172,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9e83527a808157c4dad40467aa5585d2, type: 2}
+  - {fileID: 2100000, guid: 05f78787676a89e40b2b73004400fd1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
