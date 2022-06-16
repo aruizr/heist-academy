@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5437759371039770502
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 557432527747248280}
+  m_Layer: 0
+  m_Name: Vessel 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 87
+  m_IsActive: 1
+--- !u!4 &557432527747248280
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5437759371039770502}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 3757176462233240172}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2850028382878688805
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 557432527747248280}
+    m_Modifications:
+    - target: {fileID: 1416797289453511753, guid: 7bca9c394e4ee0f49bc3a900de6bc69a, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1416797289453511753, guid: 7bca9c394e4ee0f49bc3a900de6bc69a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1416797289453511753, guid: 7bca9c394e4ee0f49bc3a900de6bc69a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.317
+      objectReference: {fileID: 0}
+    - target: {fileID: 1416797289453511753, guid: 7bca9c394e4ee0f49bc3a900de6bc69a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1416797289453511753, guid: 7bca9c394e4ee0f49bc3a900de6bc69a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1416797289453511753, guid: 7bca9c394e4ee0f49bc3a900de6bc69a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1416797289453511753, guid: 7bca9c394e4ee0f49bc3a900de6bc69a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1416797289453511753, guid: 7bca9c394e4ee0f49bc3a900de6bc69a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1416797289453511753, guid: 7bca9c394e4ee0f49bc3a900de6bc69a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1416797289453511753, guid: 7bca9c394e4ee0f49bc3a900de6bc69a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1416797289453511753, guid: 7bca9c394e4ee0f49bc3a900de6bc69a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793181471963135731, guid: 7bca9c394e4ee0f49bc3a900de6bc69a, type: 3}
+      propertyPath: m_Name
+      value: Vessel Model 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793181471963135731, guid: 7bca9c394e4ee0f49bc3a900de6bc69a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 87
+      objectReference: {fileID: 0}
+    - target: {fileID: 5570445845289335671, guid: 7bca9c394e4ee0f49bc3a900de6bc69a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 87
+      objectReference: {fileID: 0}
+    - target: {fileID: 7555473585769083586, guid: 7bca9c394e4ee0f49bc3a900de6bc69a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 87
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7bca9c394e4ee0f49bc3a900de6bc69a, type: 3}
+--- !u!4 &3757176462233240172 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1416797289453511753, guid: 7bca9c394e4ee0f49bc3a900de6bc69a, type: 3}
+  m_PrefabInstance: {fileID: 2850028382878688805}
+  m_PrefabAsset: {fileID: 0}
