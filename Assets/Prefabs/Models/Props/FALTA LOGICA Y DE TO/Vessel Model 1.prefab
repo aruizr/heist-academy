@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1156380416687487986
+--- !u!1 &1793181471963135731
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,45 +8,77 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2544875429354252660}
-  - component: {fileID: 6598679243873827547}
-  - component: {fileID: 3955556532224505795}
+  - component: {fileID: 1416797289453511753}
   m_Layer: 0
-  m_Name: CaraMono
+  m_Name: Vessel Model 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2544875429354252660
+--- !u!4 &1416797289453511753
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1156380416687487986}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.021316499, y: 0.33772078, z: 0.004511893}
-  m_LocalScale: {x: 58.04614, y: 57.876377, z: 58.04614}
-  m_Children: []
-  m_Father: {fileID: 4007548576443086520}
+  m_GameObject: {fileID: 1793181471963135731}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.074369, y: 0.334, z: 10.249213}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6438175765761124181}
+  - {fileID: 1481695834060330279}
+  m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &6598679243873827547
+--- !u!1 &5570445845289335671
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1481695834060330279}
+  - component: {fileID: 4016149974730141819}
+  - component: {fileID: 5303457866406230529}
+  m_Layer: 0
+  m_Name: Vasija
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1481695834060330279
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5570445845289335671}
+  m_LocalRotation: {x: -0.00000005338508, y: 0.7071068, z: -0.7071067, w: 0.000000053385072}
+  m_LocalPosition: {x: 0.001865382, y: 0.23262803, z: 0.0000190828}
+  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_Children: []
+  m_Father: {fileID: 1416797289453511753}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &4016149974730141819
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1156380416687487986}
-  m_Mesh: {fileID: -5870136759627984184, guid: 90c887db3d4e7c642bd01013ebeace92, type: 3}
---- !u!23 &3955556532224505795
+  m_GameObject: {fileID: 5570445845289335671}
+  m_Mesh: {fileID: -3280859244841596197, guid: cc0d46ef90dc17b4da56fb51ed9a1ebc, type: 3}
+--- !u!23 &5303457866406230529
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1156380416687487986}
+  m_GameObject: {fileID: 5570445845289335671}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -81,7 +113,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &4383828305836731394
+--- !u!1 &7555473585769083586
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,77 +121,45 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4007548576443086520}
+  - component: {fileID: 6438175765761124181}
+  - component: {fileID: 7957257105950363746}
+  - component: {fileID: 1326690777062601354}
   m_Layer: 0
-  m_Name: Vessel2
+  m_Name: Cara
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4007548576443086520
+--- !u!4 &6438175765761124181
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4383828305836731394}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.074369, y: 0.334, z: 9.459}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 2544875429354252660}
-  - {fileID: 3505171673802885078}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7600641762697849222
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3505171673802885078}
-  - component: {fileID: 1407637177002893962}
-  - component: {fileID: 7903112863822850288}
-  m_Layer: 0
-  m_Name: Vasija
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3505171673802885078
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7600641762697849222}
+  m_GameObject: {fileID: 7555473585769083586}
   m_LocalRotation: {x: -0.00000005338508, y: 0.7071068, z: -0.7071067, w: 0.000000053385072}
   m_LocalPosition: {x: 0.001865382, y: 0.23262803, z: 0.0000190828}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
-  m_Father: {fileID: 4007548576443086520}
-  m_RootOrder: 1
+  m_Father: {fileID: 1416797289453511753}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &1407637177002893962
+--- !u!33 &7957257105950363746
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7600641762697849222}
-  m_Mesh: {fileID: -3280859244841596197, guid: 90c887db3d4e7c642bd01013ebeace92, type: 3}
---- !u!23 &7903112863822850288
+  m_GameObject: {fileID: 7555473585769083586}
+  m_Mesh: {fileID: -1990426294332860488, guid: cc0d46ef90dc17b4da56fb51ed9a1ebc, type: 3}
+--- !u!23 &1326690777062601354
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7600641762697849222}
+  m_GameObject: {fileID: 7555473585769083586}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
