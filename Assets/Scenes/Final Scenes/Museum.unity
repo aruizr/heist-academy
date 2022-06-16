@@ -9012,7 +9012,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20968
+  m_Name: pb_Mesh247146
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -27235,7 +27235,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh23330
+  m_Name: pb_Mesh249482
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -35304,7 +35304,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25340
+  m_Name: pb_Mesh251424
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -35468,7 +35468,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh21254
+  m_Name: pb_Mesh247432
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -41523,7 +41523,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh23196
+  m_Name: pb_Mesh249358
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -43385,7 +43385,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh22670
+  m_Name: pb_Mesh248838
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -50617,7 +50617,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh22288
+  m_Name: pb_Mesh248456
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -63663,7 +63663,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25868
+  m_Name: pb_Mesh251942
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -94687,6 +94687,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 406519069}
     m_Modifications:
+    - target: {fileID: 1009723362837174690, guid: 7adc09e13b3518642b0ac169d9c7a274, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 74d53870f6717494e9f189a17175dc45, type: 2}
+    - target: {fileID: 1874971433212550744, guid: 7adc09e13b3518642b0ac169d9c7a274, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 74d53870f6717494e9f189a17175dc45, type: 2}
     - target: {fileID: 5653963369791008822, guid: 7adc09e13b3518642b0ac169d9c7a274, type: 3}
       propertyPath: m_Name
       value: Floors
@@ -94735,7 +94743,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8618486635932514005, guid: 7adc09e13b3518642b0ac169d9c7a274, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8618486635932514005, guid: 7adc09e13b3518642b0ac169d9c7a274, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7adc09e13b3518642b0ac169d9c7a274, type: 3}
 --- !u!4 &2402030914446581353 stripped
 Transform:
