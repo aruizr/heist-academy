@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 2402030912835587628}
   - component: {fileID: 2402030912835587627}
   - component: {fileID: 2402030912835587626}
-  m_Layer: 6
+  m_Layer: 16
   m_Name: Conrceto
-  m_TagString: Untagged
+  m_TagString: Marble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -107,9 +107,9 @@ GameObject:
   - component: {fileID: 2402030913036754515}
   - component: {fileID: 2402030913036754514}
   - component: {fileID: 2402030913036754513}
-  m_Layer: 6
+  m_Layer: 16
   m_Name: Room Pasillito
-  m_TagString: Untagged
+  m_TagString: Wooden
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -202,9 +202,9 @@ GameObject:
   - component: {fileID: 2402030913333419360}
   - component: {fileID: 2402030913333419375}
   - component: {fileID: 2402030913333419374}
-  m_Layer: 6
+  m_Layer: 16
   m_Name: "Room Peque\xF1a final"
-  m_TagString: Untagged
+  m_TagString: Wooden
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -297,9 +297,9 @@ GameObject:
   - component: {fileID: 2402030913413529627}
   - component: {fileID: 2402030913413529626}
   - component: {fileID: 2402030913413529625}
-  m_Layer: 6
+  m_Layer: 16
   m_Name: Suelo Almacen
-  m_TagString: Untagged
+  m_TagString: Wooden
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -392,9 +392,9 @@ GameObject:
   - component: {fileID: 2402030913723985334}
   - component: {fileID: 2402030913723985333}
   - component: {fileID: 2402030913723985332}
-  m_Layer: 6
+  m_Layer: 16
   m_Name: Room Cuadro VAN KEK
-  m_TagString: Untagged
+  m_TagString: Wooden
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -487,9 +487,9 @@ GameObject:
   - component: {fileID: 2402030913777646080}
   - component: {fileID: 2402030913777646095}
   - component: {fileID: 2402030913777646094}
-  m_Layer: 6
+  m_Layer: 16
   m_Name: Room Final Ventana
-  m_TagString: Untagged
+  m_TagString: Wooden
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -587,7 +587,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 9
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2402030913786185831
 Transform:
@@ -678,9 +678,9 @@ GameObject:
   - component: {fileID: 2402030914287621322}
   - component: {fileID: 2402030914287621321}
   - component: {fileID: 2402030914287621320}
-  m_Layer: 6
+  m_Layer: 16
   m_Name: Room Computer
-  m_TagString: Untagged
+  m_TagString: Wooden
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -773,9 +773,9 @@ GameObject:
   - component: {fileID: 2402030914572419463}
   - component: {fileID: 2402030914572419462}
   - component: {fileID: 2402030914572419461}
-  m_Layer: 6
+  m_Layer: 16
   m_Name: Room final Estanterias
-  m_TagString: Untagged
+  m_TagString: Wooden
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -911,6 +911,14 @@ PrefabInstance:
       value: Room final arriba final
       objectReference: {fileID: 0}
     - target: {fileID: 45477074215848641, guid: 2d74d71b1b17dd14b8c6551df7f9252f, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 45477074215848641, guid: 2d74d71b1b17dd14b8c6551df7f9252f, type: 3}
+      propertyPath: m_TagString
+      value: Marble
+      objectReference: {fileID: 0}
+    - target: {fileID: 45477074215848641, guid: 2d74d71b1b17dd14b8c6551df7f9252f, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -991,6 +999,14 @@ PrefabInstance:
     - target: {fileID: 6136163679578165805, guid: 140c6a4d0ddcc0940ae1680645d212b4, type: 3}
       propertyPath: m_Name
       value: Room Final
+      objectReference: {fileID: 0}
+    - target: {fileID: 6136163679578165805, guid: 140c6a4d0ddcc0940ae1680645d212b4, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6136163679578165805, guid: 140c6a4d0ddcc0940ae1680645d212b4, type: 3}
+      propertyPath: m_TagString
+      value: Marble
       objectReference: {fileID: 0}
     - target: {fileID: 6136163679578165805, guid: 140c6a4d0ddcc0940ae1680645d212b4, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1120,7 +1136,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3145949306540681868, guid: 7ff20cc974f214b43bfd4948fe6f8651, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3145949306540681868, guid: 7ff20cc974f214b43bfd4948fe6f8651, type: 3}
+      propertyPath: m_TagString
+      value: Wooden
       objectReference: {fileID: 0}
     - target: {fileID: 3145949306540681868, guid: 7ff20cc974f214b43bfd4948fe6f8651, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1169,6 +1189,14 @@ PrefabInstance:
     - target: {fileID: 7104636849251438244, guid: ab93e7ba8ff06d948ae6f3d095b4d413, type: 3}
       propertyPath: m_Name
       value: Habitacion Grande Arriba
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104636849251438244, guid: ab93e7ba8ff06d948ae6f3d095b4d413, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104636849251438244, guid: ab93e7ba8ff06d948ae6f3d095b4d413, type: 3}
+      propertyPath: m_TagString
+      value: Wooden
       objectReference: {fileID: 0}
     - target: {fileID: 7104636849251438244, guid: ab93e7ba8ff06d948ae6f3d095b4d413, type: 3}
       propertyPath: m_StaticEditorFlags

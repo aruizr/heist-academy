@@ -11,13 +11,13 @@ GameObject:
   - component: {fileID: 6956934076468456528}
   - component: {fileID: 1834846580447582926}
   - component: {fileID: 7813924392147568145}
-  - component: {fileID: -1903435001602146019}
-  m_Layer: 0
+  - component: {fileID: 6857806587604217029}
+  m_Layer: 13
   m_Name: Outside Bench
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6956934076468456528
 Transform:
@@ -82,8 +82,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &-1903435001602146019
-MeshCollider:
+--- !u!65 &6857806587604217029
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -92,7 +92,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 6790e7cb4bab18d44b1c0c6612b92aef, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.036392707, y: 0.019963237, z: 0.01864369}
+  m_Center: {x: 0.00005813037, y: -0.000018382447, z: 0.00090660213}
