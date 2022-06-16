@@ -122,7 +122,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2402030913036754527}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.6782131, y: 0.01, z: -65.462166}
+  m_LocalPosition: {x: -0.6782131, y: 0.012, z: -65.462166}
   m_LocalScale: {x: 0.63109, y: 1, z: 1.6418576}
   m_Children: []
   m_Father: {fileID: 7394712080218241409}
@@ -155,7 +155,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 09b0d956810d01348b245873b3161191, type: 2}
+  - {fileID: 2100000, guid: 8136ce1e44d30794d96ce6ffdd1e7c35, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -217,7 +217,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2402030913333419372}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -25.063549, y: 0.1, z: -91.79866}
+  m_LocalPosition: {x: -25.063549, y: 0.1, z: -91.61}
   m_LocalScale: {x: 1.2127354, y: 1, z: 0.9021684}
   m_Children: []
   m_Father: {fileID: 7394712080218241409}
@@ -250,7 +250,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4de4cf02a37c07648b2215da91b1627d, type: 2}
+  - {fileID: 2100000, guid: ea3cc93c1750c504b8b7dc1ffdc00043, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -440,7 +440,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 09b0d956810d01348b245873b3161191, type: 2}
+  - {fileID: 2100000, guid: e721d8350a471134f9c6f54e905e279d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -502,7 +502,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2402030913777646092}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -66.83137, y: 4.01, z: -65.05809}
+  m_LocalPosition: {x: -66.903, y: 4.01, z: -65.05809}
   m_LocalScale: {x: 1.6139928, y: 1, z: 1.2598855}
   m_Children: []
   m_Father: {fileID: 7394712080218241409}
@@ -990,7 +990,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6136163679578165805, guid: 140c6a4d0ddcc0940ae1680645d212b4, type: 3}
       propertyPath: m_Name
-      value: Room Inicial
+      value: Room Final
       objectReference: {fileID: 0}
     - target: {fileID: 6136163679578165805, guid: 140c6a4d0ddcc0940ae1680645d212b4, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1055,24 +1055,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6801518420016318615, guid: 140c6a4d0ddcc0940ae1680645d212b4, type: 3}
   m_PrefabInstance: {fileID: 1999222611564533946}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &5662891721169734295 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6136163679578165805, guid: 140c6a4d0ddcc0940ae1680645d212b4, type: 3}
-  m_PrefabInstance: {fileID: 1999222611564533946}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1999222611564533948
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5662891721169734295}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.37391624, y: 0.44277802, z: 1.9663298e-16}
-  m_Center: {x: 0.017101144, y: -0.0020802761, z: 9.238284e-19}
 --- !u!1001 &4761517773023478763
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1255,21 +1237,3 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7625558707450418206, guid: ab93e7ba8ff06d948ae6f3d095b4d413, type: 3}
   m_PrefabInstance: {fileID: 8618486635932514003}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1514263340820281463 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7104636849251438244, guid: ab93e7ba8ff06d948ae6f3d095b4d413, type: 3}
-  m_PrefabInstance: {fileID: 8618486635932514003}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &8618486635932514005
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1514263340820281463}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.23799999, y: 0.44199988, z: 0.00042702127}
-  m_Center: {x: 0.031738307, y: -0.08264736, z: 0.00021350633}
