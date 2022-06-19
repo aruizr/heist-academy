@@ -13,7 +13,6 @@ namespace Interactions
     {
         [SerializeField] private PropertyAnimator<Transform, Vector3> animator;
         [SerializeField] private bool isLocked;
-        [SerializeField] private GameObject lockGameObject = null;
 
         [SerializeField] [ConditionalField(nameof(isLocked))]
         private GameObject unlockedBy;
@@ -27,6 +26,7 @@ namespace Interactions
         public UnityEvent onFinishedClosing;
 
         [ConditionalField(nameof(isLocked))] public UnityEvent onLocked;
+        [ConditionalField(nameof(isLocked))] public UnityEvent onUnlocked;
 
         private void Start()
         {
@@ -43,16 +43,15 @@ namespace Interactions
                 return;
             }
 
-            if (!inventory.Contains(unlockedBy))
+            if (!inventory.Any())
             {
                 onLocked?.Invoke();
                 return;
             }
 
-            inventory.Remove(unlockedBy);
-            if(lockGameObject != null)
-                lockGameObject.SetActive(false);
+            inventory.Remove(inventory.ElementAt(0));
             isLocked = false;
+            onUnlocked?.Invoke();
             ForceOpen();
         }
 

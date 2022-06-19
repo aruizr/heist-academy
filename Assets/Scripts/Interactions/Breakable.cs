@@ -3,6 +3,7 @@ using Codetox.Core;
 using Codetox.Messaging;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Events;
 using Utilities;
 using Variables;
 
@@ -16,9 +17,16 @@ namespace Interactions
         [SerializeField] private ValueReference<float> shardStartFadingDelay;
         [SerializeField] private ValueReference<float> shardFadingTime;
 
+        public UnityEvent onBreak;
+        public UnityEvent onNotBreak;
+
         public void Break()
         {
-            if (rigidbody.velocity.magnitude < minVelocity.Value) return;
+            if (rigidbody.velocity.magnitude < minVelocity.Value)
+            {
+                onNotBreak?.Invoke();
+                return;
+            }
 
             foreach (var shard in shards)
             {
@@ -42,6 +50,8 @@ namespace Interactions
                         OnComplete(() => shard.gameObject.SetActive(false));
                 });
             }
+            
+            onBreak?.Invoke();
 
             rigidbody.gameObject.SetActive(false);
         }
