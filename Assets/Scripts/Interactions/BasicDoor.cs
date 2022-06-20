@@ -14,6 +14,7 @@ namespace Interactions
         [SerializeField] private float backwardRotation;
         [SerializeField] private float rotationTime;
         [SerializeField] private Ease rotationEase;
+        [SerializeField] private bool startOpen = false;
         [SerializeField] private bool isLocked;
 
         [SerializeField] [ConditionalField(nameof(isLocked))]
@@ -36,7 +37,16 @@ namespace Interactions
         {
             var t = transform;
             _doorPlane = new Plane(t.forward, t.position);
-            _originalRotation = movingPart.eulerAngles;
+            IsOpen = startOpen;
+
+            if (IsOpen)
+            {
+                _originalRotation = movingPart.eulerAngles - new Vector3(0, forwardRotation, 0);
+            }
+            else
+            {
+                _originalRotation = movingPart.eulerAngles;
+            }
         }
 
         public void Open(Transform source)
