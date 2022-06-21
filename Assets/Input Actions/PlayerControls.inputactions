@@ -34,7 +34,7 @@
                 },
                 {
                     "name": "Move Camera",
-                    "type": "Value",
+                    "type": "PassThrough",
                     "id": "f2200a8a-256f-4f97-bdeb-fe6ab6a92d4a",
                     "expectedControlType": "Vector2",
                     "processors": "",
@@ -185,7 +185,7 @@
                     "id": "b48866ff-7078-414c-9601-cbe884d90fb3",
                     "path": "2DVector(mode=2)",
                     "interactions": "",
-                    "processors": "ScaleVector2(x=4,y=4)",
+                    "processors": "ScaleVector2(x=10,y=10)",
                     "groups": "",
                     "action": "Move Camera",
                     "isComposite": true,

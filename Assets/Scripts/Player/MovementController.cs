@@ -33,6 +33,12 @@ namespace Player
             controller.Move(finalVelocity * Time.deltaTime);
         }
 
+        public void StopMoving()
+        {
+            currentVelocity.Value = Vector3.zero;
+            controller.Move(Vector3.zero);
+        }
+
         private Vector3 GetFinalVelocity(Vector2 finalHorizontalVelocity)
         {
             return new Vector3(finalHorizontalVelocity.x, currentVelocity.Value.y, finalHorizontalVelocity.y);
