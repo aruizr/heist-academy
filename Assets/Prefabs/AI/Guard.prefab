@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd4eb5ccdf2e4acf98771a2d0dba2735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 2.2
+  distance: 1.5
   fieldOfView: 75
   targetLayers:
     useField: 0
@@ -2055,7 +2055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd4eb5ccdf2e4acf98771a2d0dba2735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 2.2
+  distance: 1.5
   fieldOfView: 75
   targetLayers:
     useField: 0
@@ -2700,6 +2700,12 @@ MonoBehaviour:
   onCrouchingStep:
     m_PersistentCalls:
       m_Calls: []
+  onFinishedThrowing:
+    m_PersistentCalls:
+      m_Calls: []
+  onThrow:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &4071114478282862942
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3100,6 +3106,12 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   onCrouchingStep:
+    m_PersistentCalls:
+      m_Calls: []
+  onFinishedThrowing:
+    m_PersistentCalls:
+      m_Calls: []
+  onThrow:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &8752431713665523971
