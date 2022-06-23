@@ -14,23 +14,23 @@ namespace AI.Guard
 
         public void OpenDoor(GameObject target)
         {
-            target.Send<Door>(OpenDoor, MessageScope.Parents);
+            target.Send<BasicDoor>(OpenDoor, MessageScope.Parents);
         }
 
         public void CloseDoor(GameObject target)
         {
-            target.Send<Door>(CloseDoor, MessageScope.Parents);
+            target.Send<BasicDoor>(CloseDoor, MessageScope.Parents);
         }
         
-        public void OpenDoor(Door door)
+        public void OpenDoor(BasicDoor door)
         {
             if (door.IsOpen) return;
             navMeshAgent.isStopped = true;
-            door.ForceOpen();
+            door.ForceOpen(navMeshAgent.transform);
             door.onFinishedOpening.AddListener(() => OnDoorFinishedOpening(door));
         }
 
-        private void CloseDoor(Door door)
+        private void CloseDoor(BasicDoor door)
         {
             door.gameObject.
                 Coroutine().
@@ -39,7 +39,7 @@ namespace AI.Guard
                 Run();
         }
 
-        private void OnDoorFinishedOpening(Door door)
+        private void OnDoorFinishedOpening(BasicDoor door)
         {
             navMeshAgent.isStopped = false;
             door.onFinishedOpening.RemoveListener(() => OnDoorFinishedOpening(door));

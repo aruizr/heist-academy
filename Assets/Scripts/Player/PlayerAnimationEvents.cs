@@ -7,6 +7,8 @@ namespace Player
     {
         public UnityEvent onWalkingStep;
         public UnityEvent onCrouchingStep;
+        public UnityEvent onFinishedThrowing;
+        public UnityEvent onThrow;
 
         public void WalkingStep()
         {
@@ -16,6 +18,16 @@ namespace Player
         public void CrouchingStep()
         {
             onCrouchingStep?.Invoke();
+        }
+
+        public void FinishedThrowing()
+        {
+            onFinishedThrowing?.Invoke();
+        }
+
+        public void Throw()
+        {
+            onThrow?.Invoke();
         }
     }
 }

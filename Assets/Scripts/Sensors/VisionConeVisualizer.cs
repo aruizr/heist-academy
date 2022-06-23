@@ -7,6 +7,14 @@ namespace Sensors
     [ExecuteAlways]
     public class VisionConeVisualizer : MonoBehaviour
     {
+        private static readonly int ViewSpaceMatrix = Shader.PropertyToID("_ViewSpaceMatrix");
+        private static readonly int ViewDepthTexture = Shader.PropertyToID("_ViewDepthTexture");
+        private static readonly int FieldOfView = Shader.PropertyToID("_FieldOfView");
+        private static readonly int Color = Shader.PropertyToID("_Color");
+        private static readonly int InnerRadius = Shader.PropertyToID("_InnerRadius");
+        private static readonly int RadiusSaturation = Shader.PropertyToID("_RadiusSaturation");
+        private static readonly int FieldOfViewSaturation = Shader.PropertyToID("_FieldOfViewSaturation");
+        
         [SerializeField] private VisionCone visionCone;
         [SerializeField] private GameObject shaderObject;
         [SerializeField] private Material shaderMaterial;
@@ -43,20 +51,20 @@ namespace Sensors
             perspectiveCamera.Render();
 
             var matrix = perspectiveCamera.projectionMatrix * perspectiveCamera.worldToCameraMatrix;
-            
+
             if (!_tempMaterial)
             {
                 _tempMaterial = new Material(shaderMaterial);
                 shaderObject.Send<MeshRenderer>(meshRenderer => meshRenderer.sharedMaterial = _tempMaterial);
             }
 
-            _tempMaterial.SetMatrix("_ViewSpaceMatrix", matrix);
-            _tempMaterial.SetTexture("_ViewDepthTexture", perspectiveCamera.targetTexture);
-            _tempMaterial.SetFloat("_FieldOfView", visionCone.FieldOfView);
-            _tempMaterial.SetColor("_Color", color.Value);
-            _tempMaterial.SetFloat("_InnerRadius", innerRadius);
-            _tempMaterial.SetFloat("_RadiusSaturation", radiusSaturation);
-            _tempMaterial.SetFloat("_FieldOfViewSaturation", fieldOfViewSaturation);
+            _tempMaterial.SetMatrix(ViewSpaceMatrix, matrix);
+            _tempMaterial.SetTexture(ViewDepthTexture, perspectiveCamera.targetTexture);
+            _tempMaterial.SetFloat(FieldOfView, visionCone.FieldOfView);
+            _tempMaterial.SetColor(Color, color.Value);
+            _tempMaterial.SetFloat(InnerRadius, innerRadius);
+            _tempMaterial.SetFloat(RadiusSaturation, radiusSaturation);
+            _tempMaterial.SetFloat(FieldOfViewSaturation, fieldOfViewSaturation);
         }
     }
 }

@@ -11,6 +11,8 @@ namespace Cam
         [SerializeField] private ValueReference<float> rotationSmoothTime;
         [SerializeField] private ValueReference<float> distanceToPlayer;
         [SerializeField] private ValueReference<Vector3> currentPlayerPosition;
+        [SerializeField] private ValueReference<float> minVerticalRotation;
+        [SerializeField] private ValueReference<float> maxVerticalRotation;
 
         private Transform _cameraTransform;
         private Vector2 _currentDirection;
@@ -29,12 +31,13 @@ namespace Cam
             // _currentRotation = Vector3.SmoothDamp(_currentRotation, _targetRotation, ref _currentVelocity,
             //     rotationSmoothTime.Value);
 
-            _currentRotation += new Vector3(0f, _currentDirection.x, 0f) * rotationSpeed.Value * Time.fixedDeltaTime;
+            _currentRotation += new Vector3(_currentDirection.y, _currentDirection.x, 0f) * rotationSpeed.Value * Time.fixedDeltaTime;
+            _currentRotation.x = Mathf.Clamp(_currentRotation.x, minVerticalRotation.Value, maxVerticalRotation.Value);
         }
 
         private void LateUpdate()
         {
-            var targetRotation = Quaternion.Euler(_currentRotation + rotationOffset.Value);
+            var targetRotation = Quaternion.Euler(_currentRotation);
             _cameraTransform.rotation = Quaternion.Slerp(_cameraTransform.rotation, targetRotation, rotationSmoothTime.Value);
             _cameraTransform.position = currentPlayerPosition.Value + positionOffset.Value -
                                         _cameraTransform.forward * distanceToPlayer.Value;

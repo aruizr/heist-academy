@@ -482,7 +482,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &293740392053633298
 Transform:
   m_ObjectHideFlags: 0
@@ -868,7 +868,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1484774578746382568
 Transform:
   m_ObjectHideFlags: 0
@@ -1387,7 +1387,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8715575594005986731
 Transform:
   m_ObjectHideFlags: 0
@@ -2041,6 +2041,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6631659123813795313}
     - target: {fileID: 4833668121199936270, guid: 3c4e2ed0f25e10b469965f0c99ac5896, type: 3}
+      propertyPath: radiusSaturation
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4833668121199936270, guid: 3c4e2ed0f25e10b469965f0c99ac5896, type: 3}
       propertyPath: color.variableValue
       value: 
       objectReference: {fileID: 11400000, guid: 82dbbda4de1ea944aab3829283073c92, type: 2}
@@ -2240,6 +2244,10 @@ PrefabInstance:
       propertyPath: visionCone
       value: 
       objectReference: {fileID: 2658568945041879835}
+    - target: {fileID: 4833668121199936270, guid: 3c4e2ed0f25e10b469965f0c99ac5896, type: 3}
+      propertyPath: radiusSaturation
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4833668121199936270, guid: 3c4e2ed0f25e10b469965f0c99ac5896, type: 3}
       propertyPath: color.variableValue
       value: 
@@ -2490,6 +2498,10 @@ PrefabInstance:
       propertyPath: visionCone
       value: 
       objectReference: {fileID: 7236292002260331918}
+    - target: {fileID: 4833668121199936270, guid: 3c4e2ed0f25e10b469965f0c99ac5896, type: 3}
+      propertyPath: radiusSaturation
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4833668121199936270, guid: 3c4e2ed0f25e10b469965f0c99ac5896, type: 3}
       propertyPath: color.variableValue
       value: 

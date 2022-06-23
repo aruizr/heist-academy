@@ -54,5 +54,19 @@ namespace Utilities
         {
             return value != 0;
         }
+
+        public static bool TryFind<T>(this List<T> list, Predicate<T> predicate, out T output)
+        {
+            var i = list.FindIndex(predicate);
+            
+            if (i != -1)
+            {
+                output = list[i];
+                return true;
+            }
+
+            output = default;
+            return false;
+        }
     }
 }

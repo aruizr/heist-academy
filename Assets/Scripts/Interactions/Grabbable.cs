@@ -36,7 +36,7 @@ namespace Interactions
             _toFollow = null;
             rigidbody.isKinematic = false;
             rigidbody.collisionDetectionMode = CollisionDetectionMode.Continuous;
-            rigidbody.velocity += velocity;
+            rigidbody.velocity = velocity;
             IsGrabbed = false;
             onThrown?.Invoke();
         }
