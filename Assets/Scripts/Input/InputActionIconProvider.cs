@@ -1,48 +1,34 @@
 ﻿using System;
-using System.Linq;
+using GameEvents;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.LowLevel;
 
 namespace Input
 {
     public class InputActionIconProvider : MonoBehaviour
     {
+        [SerializeField] private ControlSchemeSwitchedGameEvent gameEvent;
         [SerializeField] private InputActionReference inputActionReference;
         [SerializeField] private InputIconMap inputIconMap;
         [SerializeField] private TMP_SpriteAsset spriteAsset;
 
-        private InputDevice _currentDevice;
-        private InputControlScheme _currentScheme;
-
         private void OnEnable()
         {
-            InputSystem.onEvent += OnInputSystemEvent;
+            gameEvent.AddListener(OnControlSchemeSwitched);
         }
 
         private void OnDisable()
         {
-            InputSystem.onEvent -= OnInputSystemEvent;
+            gameEvent.RemoveListener(OnControlSchemeSwitched);
         }
 
-        private void OnInputSystemEvent(InputEventPtr eventPtr, InputDevice device)
+        private void OnControlSchemeSwitched(ControlSchemeSwitchedGameEventData data)
         {
-            if (!inputActionReference || !inputIconMap || !spriteAsset) return;
-
-            if (_currentDevice != null && _currentDevice == device) return;
-            if (eventPtr.type == StateEvent.Type)
-                if (!eventPtr.EnumerateChangedControls(device, 0.001f).Any())
-                    return;
-
-            _currentDevice = device;
-            _currentScheme =
-                inputActionReference.asset.controlSchemes.First(scheme => scheme.SupportsDevice(_currentDevice));
-
             try
             {
                 var inputAction = inputActionReference.action;
-                var currentBindingIndex = inputAction.GetBindingIndex(_currentScheme.bindingGroup);
+                var currentBindingIndex = inputAction.GetBindingIndex(data.ControlScheme.bindingGroup);
                 var currentBinding = inputAction.bindings[currentBindingIndex];
                 var currentSprite = inputIconMap.GetIcon(currentBinding.path);
                 spriteAsset.material.SetTexture(ShaderUtilities.ID_MainTex, currentSprite.texture);

@@ -1,49 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using GameEvents;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.UI;
 using Utilities;
 
-namespace UI
+namespace Managers
 {
     public class UIManager : MonoBehaviour
     {
-        [SerializeField] private InputActionAsset inputActionAsset;
+        [SerializeField] private ControlSchemeSwitchedGameEvent gameEvent;
         [SerializeField] private string keyboardAndMouseControlSchemeName;
         [SerializeField] private List<UIPanel> panels;
 
-        private InputDevice _currentDevice;
-        private InputControlScheme _currentScheme;
-
         private void OnEnable()
         {
-            InputSystem.onEvent += OnInputSystemEvent;
+            gameEvent.AddListener(OnControlSchemeSwitched);
 
             if (panels.Count > 0) SetPanel(panels[0].panel);
         }
 
         private void OnDisable()
         {
-            InputSystem.onEvent -= OnInputSystemEvent;
+            gameEvent.RemoveListener(OnControlSchemeSwitched);
         }
 
-        private void OnInputSystemEvent(InputEventPtr eventPtr, InputDevice device)
+        private void OnControlSchemeSwitched(ControlSchemeSwitchedGameEventData data)
         {
-            if (!inputActionAsset) return;
-
-            if (_currentDevice != null && _currentDevice == device) return;
-            if (eventPtr.type == StateEvent.Type)
-                if (!eventPtr.EnumerateChangedControls(device, 0.001f).Any())
-                    return;
-
-            _currentDevice = device;
-            _currentScheme = inputActionAsset.controlSchemes.First(scheme => scheme.SupportsDevice(_currentDevice));
-
-            if (_currentScheme.name == keyboardAndMouseControlSchemeName)
+            if (data.ControlScheme.name == keyboardAndMouseControlSchemeName)
                 ShowCursor();
             else
                 HideCursor();
@@ -53,9 +39,9 @@ namespace UI
         {
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
-            
+
             var e = EventSystem.current;
-            
+
             e.SetSelectedGameObject(null);
 
             var data = new PointerEventData(e)
