@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -10,10 +8,10 @@ namespace Managers
 {
     public class GameManager : MonoBehaviour
     {
-        [SerializeField] private Slider progressBar;
+        [SerializeField] private Slider progress;
 
         public UnityEvent onLoadScene;
-        
+
         private AsyncOperation _loading;
 
         public void RestartCurrentLevel()
@@ -29,7 +27,6 @@ namespace Managers
 
         private void Load(string sceneName)
         {
-            progressBar.value = 0;
             _loading = SceneManager.LoadSceneAsync(sceneName);
             onLoadScene?.Invoke();
             StartCoroutine(DisplayProgress());
@@ -37,10 +34,10 @@ namespace Managers
 
         private IEnumerator DisplayProgress()
         {
-            progressBar.value = 0;
+            progress.value = 0;
             while (!_loading.isDone)
             {
-                progressBar.value = Mathf.Clamp01(_loading.progress / 0.9f);
+                progress.value = Mathf.Clamp01(_loading.progress / 0.9f);
                 yield return null;
             }
         }

@@ -1,15 +1,15 @@
 ﻿using System.Linq;
-using TMPro;
+using UI;
 using UnityEngine;
 
 namespace Settings
 {
-    public class ScreenResolutionSelectionController : MonoBehaviour
+    public class ScreenResolutionSelectionController : SettingController
     {
         private const string Key = "screen-resolution";
         private const string Default = "default-screen-resolution";
 
-        [SerializeField] private TMP_Dropdown dropdown;
+        [SerializeField] private OptionSelector selector;
 
         private void Awake()
         {
@@ -26,24 +26,23 @@ namespace Settings
                 var resolution = resolutions[index];
                 Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreenMode);
             }
-            
-            dropdown.ClearOptions();
-            dropdown.AddOptions(resolutionStrings);
-            dropdown.SetValueWithoutNotify(index);
+
+            selector.SetOptions(resolutionStrings);
+            selector.SetValueWithoutNotify(index);
         }
 
         public void SetResolution(int index)
         {
             var resolution = Screen.resolutions[index];
-            
+
             Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreenMode);
             PlayerPrefs.SetInt(Key, index);
             PlayerPrefs.Save();
         }
 
-        public void ResetResolution()
+        public override void ResetValue()
         {
-            dropdown.value = PlayerPrefs.GetInt(Default);
+            selector.value = PlayerPrefs.GetInt(Default);
         }
     }
 }

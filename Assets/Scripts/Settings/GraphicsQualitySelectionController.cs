@@ -1,21 +1,21 @@
 ﻿using System.Linq;
-using TMPro;
+using UI;
 using UnityEngine;
 
 namespace Settings
 {
-    public class GraphicsQualitySelectionController : MonoBehaviour
+    public class GraphicsQualitySelectionController : SettingController
     {
         private const string Key = "quality-level";
         private const string Default = "default-quality-level";
 
-        [SerializeField] private TMP_Dropdown dropdown;
+        [SerializeField] private OptionSelector selector;
 
         private void Awake()
         {
             var qualityLevels = QualitySettings.names.ToList();
             var level = QualitySettings.GetQualityLevel();
-            
+
             PlayerPrefs.SetInt(Default, level);
             PlayerPrefs.Save();
 
@@ -25,10 +25,8 @@ namespace Settings
                 QualitySettings.SetQualityLevel(level, true);
             }
 
-            dropdown.ClearOptions();
-            dropdown.AddOptions(qualityLevels);
-            dropdown.SetValueWithoutNotify(level);
-            
+            selector.SetOptions(qualityLevels);
+            selector.SetValueWithoutNotify(level);
         }
 
         public void SetQualityLevel(int index)
@@ -38,9 +36,9 @@ namespace Settings
             PlayerPrefs.Save();
         }
 
-        public void ResetQualityLevel()
+        public override void ResetValue()
         {
-            dropdown.value = PlayerPrefs.GetInt(Default);
+            selector.value = PlayerPrefs.GetInt(Default);
         }
     }
 }

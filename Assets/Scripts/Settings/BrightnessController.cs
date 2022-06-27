@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace Settings
 {
-    public class BrightnessController : MonoBehaviour
+    public class BrightnessController : SettingController
     {
         private const string Key = "brightness";
         private const string Default = "default-brightness";
@@ -33,7 +33,7 @@ namespace Settings
             PlayerPrefs.Save();
         }
 
-        public void ResetBrightness()
+        public override void ResetValue()
         {
             slider.value = PlayerPrefs.GetFloat(Default);
         }

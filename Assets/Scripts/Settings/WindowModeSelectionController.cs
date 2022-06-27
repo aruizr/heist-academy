@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using TMPro;
+using UI;
 using UnityEngine;
 
 namespace Settings
 {
-    public class WindowModeSelectionController : MonoBehaviour
+    public class WindowModeSelectionController : SettingController
     {
         private const string Key = "window-mode";
         private const string Default = "default-window-mode";
@@ -21,7 +21,7 @@ namespace Settings
             FullScreenMode.Windowed
         };
 
-        [SerializeField] private TMP_Dropdown dropdown;
+        [SerializeField] private OptionSelector selector;
 
         private void Awake()
         {
@@ -36,9 +36,8 @@ namespace Settings
                 Screen.fullScreenMode = ScreenModes[index];
             }
 
-            dropdown.ClearOptions();
-            dropdown.AddOptions(ScreenModeNames.ToList());
-            dropdown.SetValueWithoutNotify(index);
+            selector.SetOptions(ScreenModeNames.ToList());
+            selector.SetValueWithoutNotify(index);
         }
 
         public void SetWindowMode(int index)
@@ -48,9 +47,9 @@ namespace Settings
             PlayerPrefs.Save();
         }
 
-        public void ResetWindowMode()
+        public override void ResetValue()
         {
-            dropdown.value = PlayerPrefs.GetInt(Default);
+            selector.value = PlayerPrefs.GetInt(Default);
         }
     }
 }

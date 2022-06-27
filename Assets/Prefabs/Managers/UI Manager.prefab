@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 188434198539212297}
   - component: {fileID: 3717105854074921541}
+  - component: {fileID: 572388520435942964}
   m_Layer: 0
   m_Name: UI Manager
   m_TagString: Untagged
@@ -46,3 +47,31 @@ MonoBehaviour:
   gameEvent: {fileID: 11400000, guid: 32af0bfc6fd598343be75493048a869e, type: 2}
   keyboardAndMouseControlSchemeName: Mouse and Keyboard
   panels: []
+--- !u!114 &572388520435942964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6636461556738609403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af9b3702dc9244469419224be9b115fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: d0f299ac50742fb45b8905a5f6bae5e6, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3717105854074921541}
+        m_TargetAssemblyTypeName: Managers.UIManager, Assembly-CSharp
+        m_MethodName: SetPanel
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

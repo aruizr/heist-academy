@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Codetox.Messaging;
 using GameEvents;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -14,12 +15,13 @@ namespace Managers
         [SerializeField] private ControlSchemeSwitchedGameEvent gameEvent;
         [SerializeField] private string keyboardAndMouseControlSchemeName;
         [SerializeField] private List<UIPanel> panels;
+        [SerializeField] private bool setFirstPanelOnEnable;
 
         private void OnEnable()
         {
             gameEvent.AddListener(OnControlSchemeSwitched);
 
-            if (panels.Count > 0) SetPanel(panels[0].panel);
+            if (panels.Count > 0 && setFirstPanelOnEnable) SetPanel(panels[0].panel);
         }
 
         private void OnDisable()
@@ -78,11 +80,53 @@ namespace Managers
         {
             if (!panels.TryFind(uiPanel => uiPanel.panel.Equals(panel), out var selected)) return;
 
-            panels.ForEach(uiPanel => uiPanel.panel.SetActive(false));
+            panels.ForEach(uiPanel =>
+            {
+                var p = uiPanel.panel;
+                p.SetActive(true);
+                p.Send<CanvasGroup>(group =>
+                {
+                    group.alpha = 0;
+                    group.interactable = false;
+                    group.blocksRaycasts = false;
+                });
+            });
             EventSystem.current.SetSelectedGameObject(null);
-            selected.panel.SetActive(true);
+            selected.panel.Send<CanvasGroup>(group =>
+            {
+                group.alpha = 1;
+                group.interactable = true;
+                group.blocksRaycasts = true;
+            });
 
-            if (!Cursor.visible) EventSystem.current.SetSelectedGameObject(selected.firstSelected);
+            if (!Cursor.visible && selected.firstSelected) EventSystem.current.SetSelectedGameObject(selected.firstSelected);
+        }
+
+        public void AddPanel(GameObject panel)
+        {
+            if (!panels.TryFind(uiPanel => uiPanel.panel.Equals(panel), out var selected)) return;
+            EventSystem.current.SetSelectedGameObject(null);
+            selected.panel.Send<CanvasGroup>(group =>
+            {
+                group.alpha = 1;
+                group.interactable = true;
+                group.blocksRaycasts = true;
+            });
+        }
+
+        public void HideAll()
+        {
+            panels.ForEach(uiPanel =>
+            {
+                var p = uiPanel.panel;
+                p.SetActive(true);
+                p.Send<CanvasGroup>(group =>
+                {
+                    group.alpha = 0;
+                    group.interactable = false;
+                    group.blocksRaycasts = false;
+                });
+            });
         }
 
         [Serializable]

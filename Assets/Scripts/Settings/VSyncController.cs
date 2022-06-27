@@ -4,7 +4,7 @@ using Utilities;
 
 namespace Settings
 {
-    public class VSyncController : MonoBehaviour
+    public class VSyncController : SettingController
     {
         private const string Key = "v-sync";
         private const string Default = "default-v-sync";
@@ -36,7 +36,7 @@ namespace Settings
             PlayerPrefs.Save();
         }
 
-        public void ResetVSync()
+        public override void ResetValue()
         {
             toggle.isOn = PlayerPrefs.GetInt(Default).ToBool();
         }

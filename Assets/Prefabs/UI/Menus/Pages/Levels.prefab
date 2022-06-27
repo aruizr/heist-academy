@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 1685808725741230086}
   - component: {fileID: 1685808725741230136}
   - component: {fileID: 1685808725741230137}
+  - component: {fileID: 3364312870206484710}
   m_Layer: 5
   m_Name: Levels
   m_TagString: Untagged
@@ -215,6 +216,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &3364312870206484710
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685808725741230087}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1685808725985286095
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,7 +490,7 @@ MonoBehaviour:
         m_MethodName: Invoke
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 0650a85cf57cfd84688cf33a843f7925, type: 3}
+          m_ObjectArgument: {fileID: 8300000, guid: ce66697d176d02544a8669f4ce70008f, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -715,7 +728,7 @@ MonoBehaviour:
         m_MethodName: Invoke
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 0650a85cf57cfd84688cf33a843f7925, type: 3}
+          m_ObjectArgument: {fileID: 8300000, guid: ce66697d176d02544a8669f4ce70008f, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -998,6 +1011,19 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 1450578c271664d46aae0deb0aadb181, type: 2}
+        m_TargetAssemblyTypeName: Codetox.GameEvents.GameEvent`1[[System.String,
+          mscorlib
+        m_MethodName: Invoke
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Museum Edit
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1685808726911072655
@@ -1820,22 +1846,6 @@ PrefabInstance:
     - {fileID: 1055365298783213413, guid: efe77765d8b71384d92cb09df2102f73, type: 3}
     - {fileID: 6210455580528829875, guid: efe77765d8b71384d92cb09df2102f73, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: efe77765d8b71384d92cb09df2102f73, type: 3}
---- !u!114 &8423565700093114828 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7170775440378262879, guid: efe77765d8b71384d92cb09df2102f73, type: 3}
-  m_PrefabInstance: {fileID: 1685808725318798483}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d02f0f0bee154d1a974a1bbe37bf6c27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!224 &1753662489808232309 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1095342987666510822, guid: efe77765d8b71384d92cb09df2102f73, type: 3}
-  m_PrefabInstance: {fileID: 1685808725318798483}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &7878993338330535139 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8805378023592155248, guid: efe77765d8b71384d92cb09df2102f73, type: 3}
@@ -1845,6 +1855,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!224 &1753662489808232309 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1095342987666510822, guid: efe77765d8b71384d92cb09df2102f73, type: 3}
+  m_PrefabInstance: {fileID: 1685808725318798483}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8423565700093114828 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7170775440378262879, guid: efe77765d8b71384d92cb09df2102f73, type: 3}
+  m_PrefabInstance: {fileID: 1685808725318798483}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d02f0f0bee154d1a974a1bbe37bf6c27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1685808725726095860

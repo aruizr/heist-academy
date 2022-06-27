@@ -5,7 +5,7 @@ using Utilities;
 
 namespace Settings
 {
-    public class VolumeController : MonoBehaviour
+    public class VolumeController : SettingController
     {
         [SerializeField] private Slider slider;
         [SerializeField] private AudioMixer mixer;
@@ -34,7 +34,7 @@ namespace Settings
             PlayerPrefs.Save();
         }
 
-        public void ResetVolume()
+        public override void ResetValue()
         {
             slider.value = PlayerPrefs.GetFloat("default-" + parameterName);
         }
