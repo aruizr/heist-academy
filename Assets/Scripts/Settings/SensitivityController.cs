@@ -8,24 +8,16 @@ namespace Settings
     public class SensitivityController : SettingController
     {
         private const string KeyX = "sensitivity-x";
-        private const string DefaultX = "default-sensitivity-x";
         private const string KeyY = "sensitivity-y";
-        private const string DefaultY = "default-sensitivity-y";
 
         [SerializeField] private Variable<float> variableX;
         [SerializeField] private Variable<float> variableY;
         [SerializeField] private InputActionReference moveCameraActionReference;
 
-        private void Awake()
+        private void Start()
         {
             var valueX = 1f;
             var valueY = 1f;
-
-            PlayerPrefs.SetFloat(DefaultX, valueX);
-            PlayerPrefs.Save();
-            
-            PlayerPrefs.SetFloat(DefaultY, valueY);
-            PlayerPrefs.Save();
 
             if (PlayerPrefs.HasKey(KeyX))
             {
@@ -80,8 +72,8 @@ namespace Settings
 
         public override void ResetValue()
         {
-            variableX.Value = PlayerPrefs.GetFloat(DefaultX);
-            variableY.Value = PlayerPrefs.GetFloat(DefaultY);
+            variableX.Value = 1f;
+            variableY.Value = 1f;
         }
     }
 }

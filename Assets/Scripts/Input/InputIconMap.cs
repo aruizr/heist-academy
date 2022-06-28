@@ -15,9 +15,9 @@ namespace Input
         {
             foreach (var pair in from pair in map
                 let bindings = pair.Key.bindings
-                where bindings.Count != 0
-                where bindings[0].path.Equals(path)
-                select pair) return pair.Value;
+                where bindings.Any(binding => binding.path.Equals(path))
+                select pair)
+                return pair.Value;
 
             return defaultIcon;
         }

@@ -97,14 +97,230 @@ MonoBehaviour:
         m_SingletonActionBindings:
         - m_Name: 
           m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
-          m_Path: <Keyboard>/e
+          m_Path: <Gamepad>/dpad/right
           m_Interactions: 
           m_Processors: 
           m_Groups: 
           m_Action: Key
           m_Flags: 0
         m_Flags: 0
-      value: {fileID: 21300000, guid: f7769ccaf9fde704e8b8dc88e87ec426, type: 3}
+      value: {fileID: 21300000, guid: c12972e18405e004087ad23e93575f7c, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Gamepad>/dpad/up
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: a54e13045554634449a486bd31ca9365, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Gamepad>/dpad/left
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: ad64ec285767b5c4a839910b1993fdda, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Gamepad>/dpad/down
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: 9a5a8cc6673194d49aa921dc09f509fd, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Gamepad>/leftStickPress
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: bcf5be3ae6795fb429661dc6ada0149b, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Gamepad>/rightStickPress
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: 2f91e7713ff28d64492010c67b4d8e1a, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Gamepad>/rightShoulder
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: 3caf6504020860842b08400ab606d2d1, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Gamepad>/rightTrigger
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: bf01d2ffa8c27da418f02b71d8cb33d9, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Gamepad>/leftShoulder
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: 34727da19db4d1143950dcd37af7e6d5, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Gamepad>/leftTrigger
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: 630cffdd92add4142813c6c00c406d2d, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Mouse>/leftButton
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: 6e411bb0abddfb54198f46f4f83c4de7, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Mouse>/rightButton
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: 6dadc872f707f964aac30031d679c18f, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Mouse>/middleButton
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: f894820e512e6a3439f57fbf2e2f96e4, type: 3}
     - key:
         m_Name: Key
         m_Type: 0
@@ -133,14 +349,14 @@ MonoBehaviour:
         m_SingletonActionBindings:
         - m_Name: 
           m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
-          m_Path: <Gamepad>/dpad/right
+          m_Path: <Keyboard>/w
           m_Interactions: 
           m_Processors: 
           m_Groups: 
           m_Action: Key
           m_Flags: 0
         m_Flags: 0
-      value: {fileID: 21300000, guid: c12972e18405e004087ad23e93575f7c, type: 3}
+      value: {fileID: 21300000, guid: 6be0485b189b5e7478a78ec71ef005e0, type: 3}
     - key:
         m_Name: Key
         m_Type: 0
@@ -151,14 +367,140 @@ MonoBehaviour:
         m_SingletonActionBindings:
         - m_Name: 
           m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
-          m_Path: <Keyboard>/space
+          m_Path: <Keyboard>/e
           m_Interactions: 
           m_Processors: 
           m_Groups: 
           m_Action: Key
           m_Flags: 0
         m_Flags: 0
-      value: {fileID: 21300000, guid: 41a3719535595e745b7e9fdee8b50825, type: 3}
+      value: {fileID: 21300000, guid: f7769ccaf9fde704e8b8dc88e87ec426, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Keyboard>/r
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: 927a5cb388141f74897f5fe35f720830, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Keyboard>/t
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: de61298eb5b65054fa5a2512a97ee505, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Keyboard>/y
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: cc182b3e464de7b4c811c5bb998bb7bb, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Keyboard>/u
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: 3d48777f587a09041bffe159c0df0f22, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Keyboard>/i
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: 5c5f1f02218042848b41f37fde1a3d75, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Keyboard>/o
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: 88bab82c9525d7141a1ff70be53c0990, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Keyboard>/p
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: a6bb1e56e62398543b938600b2119505, type: 3}
     - key:
         m_Name: Key
         m_Type: 0
@@ -187,7 +529,293 @@ MonoBehaviour:
         m_SingletonActionBindings:
         - m_Name: 
           m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Keyboard>/s
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: 94f2bbabee5873c49bb69b03671dac4b, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Keyboard>/d
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: 31dacadffc05b1348b7f72cbacd11185, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Keyboard>/f
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: ffe42154e03475949bf84dbe4543b413, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Keyboard>/g
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: 1c24ed537adcbe245889a269c8eb0bd2, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Keyboard>/h
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: 25ad6f53106bf10458d2047335e53649, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Keyboard>/j
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: 1281902b9030eaa47900c1f99340ec74, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Keyboard>/k
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: 7ed8ec828f079bf45b13e051655e488d, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Keyboard>/l
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: 16ece97e81c789e4a8b9f2b4d13e59b4, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Keyboard>/z
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: 974e0b14c0cdb50479b29b8808077f76, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Keyboard>/x
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: 4450a3b2f25383e4c8ea453c5dec460e, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Keyboard>/c
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: 282118362de5d844ab8f69802b380942, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Keyboard>/v
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: 07ed1a7cfc3311c49a6830599c4e33ba, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Keyboard>/b
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: 5828c8b3d8635ce428e5ec04b378262f, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Keyboard>/n
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: 19db28727dc2a1e4987ee965f5e2b37e, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Keyboard>/m
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: 84a96b4459370674bb8b6393cef72cde, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Keyboard>/ctrl
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        - m_Name: 
+          m_Id: ead1e90c-1032-4719-b0cb-3f9209debf70
           m_Path: <Keyboard>/leftCtrl
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        - m_Name: 
+          m_Id: 8d3145b8-9a4d-47a0-8244-8fe6fc6a8dff
+          m_Path: <Keyboard>/rightCtrl
           m_Interactions: 
           m_Processors: 
           m_Groups: 
@@ -205,14 +833,30 @@ MonoBehaviour:
         m_SingletonActionBindings:
         - m_Name: 
           m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
-          m_Path: <Gamepad>/rightTrigger
+          m_Path: <Keyboard>/shift
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        - m_Name: 
+          m_Id: ead1e90c-1032-4719-b0cb-3f9209debf70
+          m_Path: <Keyboard>/leftShift
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        - m_Name: 
+          m_Id: 8d3145b8-9a4d-47a0-8244-8fe6fc6a8dff
+          m_Path: <Keyboard>/rightShift
           m_Interactions: 
           m_Processors: 
           m_Groups: 
           m_Action: Key
           m_Flags: 0
         m_Flags: 0
-      value: {fileID: 21300000, guid: f378905a184fd6b48a3be8e3285d653c, type: 3}
+      value: {fileID: 21300000, guid: 9a4b0d98fc7e7864db64cb1ecf49cab9, type: 3}
     - key:
         m_Name: Key
         m_Type: 0
@@ -223,11 +867,289 @@ MonoBehaviour:
         m_SingletonActionBindings:
         - m_Name: 
           m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
-          m_Path: <Keyboard>/i
+          m_Path: <Keyboard>/capsLock
           m_Interactions: 
           m_Processors: 
           m_Groups: 
           m_Action: Key
           m_Flags: 0
         m_Flags: 0
-      value: {fileID: 21300000, guid: 5c5f1f02218042848b41f37fde1a3d75, type: 3}
+      value: {fileID: 21300000, guid: 1621b5cefaf507d4299bd62b535415ef, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Keyboard>/1
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        - m_Name: 
+          m_Id: ca83e19f-9858-45e3-aaa1-f01635a4d300
+          m_Path: <Keyboard>/numpad1
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: 6348ef543d6b60e4c971f196195d2b83, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Keyboard>/2
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        - m_Name: 
+          m_Id: ca83e19f-9858-45e3-aaa1-f01635a4d300
+          m_Path: <Keyboard>/numpad2
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: 2c4080a9611bd544e869ce8fa1de36d8, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Keyboard>/3
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        - m_Name: 
+          m_Id: ca83e19f-9858-45e3-aaa1-f01635a4d300
+          m_Path: <Keyboard>/numpad3
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: 63e9b063162050b4289c82f13220331d, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Keyboard>/4
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        - m_Name: 
+          m_Id: ca83e19f-9858-45e3-aaa1-f01635a4d300
+          m_Path: <Keyboard>/numpad4
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: b18def4f091b8ff46afda1c9037144b4, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Keyboard>/5
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        - m_Name: 
+          m_Id: ca83e19f-9858-45e3-aaa1-f01635a4d300
+          m_Path: <Keyboard>/numpad5
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: d1ada340f79c6a541b88dc035b9386b2, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Keyboard>/6
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        - m_Name: 
+          m_Id: ca83e19f-9858-45e3-aaa1-f01635a4d300
+          m_Path: <Keyboard>/numpad6
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: 91508bdf962ba9147b58aedecff3739b, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Keyboard>/7
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        - m_Name: 
+          m_Id: ca83e19f-9858-45e3-aaa1-f01635a4d300
+          m_Path: <Keyboard>/numpad7
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: e03a19ad602d90d4aba5061dcc0e7cd0, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Keyboard>/8
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        - m_Name: 
+          m_Id: ca83e19f-9858-45e3-aaa1-f01635a4d300
+          m_Path: <Keyboard>/numpad8
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: e91b01811b5d84f418c41d03299797c6, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Keyboard>/9
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        - m_Name: 
+          m_Id: ca83e19f-9858-45e3-aaa1-f01635a4d300
+          m_Path: <Keyboard>/numpad9
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: 8fc45f8b7933c8744b502e50b4bd88ad, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Keyboard>/0
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        - m_Name: 
+          m_Id: ca83e19f-9858-45e3-aaa1-f01635a4d300
+          m_Path: <Keyboard>/numpad0
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: fb704c813a83fed4ba3a17e5a816f6f3, type: 3}
+    - key:
+        m_Name: Key
+        m_Type: 0
+        m_ExpectedControlType: 
+        m_Id: 080a3b44-dc8d-4118-8f59-cbb33af4bcec
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: f226ca84-f88e-4f5c-836a-0026a6593a7c
+          m_Path: <Keyboard>/space
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: Key
+          m_Flags: 0
+        m_Flags: 0
+      value: {fileID: 21300000, guid: 41a3719535595e745b7e9fdee8b50825, type: 3}
