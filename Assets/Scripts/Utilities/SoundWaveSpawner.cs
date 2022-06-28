@@ -66,7 +66,7 @@ namespace Utilities
                     material.SetFloat("_Thickness", initialThickness);
                     
                     DOTween.To(() => material.GetFloat("_Thickness"), value => material.SetFloat("_Thickness", value),
-                        finalThickness, expansionTime).SetEase(waveEase);
+                        finalThickness, expansionTime).SetEase(Ease.InSine);
                     
                     
 

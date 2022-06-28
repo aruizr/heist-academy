@@ -39,5 +39,10 @@ namespace RuntimeSets
         {
             items.Clear();
         }
+
+        public void Set(List<T> items)
+        {
+            this.items = items;
+        }
     }
 }

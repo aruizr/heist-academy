@@ -1,20 +1,20 @@
-﻿using UnityEngine;
+﻿using Codetox.Variables;
+using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine.UI;
 using Utilities;
 
 namespace Settings
 {
-    public class VolumeController : MonoBehaviour
+    public class VolumeController : SettingController
     {
-        [SerializeField] private Slider slider;
+        [SerializeField] private Variable<float> variable;
         [SerializeField] private AudioMixer mixer;
         [SerializeField] private string parameterName;
 
         private void Start()
         {
             mixer.GetVolume(parameterName, out var value);
-            
+
             PlayerPrefs.SetFloat("default-" + parameterName, value);
             PlayerPrefs.Save();
 
@@ -23,8 +23,18 @@ namespace Settings
                 value = PlayerPrefs.GetFloat(parameterName);
                 mixer.SetVolume(parameterName, value);
             }
-            
-            slider.SetValueWithoutNotify(value);
+
+            variable.Value = value;
+        }
+
+        private void OnEnable()
+        {
+            variable.OnValueChanged += SetVolume;
+        }
+
+        private void OnDisable()
+        {
+            variable.OnValueChanged -= SetVolume;
         }
 
         public void SetVolume(float value)
@@ -34,9 +44,9 @@ namespace Settings
             PlayerPrefs.Save();
         }
 
-        public void ResetVolume()
+        public override void ResetValue()
         {
-            slider.value = PlayerPrefs.GetFloat("default-" + parameterName);
+            variable.Value = PlayerPrefs.GetFloat("default-" + parameterName);
         }
     }
 }

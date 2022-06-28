@@ -1,21 +1,24 @@
 ﻿using System.Linq;
-using TMPro;
+using Codetox.Variables;
+using RuntimeSets;
+using UI;
 using UnityEngine;
 
 namespace Settings
 {
-    public class GraphicsQualitySelectionController : MonoBehaviour
+    public class GraphicsQualitySelectionController : SettingController
     {
         private const string Key = "quality-level";
         private const string Default = "default-quality-level";
 
-        [SerializeField] private TMP_Dropdown dropdown;
+        [SerializeField] private RuntimeSet<string> options;
+        [SerializeField] private Variable<int> index;
 
         private void Awake()
         {
             var qualityLevels = QualitySettings.names.ToList();
             var level = QualitySettings.GetQualityLevel();
-            
+
             PlayerPrefs.SetInt(Default, level);
             PlayerPrefs.Save();
 
@@ -25,22 +28,30 @@ namespace Settings
                 QualitySettings.SetQualityLevel(level, true);
             }
 
-            dropdown.ClearOptions();
-            dropdown.AddOptions(qualityLevels);
-            dropdown.SetValueWithoutNotify(level);
-            
+            options.Set(qualityLevels);
+            index.Value = level;
+        }
+        
+        private void OnEnable()
+        {
+            index.OnValueChanged += SetQualityLevel;
         }
 
-        public void SetQualityLevel(int index)
+        private void OnDisable()
         {
-            QualitySettings.SetQualityLevel(index, true);
-            PlayerPrefs.SetInt(Key, index);
+            index.OnValueChanged -= SetQualityLevel;
+        }
+
+        public void SetQualityLevel(int level)
+        {
+            QualitySettings.SetQualityLevel(level, true);
+            PlayerPrefs.SetInt(Key, level);
             PlayerPrefs.Save();
         }
 
-        public void ResetQualityLevel()
+        public override void ResetValue()
         {
-            dropdown.value = PlayerPrefs.GetInt(Default);
+            index.Value = PlayerPrefs.GetInt(Default);
         }
     }
 }

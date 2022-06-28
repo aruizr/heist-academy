@@ -34,7 +34,8 @@ namespace Utilities
 
         public static void SetVolume(this AudioMixer mixer, string parameterName, float percentage)
         {
-            if (percentage < 0 || percentage > 100) throw new ArgumentOutOfRangeException(nameof(percentage));
+            if (percentage < 0) percentage = 0;
+            if (percentage > 100) percentage = 100;
             mixer.SetFloat(parameterName, Mathf.Log10(percentage / 100) * 20);
         }
 

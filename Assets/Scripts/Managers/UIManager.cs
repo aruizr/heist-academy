@@ -1,49 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using Codetox.Messaging;
+using Codetox.Variables;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.UI;
 using Utilities;
 
-namespace UI
+namespace Managers
 {
     public class UIManager : MonoBehaviour
     {
-        [SerializeField] private InputActionAsset inputActionAsset;
+        [SerializeField] private Variable<InputControlScheme> currentScheme;
         [SerializeField] private string keyboardAndMouseControlSchemeName;
         [SerializeField] private List<UIPanel> panels;
-
-        private InputDevice _currentDevice;
-        private InputControlScheme _currentScheme;
+        [SerializeField] private bool setFirstPanelOnEnable;
 
         private void OnEnable()
         {
-            InputSystem.onEvent += OnInputSystemEvent;
+            SetCursorState(currentScheme.Value);
 
-            if (panels.Count > 0) SetPanel(panels[0].panel);
+            currentScheme.OnValueChanged += SetCursorState;
+
+            if (panels.Count > 0 && setFirstPanelOnEnable) SetPanel(panels[0].panel);
         }
 
         private void OnDisable()
         {
-            InputSystem.onEvent -= OnInputSystemEvent;
+            currentScheme.OnValueChanged -= SetCursorState;
         }
 
-        private void OnInputSystemEvent(InputEventPtr eventPtr, InputDevice device)
+        private void SetCursorState(InputControlScheme scheme)
         {
-            if (!inputActionAsset) return;
-
-            if (_currentDevice != null && _currentDevice == device) return;
-            if (eventPtr.type == StateEvent.Type)
-                if (!eventPtr.EnumerateChangedControls(device, 0.001f).Any())
-                    return;
-
-            _currentDevice = device;
-            _currentScheme = inputActionAsset.controlSchemes.First(scheme => scheme.SupportsDevice(_currentDevice));
-
-            if (_currentScheme.name == keyboardAndMouseControlSchemeName)
+            if (scheme.name == keyboardAndMouseControlSchemeName)
                 ShowCursor();
             else
                 HideCursor();
@@ -53,9 +43,9 @@ namespace UI
         {
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
-            
+
             var e = EventSystem.current;
-            
+
             e.SetSelectedGameObject(null);
 
             var data = new PointerEventData(e)
@@ -92,11 +82,43 @@ namespace UI
         {
             if (!panels.TryFind(uiPanel => uiPanel.panel.Equals(panel), out var selected)) return;
 
-            panels.ForEach(uiPanel => uiPanel.panel.SetActive(false));
+            panels.ForEach(uiPanel =>
+            {
+                var p = uiPanel.panel;
+                p.SetActive(false);
+            });
             EventSystem.current.SetSelectedGameObject(null);
             selected.panel.SetActive(true);
 
-            if (!Cursor.visible) EventSystem.current.SetSelectedGameObject(selected.firstSelected);
+            if (!Cursor.visible && selected.firstSelected)
+                EventSystem.current.SetSelectedGameObject(selected.firstSelected);
+        }
+
+        public void AddPanel(GameObject panel)
+        {
+            if (!panels.TryFind(uiPanel => uiPanel.panel.Equals(panel), out var selected)) return;
+            EventSystem.current.SetSelectedGameObject(null);
+            selected.panel.Send<CanvasGroup>(group =>
+            {
+                group.alpha = 1;
+                group.interactable = true;
+                group.blocksRaycasts = true;
+            });
+        }
+
+        public void HideAll()
+        {
+            panels.ForEach(uiPanel =>
+            {
+                var p = uiPanel.panel;
+                p.SetActive(true);
+                p.Send<CanvasGroup>(group =>
+                {
+                    group.alpha = 0;
+                    group.interactable = false;
+                    group.blocksRaycasts = false;
+                });
+            });
         }
 
         [Serializable]

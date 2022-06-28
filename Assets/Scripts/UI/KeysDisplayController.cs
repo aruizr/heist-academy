@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
+using Codetox.Messaging;
+using PropertyAnimators;
 using RuntimeSets;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace UI
 {
@@ -9,6 +12,8 @@ namespace UI
         [SerializeField] private GameObjectRuntimeSet inventory;
         [SerializeField] private GameObject parentElement;
         [SerializeField] private GameObject keyElement;
+
+        public UnityEvent onKeyCollected;
 
         private List<GameObject> _displayed = new List<GameObject>();
 
@@ -32,7 +37,9 @@ namespace UI
 
         private void OnItemAdded(GameObject obj)
         {
-            _displayed.Add(Instantiate(keyElement, parentElement.transform));
+            var key = Instantiate(keyElement, parentElement.transform);
+            _displayed.Add(key);
+            key.Send<PropertyAnimator<Transform, Vector3>>(animator => animator.PlayForward());
         }
     }
 }

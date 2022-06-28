@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using TMPro;
+using Codetox.Variables;
+using RuntimeSets;
 using UnityEngine;
 
 namespace Settings
 {
-    public class WindowModeSelectionController : MonoBehaviour
+    public class WindowModeSelectionController : SettingController
     {
         private const string Key = "window-mode";
         private const string Default = "default-window-mode";
@@ -21,36 +22,46 @@ namespace Settings
             FullScreenMode.Windowed
         };
 
-        [SerializeField] private TMP_Dropdown dropdown;
+        [SerializeField] private RuntimeSet<string> options;
+        [SerializeField] private Variable<int> index;
 
         private void Awake()
         {
-            var index = ScreenModes.IndexOf(Screen.fullScreenMode);
+            var i = ScreenModes.IndexOf(Screen.fullScreenMode);
 
-            PlayerPrefs.SetInt(Default, index);
+            PlayerPrefs.SetInt(Default, i);
             PlayerPrefs.Save();
 
             if (PlayerPrefs.HasKey(Key))
             {
-                index = PlayerPrefs.GetInt(Key);
-                Screen.fullScreenMode = ScreenModes[index];
+                i = PlayerPrefs.GetInt(Key);
+                Screen.fullScreenMode = ScreenModes[i];
             }
 
-            dropdown.ClearOptions();
-            dropdown.AddOptions(ScreenModeNames.ToList());
-            dropdown.SetValueWithoutNotify(index);
+            options.Set(ScreenModeNames.ToList());
+            index.Value = i;
         }
 
-        public void SetWindowMode(int index)
+        private void OnEnable()
         {
-            Screen.fullScreenMode = ScreenModes[index];
-            PlayerPrefs.SetInt(Key, index);
+            index.OnValueChanged += SetWindowMode;
+        }
+
+        private void OnDisable()
+        {
+            index.OnValueChanged -= SetWindowMode;
+        }
+
+        public void SetWindowMode(int i)
+        {
+            Screen.fullScreenMode = ScreenModes[i];
+            PlayerPrefs.SetInt(Key, i);
             PlayerPrefs.Save();
         }
 
-        public void ResetWindowMode()
+        public override void ResetValue()
         {
-            dropdown.value = PlayerPrefs.GetInt(Default);
+            index.Value = PlayerPrefs.GetInt(Default);
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
-using TMPro;
+using Codetox.Variables;
+using RuntimeSets;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
 
@@ -9,7 +9,8 @@ namespace Settings
 {
     public class LanguageSelectionController : MonoBehaviour
     {
-        [SerializeField] private TMP_Dropdown dropdown;
+        [SerializeField] private RuntimeSet<string> options;
+        [SerializeField] private Variable<int> index;
 
         private IEnumerator Start()
         {
@@ -18,14 +19,23 @@ namespace Settings
             var locales = LocalizationSettings.AvailableLocales.Locales;
             var localesNames = locales.Select(locale => locale.LocaleName).ToList();
 
-            dropdown.ClearOptions();
-            dropdown.AddOptions(localesNames);
-            dropdown.SetValueWithoutNotify(locales.IndexOf(LocalizationSettings.SelectedLocale));
+            options.Set(localesNames);
+            index.Value = locales.IndexOf(LocalizationSettings.SelectedLocale);
         }
 
-        public void SetLanguage(int index)
+        private void OnEnable()
         {
-            LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[index];
+            index.OnValueChanged += SetLanguage;
+        }
+
+        private void OnDisable()
+        {
+            index.OnValueChanged -= SetLanguage;
+        }
+
+        public void SetLanguage(int i)
+        {
+            LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[i];
         }
     }
 }

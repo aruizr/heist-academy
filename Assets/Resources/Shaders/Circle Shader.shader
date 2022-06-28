@@ -47,6 +47,7 @@ Shader "Custom/Circle Shader"
 				o.Alpha = 0;
 			}
 			// o.Alpha = 1;
+			o.Emission = _Color.rgb;
 		}
 		ENDCG
 	}

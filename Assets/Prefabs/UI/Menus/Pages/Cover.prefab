@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 481, y: -113}
-  m_SizeDelta: {x: 600, y: 600}
+  m_AnchoredPosition: {x: 481, y: -72}
+  m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &497236767114247722
 CanvasRenderer:
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1cb12f3d0d85a6c4a8204aeb606bcef8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0fe24d6459a464847b061161b0798a4b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1083,7 +1083,7 @@ PrefabInstance:
     - target: {fileID: 2143273251503781408, guid: efe77765d8b71384d92cb09df2102f73, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 7306312429713744209}
+      objectReference: {fileID: 11400000, guid: d0f299ac50742fb45b8905a5f6bae5e6, type: 2}
     - target: {fileID: 2143273251503781408, guid: efe77765d8b71384d92cb09df2102f73, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
@@ -1106,7 +1106,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2143273251503781408, guid: efe77765d8b71384d92cb09df2102f73, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SetNormal
+      value: Invoke
       objectReference: {fileID: 0}
     - target: {fileID: 2143273251503781408, guid: efe77765d8b71384d92cb09df2102f73, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
@@ -1118,7 +1118,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2143273251503781408, guid: efe77765d8b71384d92cb09df2102f73, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: UI.FontStyleController, Assembly-CSharp
+      value: Codetox.GameEvents.GameEvent`1[[UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2143273251503781408, guid: efe77765d8b71384d92cb09df2102f73, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
@@ -1130,7 +1130,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2143273251503781408, guid: efe77765d8b71384d92cb09df2102f73, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2143273251503781408, guid: efe77765d8b71384d92cb09df2102f73, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
@@ -1143,7 +1143,7 @@ PrefabInstance:
     - target: {fileID: 2143273251503781408, guid: efe77765d8b71384d92cb09df2102f73, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 8994944768722160766}
+      objectReference: {fileID: 0}
     - target: {fileID: 2143273251503781408, guid: efe77765d8b71384d92cb09df2102f73, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgument
       value: 
@@ -1154,7 +1154,7 @@ PrefabInstance:
       objectReference: {fileID: 8994944768722160766}
     - target: {fileID: 2143273251503781408, guid: efe77765d8b71384d92cb09df2102f73, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: TMPro.TMP_Text, Unity.TextMeshPro
+      value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2143273251503781408, guid: efe77765d8b71384d92cb09df2102f73, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName

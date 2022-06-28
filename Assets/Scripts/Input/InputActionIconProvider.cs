@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Linq;
+using Codetox.Variables;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.LowLevel;
 
 namespace Input
 {
@@ -12,40 +11,34 @@ namespace Input
         [SerializeField] private InputActionReference inputActionReference;
         [SerializeField] private InputIconMap inputIconMap;
         [SerializeField] private TMP_SpriteAsset spriteAsset;
-
-        private InputDevice _currentDevice;
-        private InputControlScheme _currentScheme;
+        [SerializeField] private Variable<InputControlScheme> currentControlScheme;
 
         private void OnEnable()
         {
-            InputSystem.onEvent += OnInputSystemEvent;
+            currentControlScheme.OnValueChanged += OnControlSchemeChanged;
         }
 
         private void OnDisable()
         {
-            InputSystem.onEvent -= OnInputSystemEvent;
+            currentControlScheme.OnValueChanged -= OnControlSchemeChanged;
         }
 
-        private void OnInputSystemEvent(InputEventPtr eventPtr, InputDevice device)
+        private void OnControlSchemeChanged(InputControlScheme inputControlScheme)
         {
-            if (!inputActionReference || !inputIconMap || !spriteAsset) return;
+            UpdateIcon();
+        }
 
-            if (_currentDevice != null && _currentDevice == device) return;
-            if (eventPtr.type == StateEvent.Type)
-                if (!eventPtr.EnumerateChangedControls(device, 0.001f).Any())
-                    return;
-
-            _currentDevice = device;
-            _currentScheme =
-                inputActionReference.asset.controlSchemes.First(scheme => scheme.SupportsDevice(_currentDevice));
-
+        public void UpdateIcon()
+        {
             try
             {
                 var inputAction = inputActionReference.action;
-                var currentBindingIndex = inputAction.GetBindingIndex(_currentScheme.bindingGroup);
-                var currentBinding = inputAction.bindings[currentBindingIndex];
-                var currentSprite = inputIconMap.GetIcon(currentBinding.path);
-                spriteAsset.material.SetTexture(ShaderUtilities.ID_MainTex, currentSprite.texture);
+                var bindingIndex = inputAction.GetBindingIndex(currentControlScheme.Value.bindingGroup);
+                var binding = inputAction.bindings[bindingIndex];
+                var path = binding.hasOverrides ? binding.overridePath : binding.path;
+                var sprite = inputIconMap.GetIcon(path);
+                
+                spriteAsset.material.SetTexture(ShaderUtilities.ID_MainTex, sprite.texture);
             }
             catch (Exception e)
             {

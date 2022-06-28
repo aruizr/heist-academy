@@ -16,7 +16,8 @@ MonoBehaviour:
     m_Code: ca
   m_SharedData: {fileID: 11400000, guid: aaf49131e4f445c47aabde9cf0b354c3, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - id: 0
   m_TableData:
   - m_Id: 5896302592
     m_Localized: Reiniciar
@@ -111,9 +112,10 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 14447253407064064
-    m_Localized: Sensibilitat
+    m_Localized: Sensibilitat {axis}
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - id: 0
   - m_Id: 14448137268551680
     m_Localized: Invertir Y
     m_Metadata:
@@ -146,5 +148,33 @@ MonoBehaviour:
     m_Localized: Continuar
     m_Metadata:
       m_Items: []
+  - m_Id: 18430918678179840
+    m_Localized: Controls
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18433530714550272
+    m_Localized: Interactuar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18433861791936512
+    m_Localized: "Llen\xE7ar"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18433946512683008
+    m_Localized: "Canviar de selecci\xF3"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18434202054848512
+    m_Localized: Ajupir-se
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18748962960994304
+    m_Localized: A
+    m_Metadata:
+      m_Items: []
   references:
     version: 1
+    00000000:
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 00e04e4fb3533300
