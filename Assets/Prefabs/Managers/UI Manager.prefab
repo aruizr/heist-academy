@@ -44,9 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e79f22261d346a58abcdda7074afa35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 32af0bfc6fd598343be75493048a869e, type: 2}
+  currentScheme: {fileID: 11400000, guid: 9e31298abd13ce746b9882490654a493, type: 2}
   keyboardAndMouseControlSchemeName: Mouse and Keyboard
   panels: []
+  setFirstPanelOnEnable: 0
 --- !u!114 &572388520435942964
 MonoBehaviour:
   m_ObjectHideFlags: 0

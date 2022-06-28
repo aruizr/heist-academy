@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Codetox.Messaging;
-using GameEvents;
+using Codetox.Variables;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -12,26 +12,28 @@ namespace Managers
 {
     public class UIManager : MonoBehaviour
     {
-        [SerializeField] private ControlSchemeSwitchedGameEvent gameEvent;
+        [SerializeField] private Variable<InputControlScheme> currentScheme;
         [SerializeField] private string keyboardAndMouseControlSchemeName;
         [SerializeField] private List<UIPanel> panels;
         [SerializeField] private bool setFirstPanelOnEnable;
 
         private void OnEnable()
         {
-            gameEvent.AddListener(OnControlSchemeSwitched);
+            SetCursorState(currentScheme.Value);
+
+            currentScheme.OnValueChanged += SetCursorState;
 
             if (panels.Count > 0 && setFirstPanelOnEnable) SetPanel(panels[0].panel);
         }
 
         private void OnDisable()
         {
-            gameEvent.RemoveListener(OnControlSchemeSwitched);
+            currentScheme.OnValueChanged -= SetCursorState;
         }
 
-        private void OnControlSchemeSwitched(ControlSchemeSwitchedGameEventData data)
+        private void SetCursorState(InputControlScheme scheme)
         {
-            if (data.ControlScheme.name == keyboardAndMouseControlSchemeName)
+            if (scheme.name == keyboardAndMouseControlSchemeName)
                 ShowCursor();
             else
                 HideCursor();
@@ -83,23 +85,13 @@ namespace Managers
             panels.ForEach(uiPanel =>
             {
                 var p = uiPanel.panel;
-                p.SetActive(true);
-                p.Send<CanvasGroup>(group =>
-                {
-                    group.alpha = 0;
-                    group.interactable = false;
-                    group.blocksRaycasts = false;
-                });
+                p.SetActive(false);
             });
             EventSystem.current.SetSelectedGameObject(null);
-            selected.panel.Send<CanvasGroup>(group =>
-            {
-                group.alpha = 1;
-                group.interactable = true;
-                group.blocksRaycasts = true;
-            });
+            selected.panel.SetActive(true);
 
-            if (!Cursor.visible && selected.firstSelected) EventSystem.current.SetSelectedGameObject(selected.firstSelected);
+            if (!Cursor.visible && selected.firstSelected)
+                EventSystem.current.SetSelectedGameObject(selected.firstSelected);
         }
 
         public void AddPanel(GameObject panel)

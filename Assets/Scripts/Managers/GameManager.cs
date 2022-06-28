@@ -1,14 +1,14 @@
 ﻿using System.Collections;
+using Codetox.Variables;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 namespace Managers
 {
     public class GameManager : MonoBehaviour
     {
-        [SerializeField] private Slider progress;
+        [SerializeField] private Variable<float> progress;
 
         public UnityEvent onLoadScene;
 
@@ -34,10 +34,10 @@ namespace Managers
 
         private IEnumerator DisplayProgress()
         {
-            progress.value = 0;
+            progress.Value = 0;
             while (!_loading.isDone)
             {
-                progress.value = Mathf.Clamp01(_loading.progress / 0.9f);
+                progress.Value = Mathf.Clamp01(_loading.progress / 0.9f);
                 yield return null;
             }
         }
@@ -66,7 +66,7 @@ namespace Managers
         public void ShowCursor()
         {
             Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
+            Cursor.lockState = CursorLockMode.Confined;
         }
     }
 }

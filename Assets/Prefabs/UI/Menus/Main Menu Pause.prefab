@@ -179,6 +179,10 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 3071229406490001238, guid: 4ecb86778195c42fcbf93e065029b2ae, type: 2}
+    - target: {fileID: 2114046364916242934, guid: e6a3ff22f63d379459467710b7ce01da, type: 3}
+      propertyPath: panels.Array.data[0].firstSelected
+      value: 
+      objectReference: {fileID: 6896280033948695551}
     - target: {fileID: 2919011449152470512, guid: e6a3ff22f63d379459467710b7ce01da, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -1111,12 +1115,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a00fdc901bd719d4cba8540f8315ef62, type: 3}
+--- !u!1 &6896280033948695551 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3010022755391726697, guid: a00fdc901bd719d4cba8540f8315ef62, type: 3}
+  m_PrefabInstance: {fileID: 8534670494368407446}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2971371388802327502 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6867236336848632920, guid: a00fdc901bd719d4cba8540f8315ef62, type: 3}
   m_PrefabInstance: {fileID: 8534670494368407446}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 6896280033948695551}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}

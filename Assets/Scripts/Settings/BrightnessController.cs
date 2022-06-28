@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿using Codetox.Variables;
+using UnityEngine;
 
 namespace Settings
 {
@@ -8,9 +8,9 @@ namespace Settings
         private const string Key = "brightness";
         private const string Default = "default-brightness";
 
-        [SerializeField] private Slider slider;
+        [SerializeField] private Variable<float> variable;
 
-        private void Awake()
+        private void Start()
         {
             var value = Screen.brightness;
 
@@ -23,7 +23,17 @@ namespace Settings
                 Screen.brightness = value;
             }
 
-            slider.SetValueWithoutNotify(value);
+            variable.Value = value;
+        }
+        
+        private void OnEnable()
+        {
+            variable.OnValueChanged += SetBrightness;
+        }
+
+        private void OnDisable()
+        {
+            variable.OnValueChanged -= SetBrightness;
         }
 
         public void SetBrightness(float value)
@@ -35,7 +45,7 @@ namespace Settings
 
         public override void ResetValue()
         {
-            slider.value = PlayerPrefs.GetFloat(Default);
+            variable.Value = PlayerPrefs.GetFloat(Default);
         }
     }
 }

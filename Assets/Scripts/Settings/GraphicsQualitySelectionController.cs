@@ -1,4 +1,6 @@
 ﻿using System.Linq;
+using Codetox.Variables;
+using RuntimeSets;
 using UI;
 using UnityEngine;
 
@@ -9,7 +11,8 @@ namespace Settings
         private const string Key = "quality-level";
         private const string Default = "default-quality-level";
 
-        [SerializeField] private OptionSelector selector;
+        [SerializeField] private RuntimeSet<string> options;
+        [SerializeField] private Variable<int> index;
 
         private void Awake()
         {
@@ -25,20 +28,30 @@ namespace Settings
                 QualitySettings.SetQualityLevel(level, true);
             }
 
-            selector.SetOptions(qualityLevels);
-            selector.SetValueWithoutNotify(level);
+            options.Set(qualityLevels);
+            index.Value = level;
+        }
+        
+        private void OnEnable()
+        {
+            index.OnValueChanged += SetQualityLevel;
         }
 
-        public void SetQualityLevel(int index)
+        private void OnDisable()
         {
-            QualitySettings.SetQualityLevel(index, true);
-            PlayerPrefs.SetInt(Key, index);
+            index.OnValueChanged -= SetQualityLevel;
+        }
+
+        public void SetQualityLevel(int level)
+        {
+            QualitySettings.SetQualityLevel(level, true);
+            PlayerPrefs.SetInt(Key, level);
             PlayerPrefs.Save();
         }
 
         public override void ResetValue()
         {
-            selector.value = PlayerPrefs.GetInt(Default);
+            index.Value = PlayerPrefs.GetInt(Default);
         }
     }
 }

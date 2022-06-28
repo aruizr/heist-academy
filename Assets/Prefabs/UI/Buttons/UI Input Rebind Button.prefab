@@ -238,8 +238,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aae32aa82e704897900bfb3dba95cd63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 32af0bfc6fd598343be75493048a869e, type: 2}
   inputActionReference: {fileID: 4151149483586709142, guid: c107002edee2d8b47a518225af51c169, type: 3}
+  currentControlScheme: {fileID: 11400000, guid: 9e31298abd13ce746b9882490654a493, type: 2}
   excludeBindings:
     m_Name: Exclude Bindings
     m_Type: 0
@@ -267,14 +267,6 @@ MonoBehaviour:
     - m_Name: 
       m_Id: 2f485235-6e04-4833-b42e-1f4172a067bf
       m_Path: '*/{Menu}'
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Exclude Bindings
-      m_Flags: 0
-    - m_Name: 
-      m_Id: a3b0b288-9ed6-47ae-93f8-34148633d8cf
-      m_Path: <Keyboard>/escape
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -433,7 +425,7 @@ MonoBehaviour:
   onRebindCompleted:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: b170708a5359b2f409d4381d2f23b51c, type: 2}
+      - m_Target: {fileID: 11400000, guid: fcdc2419baa2f454abb7dd698dc09d5a, type: 2}
         m_TargetAssemblyTypeName: Codetox.GameEvents.VoidGameEvent, com.aruizrab.codetox
         m_MethodName: Invoke
         m_Mode: 1

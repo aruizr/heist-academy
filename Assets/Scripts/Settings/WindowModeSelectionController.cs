@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using UI;
+using Codetox.Variables;
+using RuntimeSets;
 using UnityEngine;
 
 namespace Settings
@@ -21,35 +22,46 @@ namespace Settings
             FullScreenMode.Windowed
         };
 
-        [SerializeField] private OptionSelector selector;
+        [SerializeField] private RuntimeSet<string> options;
+        [SerializeField] private Variable<int> index;
 
         private void Awake()
         {
-            var index = ScreenModes.IndexOf(Screen.fullScreenMode);
+            var i = ScreenModes.IndexOf(Screen.fullScreenMode);
 
-            PlayerPrefs.SetInt(Default, index);
+            PlayerPrefs.SetInt(Default, i);
             PlayerPrefs.Save();
 
             if (PlayerPrefs.HasKey(Key))
             {
-                index = PlayerPrefs.GetInt(Key);
-                Screen.fullScreenMode = ScreenModes[index];
+                i = PlayerPrefs.GetInt(Key);
+                Screen.fullScreenMode = ScreenModes[i];
             }
 
-            selector.SetOptions(ScreenModeNames.ToList());
-            selector.SetValueWithoutNotify(index);
+            options.Set(ScreenModeNames.ToList());
+            index.Value = i;
         }
 
-        public void SetWindowMode(int index)
+        private void OnEnable()
         {
-            Screen.fullScreenMode = ScreenModes[index];
-            PlayerPrefs.SetInt(Key, index);
+            index.OnValueChanged += SetWindowMode;
+        }
+
+        private void OnDisable()
+        {
+            index.OnValueChanged -= SetWindowMode;
+        }
+
+        public void SetWindowMode(int i)
+        {
+            Screen.fullScreenMode = ScreenModes[i];
+            PlayerPrefs.SetInt(Key, i);
             PlayerPrefs.Save();
         }
 
         public override void ResetValue()
         {
-            selector.value = PlayerPrefs.GetInt(Default);
+            index.Value = PlayerPrefs.GetInt(Default);
         }
     }
 }

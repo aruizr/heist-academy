@@ -1,5 +1,5 @@
 ﻿using System.Linq;
-using GameEvents;
+using Codetox.Variables;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.LowLevel;
@@ -9,10 +9,9 @@ namespace Input
     public class InputActionAssetControlSchemeController : MonoBehaviour
     {
         [SerializeField] private InputActionAsset inputActionAsset;
-        [SerializeField] private ControlSchemeSwitchedGameEvent gameEvent;
+        [SerializeField] private Variable<InputControlScheme> currentControlScheme;
 
         private InputDevice _currentDevice;
-        private InputControlScheme _currentScheme;
 
         private void OnEnable()
         {
@@ -34,11 +33,7 @@ namespace Input
                     return;
 
             _currentDevice = device;
-            _currentScheme = inputActionAsset.controlSchemes.First(scheme => scheme.SupportsDevice(_currentDevice));
-
-            var eventData = new ControlSchemeSwitchedGameEventData(_currentDevice, _currentScheme);
-
-            gameEvent.Invoke(eventData);
+            currentControlScheme.Value = inputActionAsset.controlSchemes.First(scheme => scheme.SupportsDevice(device));
         }
     }
 }

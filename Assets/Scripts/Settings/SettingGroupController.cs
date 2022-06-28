@@ -1,14 +1,16 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 
 namespace Settings
 {
     public class SettingGroupController : MonoBehaviour
     {
-        private SettingController[] _settings;
+        private List<SettingController> _settings;
 
         private void Awake()
         {
-            _settings = GetComponentsInChildren<SettingController>();
+            _settings = GetComponents<SettingController>().ToList();
         }
 
         public void ResetGroup()

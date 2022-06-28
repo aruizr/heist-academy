@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4541010337942107751}
   - component: {fileID: 6087100944548496835}
+  - component: {fileID: 548299960751903211}
   m_Layer: 0
   m_Name: Throw Action Icon Provider
   m_TagString: Untagged
@@ -43,11 +44,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50897091a8ef4bbe8e4dafe7b61b02c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 32af0bfc6fd598343be75493048a869e, type: 2}
-  updateIconGameEvent: {fileID: 11400000, guid: 2379990bfa399f745b684c1da4649525, type: 2}
   inputActionReference: {fileID: 3728198380002976230, guid: c107002edee2d8b47a518225af51c169, type: 3}
   inputIconMap: {fileID: 11400000, guid: d7b01a7280b164e4bae01e3c9df9271d, type: 2}
   spriteAsset: {fileID: 11400000, guid: fe247b6ae2eacdd46a8625bf48cb8062, type: 2}
+  currentControlScheme: {fileID: 11400000, guid: 9e31298abd13ce746b9882490654a493, type: 2}
+--- !u!114 &548299960751903211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5893800032613913967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d99689d07e4220862eb4341c1c736a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: fcdc2419baa2f454abb7dd698dc09d5a, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6087100944548496835}
+        m_TargetAssemblyTypeName: Input.InputActionIconProvider, Assembly-CSharp
+        m_MethodName: UpdateIcon
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6369014795532799703
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,6 +86,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3534582068337463647}
   - component: {fileID: 5066692547537676844}
+  - component: {fileID: 8749419366995133963}
   m_Layer: 0
   m_Name: Switch Selection Action Icon Provider
   m_TagString: Untagged
@@ -91,11 +120,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50897091a8ef4bbe8e4dafe7b61b02c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 32af0bfc6fd598343be75493048a869e, type: 2}
-  updateIconGameEvent: {fileID: 11400000, guid: edc5403947e20b243aa63683a1af8a1e, type: 2}
   inputActionReference: {fileID: -1514384667972057413, guid: c107002edee2d8b47a518225af51c169, type: 3}
   inputIconMap: {fileID: 11400000, guid: d7b01a7280b164e4bae01e3c9df9271d, type: 2}
   spriteAsset: {fileID: 11400000, guid: 1b7d965b343313d4b82ae63609f38149, type: 2}
+  currentControlScheme: {fileID: 11400000, guid: 9e31298abd13ce746b9882490654a493, type: 2}
+--- !u!114 &8749419366995133963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6369014795532799703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d99689d07e4220862eb4341c1c736a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: fcdc2419baa2f454abb7dd698dc09d5a, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5066692547537676844}
+        m_TargetAssemblyTypeName: Input.InputActionIconProvider, Assembly-CSharp
+        m_MethodName: UpdateIcon
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7490189060043024335
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,6 +162,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4007335883175411646}
   - component: {fileID: 8116841200080014869}
+  - component: {fileID: 610144587844343465}
   m_Layer: 0
   m_Name: Crouch Action Icon Provider
   m_TagString: Untagged
@@ -139,11 +196,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50897091a8ef4bbe8e4dafe7b61b02c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 32af0bfc6fd598343be75493048a869e, type: 2}
-  updateIconGameEvent: {fileID: 11400000, guid: c10090fbd80cee040b3ff7a549edfe5d, type: 2}
   inputActionReference: {fileID: 2483261668049847350, guid: c107002edee2d8b47a518225af51c169, type: 3}
   inputIconMap: {fileID: 11400000, guid: d7b01a7280b164e4bae01e3c9df9271d, type: 2}
   spriteAsset: {fileID: 11400000, guid: 032e8706b2b5ee34abb19edc7496e4f9, type: 2}
+  currentControlScheme: {fileID: 11400000, guid: 9e31298abd13ce746b9882490654a493, type: 2}
+--- !u!114 &610144587844343465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7490189060043024335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d99689d07e4220862eb4341c1c736a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: fcdc2419baa2f454abb7dd698dc09d5a, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8116841200080014869}
+        m_TargetAssemblyTypeName: Input.InputActionIconProvider, Assembly-CSharp
+        m_MethodName: UpdateIcon
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7670242266202680419
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,6 +238,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1659609419228059672}
   - component: {fileID: 2364799657687453283}
+  - component: {fileID: 5214868153022104033}
   m_Layer: 0
   m_Name: Interact Action Icon Provider
   m_TagString: Untagged
@@ -187,11 +272,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50897091a8ef4bbe8e4dafe7b61b02c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 32af0bfc6fd598343be75493048a869e, type: 2}
-  updateIconGameEvent: {fileID: 11400000, guid: b170708a5359b2f409d4381d2f23b51c, type: 2}
   inputActionReference: {fileID: 4151149483586709142, guid: c107002edee2d8b47a518225af51c169, type: 3}
   inputIconMap: {fileID: 11400000, guid: d7b01a7280b164e4bae01e3c9df9271d, type: 2}
   spriteAsset: {fileID: 11400000, guid: f6741bcc277fb684c837bba00cf55be3, type: 2}
+  currentControlScheme: {fileID: 11400000, guid: 9e31298abd13ce746b9882490654a493, type: 2}
+--- !u!114 &5214868153022104033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7670242266202680419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d99689d07e4220862eb4341c1c736a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: fcdc2419baa2f454abb7dd698dc09d5a, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2364799657687453283}
+        m_TargetAssemblyTypeName: Input.InputActionIconProvider, Assembly-CSharp
+        m_MethodName: UpdateIcon
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8924875284468355905
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,4 +352,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputActionAsset: {fileID: -944628639613478452, guid: c107002edee2d8b47a518225af51c169, type: 3}
-  gameEvent: {fileID: 11400000, guid: 32af0bfc6fd598343be75493048a869e, type: 2}
+  currentControlScheme: {fileID: 11400000, guid: 9e31298abd13ce746b9882490654a493, type: 2}
