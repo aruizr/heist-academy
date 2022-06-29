@@ -1279,15 +1279,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5385900395094379590, guid: 1bd8a8b273ba0e545bc0555ff8abe0e2, type: 3}
       propertyPath: m_Value
-      value: 1
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 5385900395094379590, guid: 1bd8a8b273ba0e545bc0555ff8abe0e2, type: 3}
       propertyPath: m_MaxValue
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5385900395094379590, guid: 1bd8a8b273ba0e545bc0555ff8abe0e2, type: 3}
       propertyPath: m_MinValue
-      value: 0.01
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5385900395094379590, guid: 1bd8a8b273ba0e545bc0555ff8abe0e2, type: 3}
       propertyPath: m_Navigation.m_SelectOnUp
@@ -1431,11 +1431,11 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 0f61c31b9dba57549b8933f24388d8e3, type: 2}
     - target: {fileID: 8810436354265993211, guid: 1bd8a8b273ba0e545bc0555ff8abe0e2, type: 3}
       propertyPath: decimals
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8810436354265993211, guid: 1bd8a8b273ba0e545bc0555ff8abe0e2, type: 3}
       propertyPath: multiplier
-      value: 1
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bd8a8b273ba0e545bc0555ff8abe0e2, type: 3}
@@ -3013,15 +3013,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5385900395094379590, guid: 1bd8a8b273ba0e545bc0555ff8abe0e2, type: 3}
       propertyPath: m_Value
-      value: 1
+      value: 0.0025
       objectReference: {fileID: 0}
     - target: {fileID: 5385900395094379590, guid: 1bd8a8b273ba0e545bc0555ff8abe0e2, type: 3}
       propertyPath: m_MaxValue
-      value: 10
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 5385900395094379590, guid: 1bd8a8b273ba0e545bc0555ff8abe0e2, type: 3}
       propertyPath: m_MinValue
-      value: 0.01
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5385900395094379590, guid: 1bd8a8b273ba0e545bc0555ff8abe0e2, type: 3}
       propertyPath: m_Navigation.m_SelectOnUp
@@ -3165,11 +3165,11 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: a6cb754de23b3d74c87c43bcb570ab26, type: 2}
     - target: {fileID: 8810436354265993211, guid: 1bd8a8b273ba0e545bc0555ff8abe0e2, type: 3}
       propertyPath: decimals
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8810436354265993211, guid: 1bd8a8b273ba0e545bc0555ff8abe0e2, type: 3}
       propertyPath: multiplier
-      value: 1
+      value: 10000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bd8a8b273ba0e545bc0555ff8abe0e2, type: 3}
