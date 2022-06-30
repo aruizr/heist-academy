@@ -44,7 +44,7 @@ namespace Settings
         private void OnDisable()
         {
             variableX.OnValueChanged -= SetSensitivityX;
-            variableY.OnValueChanged += SetSensitivityY;
+            variableY.OnValueChanged -= SetSensitivityY;
         }
 
         public void SetSensitivityX(float value)

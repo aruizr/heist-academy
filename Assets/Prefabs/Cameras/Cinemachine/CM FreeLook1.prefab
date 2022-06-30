@@ -344,6 +344,7 @@ GameObject:
   - component: {fileID: 6153718223203821875}
   - component: {fileID: 6153718223203821874}
   - component: {fileID: 6153718223203821873}
+  - component: {fileID: 314880711642269113}
   m_Layer: 0
   m_Name: CM FreeLook1
   m_TagString: Untagged
@@ -406,7 +407,7 @@ MonoBehaviour:
   m_YAxis:
     Value: 2
     m_SpeedMode: 1
-    m_MaxSpeed: 0.005
+    m_MaxSpeed: 0.0025
     m_AccelTime: 0.5
     m_DecelTime: 0.5
     m_InputAxisName: Mouse Y
@@ -485,6 +486,21 @@ MonoBehaviour:
   AutoEnableInputs: 0
   XYAxis: {fileID: 2991132634501479806, guid: c107002edee2d8b47a518225af51c169, type: 3}
   ZAxis: {fileID: 0}
+--- !u!114 &314880711642269113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6153718223203821872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3135a12db2a5f479253852aa9ea061, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 6153718223203821874}
+  variableX: {fileID: 11400000, guid: 0f61c31b9dba57549b8933f24388d8e3, type: 2}
+  variableY: {fileID: 11400000, guid: a6cb754de23b3d74c87c43bcb570ab26, type: 2}
 --- !u!1 &6770093592984907269
 GameObject:
   m_ObjectHideFlags: 3
